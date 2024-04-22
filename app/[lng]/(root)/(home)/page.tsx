@@ -1,3 +1,4 @@
+import Contacts from './_components/contacts'
 import Directions from './_components/directions'
 import Hero from './_components/hero'
 
@@ -6,6 +7,7 @@ async function Page() {
 		<>
 			<Hero />
 			<Directions />
+			<Contacts />
 		</>
 	)
 }

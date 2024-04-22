@@ -1,5 +1,6 @@
 'use client'
 
+import useTranslate from '@/hooks/use-translate'
 import { contactSchema } from '@/lib/validation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Send } from 'lucide-react'
@@ -11,7 +12,6 @@ import { Button } from '../ui/button'
 import { Form, FormControl, FormField, FormItem, FormMessage } from '../ui/form'
 import { Input } from '../ui/input'
 import { Textarea } from '../ui/textarea'
-import useTranslate from '@/hooks/use-translate'
 
 function ContactForm() {
 	const [isLoading, setIsLoading] = useState(false)
