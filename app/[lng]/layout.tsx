@@ -28,20 +28,20 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://digiiusi.uz'),
-	title: 'Digital IUSI | Online o`qitish uchun platforma',
-	description: 'Xalqaro innovatsion texnologiyalari universiteti',
+	metadataBase: new URL('https://iusi.uz'),
+	title: 'IUSI | Online o`qitish uchun platforma',
+	description: 'Xalqaro ijtimoiy innovatsiyalar universiteti',
 	authors: [{ name: 'Abduvoxidov Davlatbek', url: 'https://t.me/adsh97' }],
 	icons: { icon: '/logo.png' },
 	openGraph: {
-		title: 'Digital IUSI | Online o`qitish uchun platforma',
-		description: 'Xalqaro innovatsion texnologiyalari universiteti',
+		title: 'IUSI | Online o`qitish uchun platforma',
+		description: 'Xalqaro ijtimoiy innovatsiyalar universiteti',
 		type: 'website',
-		url: 'https://digiiusi.uz',
+		url: 'https://iusi.uz',
 		locale: 'uz_UZ',
 		images: '/logo.png',
 		countryName: 'Uzbekistan',
-		siteName: 'digiiusi.uz',
+		siteName: 'iusi.uz',
 		emails: 'info@iusi.uz',
 	},
 	keywords:
