@@ -72,6 +72,13 @@ export const filterLevels = [
 	{ label: 'level4', name: 'advanced' },
 ]
 
+export const coruselhero = [
+	'/assets/corusel/slider1.jpg',
+	'/assets/corusel/slider2.jpg',
+	'/assets/corusel/slider3.jpg',
+	'/assets/corusel/slider4.jpg',
+]
+
 export const courses = [
 	{
 		title: 'JavaScript',

@@ -14,7 +14,7 @@ function Footer() {
 		<div className='mt-12 bg-secondary pt-12 max-md:px-4'>
 			<div className='container mx-auto max-w-7xl pb-12'>
 				<div className='grid grid-cols-1 gap-12 md:grid-cols-4'>
-					<div className='flex flex-col space-y-3 md:col-span-2'>
+					<div className='flex flex-col space-y-3 md:col-span-1'>
 						<Logo />
 						<p>{t('heroDescription')}</p>
 					</div>
