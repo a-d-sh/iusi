@@ -5,13 +5,10 @@ import {
 	CarouselContent,
 	CarouselItem,
 } from '@/components/ui/carousel'
-import useTranslate from '@/hooks/use-translate'
 import Autoplay from 'embla-carousel-autoplay'
 import Image from 'next/image'
 
 function Hero() {
-	const t = useTranslate()
-
 	return (
 		<>
 			<div className='w-full'>
