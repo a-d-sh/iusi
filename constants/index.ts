@@ -177,6 +177,81 @@ export const categories = [
 	{ icon: '/assets/categories/it-software.svg', label: 'IT & Software' },
 ]
 
+export const directions = [
+	{
+		icon: '/logo.png',
+		label: 'Bank ishi va audit',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Biznes huquqi',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Boshlangich ta`lim',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Buxgalteriya ta`lim yo`nalishi',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Dasturiy injiniring',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Filologiya Ingliz tili',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Filologiya Koreys tili',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Filologiya Xitoy Tili',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Filologiya Yapon tili',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Iqtisodiyot',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Moliya va moliya texnologiyalari',
+	},
+	{
+		icon: '/logo.png',
+		label: 'O`zbek tili va adabiyoti',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Raqamli Iqtisodiyot',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Siyosatshunoslik',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Soliq va soliqqa tortish',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Xalqaro jurnalistika',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Magistratura raqamli iqtisodiyot',
+	},
+	{
+		icon: '/logo.png',
+		label: 'Magistratura ingliz tili',
+	},
+]
+
 export const instructors = [
 	{
 		name: 'Chris Impley',

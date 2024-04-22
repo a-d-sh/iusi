@@ -25,6 +25,11 @@ export interface ICategory {
 	icon: string
 }
 
+export interface IDirection {
+	label: string
+	icon: string
+}
+
 export interface IInstructor {
 	name: string
 	image: string

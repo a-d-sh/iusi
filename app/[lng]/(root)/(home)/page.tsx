@@ -1,11 +1,11 @@
-import Categories from './_components/categories'
+import Directions from './_components/directions'
 import Hero from './_components/hero'
 
 async function Page() {
 	return (
 		<>
 			<Hero />
-			<Categories />
+			<Directions />
 		</>
 	)
 }
