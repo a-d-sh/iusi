@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 		emails: 'info@iusi.uz',
 	},
 	keywords:
-		"Digi, iusi, iusi.uz, digi.iusi.uz, NextJS, online, o'qitish, NextJS dasturlash, Startup, Startup loyiha, Startup iusi, Iusi, Iusi digi,",
+		"iusi, iusi.uz, iusi.uz, NextJS, online, o'qitish, NextJS dasturlash, Startup, Startup loyiha, Startup iusi, Iusi, Iusi digi,",
 }
 
 interface Props extends ChildProps {
