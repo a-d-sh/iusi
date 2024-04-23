@@ -1,6 +1,5 @@
 import {
 	Bell,
-	Contact,
 	CreditCard,
 	FileCode,
 	GaugeCircle,
@@ -8,7 +7,6 @@ import {
 	ListVideo,
 	MessageSquareMore,
 	MonitorPlay,
-	Rss,
 	Settings2,
 	User,
 } from 'lucide-react'
@@ -30,9 +28,9 @@ import {
 
 export const navLinks = [
 	{ route: '', name: 'navLink1', icon: Home },
-	{ route: 'courses', name: 'navLink2', icon: ListVideo },
-	{ route: 'blogs', name: 'navLink3', icon: Rss },
-	{ route: 'contacts', name: 'navLink4', icon: Contact },
+	// { route: 'courses', name: 'navLink2', icon: ListVideo },
+	// { route: 'blogs', name: 'navLink3', icon: Rss },
+	// { route: 'contacts', name: 'navLink4', icon: Contact },
 ]
 
 export const lngs = [

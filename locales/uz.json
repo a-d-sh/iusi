@@ -1,5 +1,5 @@
 {
-	"navLink1": "Bosh sahifa",
+	"navLink1": "Xalqaro ijtimoiy innovatsiyalar universiteti",
 	"navLink2": "Kurslar",
 	"navLink3": "Bloglar",
 	"navLink4": "Aloqa",
@@ -54,8 +54,8 @@
 	"level": "Daraja",
 	"blogs": "Bloglar",
 	"blogsDescription": "Kurslarimiz va o'qituvchilarimiz haqida ko'proq ma'lumot olish uchun eng so'nggi bloglarimizni o'qing.",
-	"contactTitle": "Biz bilan aloqa oling",
-	"contactDescription": "Sizga yordam bera olish uchun bizga qo'ng'iroq qilishingiz mumkin. Agar savolingiz bo'lsa, baxtli bo'ling.",
+	"contactTitle": "Biz bilan bog`laning",
+	"contactDescription": "Biz bilan ekaningizdan mamnunmiz, qo'shimcha ma'lumot olish uchun xabar qoldiring!",
 	"contactForm": "Aloqa forması",
 	"contactFormTextarea": "Savol yoki Salom deb ayting",
 	"contactFormName": "Ismingizni kiriting",
