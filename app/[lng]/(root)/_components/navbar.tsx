@@ -172,7 +172,7 @@ function Navbar() {
 										TA`LIM
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
-										<Link href='/' legacyBehavior passHref>
+										<Link href='/direction-bachelor' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>

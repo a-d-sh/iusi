@@ -10,6 +10,10 @@ export default authMiddleware({
 	beforeAuth: req => intlMiddleware(req),
 	publicRoutes: [
 		'/:lng',
+		'/:lng/direction-bachelor',
+		'/:lng/direction-bachelor/:slug',
+		'/:lng/bachelor',
+		'/:lng/bachelor/:slug',
 		'/:lng/courses',
 		'/:lng/course/:slug',
 		'/:lng/blogs',

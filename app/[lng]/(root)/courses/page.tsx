@@ -1,8 +1,8 @@
-import TopBar from '@/components/shared/top-bar'
-import AllCourses from './_components/all-courses'
 import { getAllCourses } from '@/actions/course.action'
 import { SearchParamsProps } from '@/app.types'
+import TopBar from '@/components/shared/top-bar'
 import { Metadata } from 'next'
+import AllCourses from './_components/all-courses'
 
 export const metadata: Metadata = {
 	title: 'Praktikum | Barcha kurslar',
