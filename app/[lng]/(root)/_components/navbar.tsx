@@ -101,7 +101,7 @@ function Navbar() {
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Me'yoriy hujjatlar
+												Me`yoriy hujjatlar
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
@@ -296,14 +296,14 @@ function Navbar() {
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Distansion ta'lim haqida
+												Distansion ta`lim haqida
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Distansion ta'lim qulayliklari
+												Distansion ta`lim qulayliklari
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuContent>
