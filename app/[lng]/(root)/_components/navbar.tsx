@@ -362,21 +362,21 @@ function Navbar() {
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Ta'lim shakllari va yo'nalishlari, mutaxassisliklari
+												Ta`lim shakllari va yo`nalishlari, mutaxassisliklari
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												2024-2025 o'quv yili uchun ro'yxatdan o'tish
+												2024-2025 o`quv yili uchun ro`yxatdan o`tish
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Ko'p beriladigan savollarga javoblar
+												Ko`p beriladigan savollarga javoblar
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
