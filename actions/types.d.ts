@@ -13,6 +13,13 @@ export interface ICreateCourse {
 	previewImage: string
 }
 
+export interface ICreateDirection {
+	title: string
+	titleru: string
+	titleen: string
+	previewImage: string
+}
+
 export interface ICreateUser {
 	clerkId: string
 	fullName: string
@@ -58,6 +65,13 @@ export interface GetCoursesParams {
 }
 
 export interface GetAllCoursesParams {
+	page?: number
+	pageSize?: number
+	searchQuery?: string
+	filter?: string
+}
+
+export interface GetAllDirectionParams {
 	page?: number
 	pageSize?: number
 	searchQuery?: string

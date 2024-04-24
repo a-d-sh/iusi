@@ -1,16 +1,10 @@
 import { model, models, Schema } from 'mongoose'
 
-const CourseSchema = new Schema(
+const DirectionSchema = new Schema(
 	{
 		title: String,
-		description: String,
-		learning: String,
-		requirements: String,
-		level: String,
-		category: String,
-		language: String,
-		oldPrice: Number,
-		currentPrice: Number,
+		titleru: String,
+		titleen: String,
 		previewImage: String,
 		published: { type: Boolean, default: false },
 		instructor: { type: Schema.Types.ObjectId, ref: 'User' },
@@ -21,5 +15,5 @@ const CourseSchema = new Schema(
 	{ timestamps: true }
 )
 
-const Course = models.Course || model('Course', CourseSchema)
-export default Course
+const Direction = models.Direction || model('Direction', DirectionSchema)
+export default Direction

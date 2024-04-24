@@ -10,7 +10,7 @@ function Contacts() {
 	return (
 		<>
 			<iframe
-				src='https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23955.626327049013!2d69.31617838577279!3d41.36423541898553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1713141146586!5m2!1sen!2s'
+				src='https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2994.7900616494817!2d69.34011947579465!3d41.35691667130366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDIxJzI0LjkiTiA2OcKwMjAnMzMuNyJF!5e0!3m2!1sen!2s!4v1713857143371!5m2!1sen!2s'
 				loading='lazy'
 				className='h-96 w-full'
 			/>

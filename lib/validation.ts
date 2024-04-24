@@ -18,6 +18,12 @@ export const courseSchema = z.object({
 	currentPrice: z.string().min(0),
 })
 
+export const directionSchema = z.object({
+	title: z.string(),
+	titleru: z.string(),
+	titleen: z.string(),
+})
+
 export const courseFieldsSchema = z.object({
 	title: z.string().min(3),
 	slug: z.string().min(3),
