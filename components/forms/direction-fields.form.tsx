@@ -76,7 +76,7 @@ function DirectionFieldsForm() {
 		)
 			.then(() => {
 				form.reset()
-				router.push('/en/instructor/create-direction')
+				router.push('/en/admin/create-direction')
 			})
 			.finally(() => setIsLoading(false))
 
