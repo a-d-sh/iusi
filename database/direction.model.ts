@@ -7,10 +7,10 @@ const DirectionSchema = new Schema(
 		titleen: String,
 		previewImage: String,
 		published: { type: Boolean, default: false },
-		instructor: { type: Schema.Types.ObjectId, ref: 'User' },
+		admin: { type: Schema.Types.ObjectId, ref: 'User' },
 		slug: String,
 		tags: String,
-		purchases: [{ type: Schema.Types.ObjectId, ref: 'Purchase' }],
+		purchases: [{ type: Schema.Types.ObjectId, ref: 'Purchasedirection' }],
 	},
 	{ timestamps: true }
 )
