@@ -370,6 +370,11 @@ export const adminNavLinks = [
 	{ label: 'Instructors', route: '/admin/instructors', icon: User },
 	{ label: 'Reviews', route: '/admin/reviews', icon: MessageSquareMore },
 	{ label: 'Notifications', route: '/admin/notifications', icon: Bell },
+	{
+		label: 'Create Direction',
+		route: '/admin/create-direction',
+		icon: FileCode,
+	},
 ]
 
 export const amountOptions = [
