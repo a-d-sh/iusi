@@ -63,6 +63,11 @@ export interface GetCoursesParams {
 	page?: number
 	pageSize?: number
 }
+export interface GetDirectionsParams {
+	clerkId: string
+	page?: number
+	pageSize?: number
+}
 
 export interface GetAllCoursesParams {
 	page?: number

@@ -345,11 +345,6 @@ export const instructorNavLinks = [
 		route: '/instructor/create-course',
 		icon: FileCode,
 	},
-	{
-		label: 'Create Direction',
-		route: '/instructor/create-direction',
-		icon: FileCode,
-	},
 	{ label: 'Reviews', route: '/instructor/reviews', icon: MessageSquareMore },
 	{ label: 'Settings', route: '/instructor/settings', icon: Settings2 },
 ]
@@ -375,6 +370,7 @@ export const adminNavLinks = [
 		route: '/admin/create-direction',
 		icon: FileCode,
 	},
+	{ label: 'My Directions', route: '/admin/my-directions', icon: MonitorPlay },
 ]
 
 export const amountOptions = [

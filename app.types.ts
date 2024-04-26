@@ -25,6 +25,23 @@ export interface ICourse {
 	purchasedStudents: number
 }
 
+export interface IDirection {
+	_id: string
+	title: string
+	description: string
+	oldPrice: number
+	currentPrice: number
+	previewImage: string
+	published: boolean
+	slug: string
+	tags: string
+	admin: IUser
+	updatedAt: string
+	rating: number
+	reviewCount: number
+	purchasedStudents: number
+}
+
 export interface ISection {
 	title: string
 	_id: string

@@ -12,7 +12,7 @@ function Page() {
 
 			<div className='mt-4 rounded-md bg-background p-4'>
 				<h3 className='font-space-grotesk text-lg font-medium'>
-					Direction qo`shish
+					Create direction
 				</h3>
 				<Separator className='my-3' />
 				<DirectionFieldsForm />
