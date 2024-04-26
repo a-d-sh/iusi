@@ -15,7 +15,7 @@ export const createDirection = async (
 	try {
 		await connectToDatabase()
 		const user = await User.findOne({ clerkId })
-		await Direction.create({ ...data, instructor: user._id })
+		await Direction.create({ ...data, admin: user._id })
 		revalidatePath('/en/admin/my-directions')
 	} catch (error) {
 		throw new Error('Something went wrong while creating direction!')
