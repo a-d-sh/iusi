@@ -44,22 +44,6 @@ function Information(direction: IDirection) {
 					<div className='flex flex-col space-y-2'>
 						<div className='grid grid-cols-3 gap-2'>
 							<div className='col-span-1 font-space-grotesk font-bold text-muted-foreground'>
-								Requirements:
-							</div>
-							<div className='col-span-2 line-clamp-3'>
-								{direction.requirements}
-							</div>
-						</div>
-						<div className='grid grid-cols-3 gap-2'>
-							<div className='col-span-1 font-space-grotesk font-bold text-muted-foreground'>
-								Learning:
-							</div>
-							<div className='col-span-2 line-clamp-3'>
-								{direction.learning}
-							</div>
-						</div>
-						<div className='grid grid-cols-3 gap-2'>
-							<div className='col-span-1 font-space-grotesk font-bold text-muted-foreground'>
 								Tags:
 							</div>
 							<div className='col-span-2 line-clamp-3'>{direction.tags}</div>
@@ -85,8 +69,6 @@ function Forms({ direction, onToggle }: FormsProps) {
 	const form = useForm<z.infer<typeof informationSchema>>({
 		resolver: zodResolver(informationSchema),
 		defaultValues: {
-			requirements: direction.requirements,
-			learning: direction.learning,
 			tags: direction.tags,
 		},
 	})

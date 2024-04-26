@@ -28,6 +28,8 @@ export interface ICourse {
 export interface IDirection {
 	_id: string
 	title: string
+	titleru: string
+	titleen: string
 	description: string
 	oldPrice: number
 	currentPrice: number

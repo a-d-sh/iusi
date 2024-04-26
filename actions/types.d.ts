@@ -69,7 +69,7 @@ export interface ICreateLesson {
 }
 
 export interface ICreateBook {
-	lesson: IBookFields
+	book: IBookFields
 	science: string
 	path: string
 }

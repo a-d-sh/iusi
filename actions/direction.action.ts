@@ -103,3 +103,13 @@ export const updateDirection = async (
 		throw new Error('Something went wrong while updating Direction status!')
 	}
 }
+
+export const deleteDirection = async (id: string, path: string) => {
+	try {
+		await connectToDatabase()
+		await Direction.findByIdAndDelete(id)
+		revalidatePath(path)
+	} catch (error) {
+		throw new Error('Something went wrong while deleting direction!')
+	}
+}

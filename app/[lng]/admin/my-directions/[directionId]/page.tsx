@@ -6,7 +6,7 @@ import Header from '../../../../../components/shared/header'
 import Actions from './_components/actions'
 import DirectionFields from './_components/direction-fields'
 import PreviewImage from './_components/preview-image'
-import Sciences from './_components/sciences'
+import Sciences from './_components/science'
 
 async function Page({ params }: { params: { directionId: string } }) {
 	const directionJSON = await getDirectionById(params.directionId)

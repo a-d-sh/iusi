@@ -1,5 +1,6 @@
 'use client'
 
+import { updateDirection } from '@/actions/direction.action'
 import { IDirection } from '@/app.types'
 import FillLoading from '@/components/shared/fill-loading'
 import { Button } from '@/components/ui/button'
@@ -70,11 +71,11 @@ function Forms({ direction, onToggle }: FormsProps) {
 			reader.readAsDataURL(file)
 			reader.onload = e => {
 				const image = e.target?.result as string
-				const refs = ref(storage, `/praktikum/direction/${uuidv4()}`)
+				const refs = ref(storage, `/praktikum/course/${uuidv4()}`)
 				const promise = uploadString(refs, image, 'data_url')
 					.then(() => {
 						getDownloadURL(refs).then(url =>
-							updatedirection(direction._id, { previewImage: url }, pathname)
+							updateDirection(direction._id, { previewImage: url }, pathname)
 						)
 					})
 					.then(() => onToggle())
