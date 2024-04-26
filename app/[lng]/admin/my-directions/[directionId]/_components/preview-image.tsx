@@ -1,7 +1,6 @@
 'use client'
 
-import { updateCourse } from '@/actions/course.action'
-import { ICourse } from '@/app.types'
+import { IDirection } from '@/app.types'
 import FillLoading from '@/components/shared/fill-loading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -17,7 +16,7 @@ import { ChangeEvent, useState } from 'react'
 import { toast } from 'sonner'
 import { v4 as uuidv4 } from 'uuid'
 
-function PreviewImage(course: ICourse) {
+function PreviewImage(direction: IDirection) {
 	const { state, onToggle } = useToggleEdit()
 
 	return (
@@ -33,12 +32,12 @@ function PreviewImage(course: ICourse) {
 				</div>
 				<Separator className='my-3' />
 				{state ? (
-					<Forms course={course} onToggle={onToggle} />
+					<Forms direction={direction} onToggle={onToggle} />
 				) : (
 					<div className='relative h-72 w-full'>
 						<Image
-							src={course.previewImage}
-							alt={course.title}
+							src={direction.previewImage}
+							alt={direction.title}
 							fill
 							className='rounded-sm object-cover'
 						/>
@@ -52,10 +51,10 @@ function PreviewImage(course: ICourse) {
 export default PreviewImage
 
 interface FormsProps {
-	course: ICourse
+	direction: IDirection
 	onToggle: () => void
 }
-function Forms({ course, onToggle }: FormsProps) {
+function Forms({ direction, onToggle }: FormsProps) {
 	const [isLoading, setIsLoading] = useState(false)
 	const pathname = usePathname()
 
@@ -71,11 +70,11 @@ function Forms({ course, onToggle }: FormsProps) {
 			reader.readAsDataURL(file)
 			reader.onload = e => {
 				const image = e.target?.result as string
-				const refs = ref(storage, `/praktikum/course/${uuidv4()}`)
+				const refs = ref(storage, `/praktikum/direction/${uuidv4()}`)
 				const promise = uploadString(refs, image, 'data_url')
 					.then(() => {
 						getDownloadURL(refs).then(url =>
-							updateCourse(course._id, { previewImage: url }, pathname)
+							updatedirection(direction._id, { previewImage: url }, pathname)
 						)
 					})
 					.then(() => onToggle())

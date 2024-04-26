@@ -1,7 +1,7 @@
 'use client'
 
-import { createSection, updateSection } from '@/actions/section.action'
-import { ICourse, ISection } from '@/app.types'
+import { createScience, updateScience } from '@/actions/science.action'
+import { IDirection, IScience } from '@/app.types'
 import FillLoading from '@/components/shared/fill-loading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -16,7 +16,8 @@ import {
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import useToggleEdit from '@/hooks/use-toggle-edit'
-import { sectionSchema } from '@/lib/validation'
+import { scienceSchema } from '@/lib/validation'
+import { DragDropContext, Droppable, DropResult } from '@hello-pangea/dnd'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { BadgePlus, X } from 'lucide-react'
 import { usePathname } from 'next/navigation'
@@ -24,22 +25,21 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
-import { DragDropContext, DropResult, Droppable } from '@hello-pangea/dnd'
-import SectionList from './section-list'
+import ScienceList from './science-list'
 
 interface Props {
-	course: ICourse
-	sections: ISection[]
+	direction: IDirection
+	sciences: IScience[]
 }
 
-function Sections({ course, sections }: Props) {
+function Sciences({ direction, sciences }: Props) {
 	const [isLoading, setIsLoading] = useState(false)
 	const { state, onToggle } = useToggleEdit()
 	const pathname = usePathname()
 
 	const onReorder = (updateData: { _id: string; position: number }[]) => {
 		setIsLoading(true)
-		const promise = updateSection({
+		const promise = updateScience({
 			lists: updateData,
 			path: pathname,
 		}).finally(() => setIsLoading(false))
@@ -54,18 +54,18 @@ function Sections({ course, sections }: Props) {
 	const onDragEnd = (result: DropResult) => {
 		if (!result.destination) return null
 
-		const items = Array.from(sections)
+		const items = Array.from(sciences)
 		const [reorderedItem] = items.splice(result.source.index, 1)
 		items.splice(result.destination.index, 0, reorderedItem)
 
 		const startIndex = Math.min(result.source.index, result.destination.index)
 		const endIndex = Math.max(result.source.index, result.destination.index)
 
-		const updatedSections = items.slice(startIndex, endIndex + 1)
+		const updatedSciences = items.slice(startIndex, endIndex + 1)
 
-		const bulkUpdatedData = updatedSections.map(section => ({
-			_id: section._id,
-			position: items.findIndex(item => item._id === section._id),
+		const bulkUpdatedData = updatedSciences.map(science => ({
+			_id: science._id,
+			position: items.findIndex(item => item._id === science._id),
 		}))
 
 		onReorder(bulkUpdatedData)
@@ -76,7 +76,7 @@ function Sections({ course, sections }: Props) {
 			<CardContent className='relative p-6'>
 				{isLoading && <FillLoading />}
 				<div className='flex items-center justify-between'>
-					<span className='text-lg font-medium'>Sections</span>
+					<span className='text-lg font-medium'>Sciences</span>
 					<Button size={'icon'} variant={'ghost'} onClick={onToggle}>
 						{state ? <X /> : <BadgePlus />}
 					</Button>
@@ -84,20 +84,20 @@ function Sections({ course, sections }: Props) {
 				<Separator className='my-3' />
 
 				{state ? (
-					<Forms course={course} onToggle={onToggle} />
+					<Forms direction={direction} onToggle={onToggle} />
 				) : (
 					<>
-						{!sections.length ? (
-							<p className='text-muted-foreground'>No sections</p>
+						{!sciences.length ? (
+							<p className='text-muted-foreground'>No sciences</p>
 						) : (
 							<DragDropContext onDragEnd={onDragEnd}>
-								<Droppable droppableId='sections'>
+								<Droppable droppableId='sciences'>
 									{provided => (
 										<div {...provided.droppableProps} ref={provided.innerRef}>
-											{sections.map((section, index) => (
-												<SectionList
-													key={section._id}
-													section={section}
+											{sciences.map((science, index) => (
+												<ScienceList
+													key={science._id}
+													science={science}
 													index={index}
 												/>
 											))}
@@ -113,25 +113,25 @@ function Sections({ course, sections }: Props) {
 	)
 }
 
-export default Sections
+export default Sciences
 
 interface FormsProps {
-	course: ICourse
+	direction: IDirection
 	onToggle: () => void
 }
-function Forms({ course, onToggle }: FormsProps) {
+function Forms({ direction, onToggle }: FormsProps) {
 	const [isLoading, setIsLoading] = useState(false)
 
 	const pathname = usePathname()
 
-	const form = useForm<z.infer<typeof sectionSchema>>({
-		resolver: zodResolver(sectionSchema),
+	const form = useForm<z.infer<typeof scienceSchema>>({
+		resolver: zodResolver(scienceSchema),
 		defaultValues: { title: '' },
 	})
 
-	const onSubmit = (values: z.infer<typeof sectionSchema>) => {
+	const onSubmit = (values: z.infer<typeof scienceSchema>) => {
 		setIsLoading(true)
-		const promise = createSection(course._id, values.title, pathname)
+		const promise = createScience(direction._id, values.title, pathname)
 			.then(() => onToggle())
 			.finally(() => setIsLoading(false))
 
@@ -153,7 +153,7 @@ function Forms({ course, onToggle }: FormsProps) {
 						render={({ field }) => (
 							<FormItem>
 								<FormLabel>
-									Section title
+									Science title
 									<span className='text-red-500'>*</span>
 								</FormLabel>
 								<FormControl>
@@ -161,7 +161,7 @@ function Forms({ course, onToggle }: FormsProps) {
 										{...field}
 										className='bg-secondary'
 										disabled={isLoading}
-										placeholder='e.g. Introduction to the course'
+										placeholder='e.g. Introduction to the direction'
 									/>
 								</FormControl>
 								<FormMessage />

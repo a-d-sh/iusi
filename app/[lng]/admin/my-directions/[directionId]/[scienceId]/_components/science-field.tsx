@@ -1,7 +1,7 @@
 'use client'
 
-import { updateSectionTitle } from '@/actions/section.action'
-import { ISection } from '@/app.types'
+import { updateScienceTitle } from '@/actions/science.action'
+import { IScience } from '@/app.types'
 import FillLoading from '@/components/shared/fill-loading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -16,7 +16,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import useToggleEdit from '@/hooks/use-toggle-edit'
-import { sectionSchema } from '@/lib/validation'
+import { scienceSchema } from '@/lib/validation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Edit2, X } from 'lucide-react'
 import { usePathname } from 'next/navigation'
@@ -25,7 +25,7 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
-function SectionField(section: ISection) {
+function ScienceField(science: IScience) {
 	const { state, onToggle } = useToggleEdit()
 
 	return (
@@ -39,13 +39,13 @@ function SectionField(section: ISection) {
 				</div>
 				<Separator className='my-3' />
 				{state ? (
-					<Forms section={section} onToggle={onToggle} />
+					<Forms science={science} onToggle={onToggle} />
 				) : (
 					<div className='flex items-center gap-2'>
 						<span className='self-start font-space-grotesk font-bold text-muted-foreground'>
 							Title:
 						</span>
-						<span className='line-clamp-3 font-medium'>{section.title}</span>
+						<span className='line-clamp-3 font-medium'>{science.title}</span>
 					</div>
 				)}
 			</CardContent>
@@ -53,25 +53,25 @@ function SectionField(section: ISection) {
 	)
 }
 
-export default SectionField
+export default ScienceField
 
 interface FormsProps {
-	section: ISection
+	science: IScience
 	onToggle: () => void
 }
-function Forms({ section, onToggle }: FormsProps) {
+function Forms({ science, onToggle }: FormsProps) {
 	const [isLoading, setIsLoading] = useState(false)
 
 	const pathname = usePathname()
 
-	const form = useForm<z.infer<typeof sectionSchema>>({
-		resolver: zodResolver(sectionSchema),
-		defaultValues: { title: section.title },
+	const form = useForm<z.infer<typeof scienceSchema>>({
+		resolver: zodResolver(scienceSchema),
+		defaultValues: { title: science.title },
 	})
 
-	const onSubmit = (values: z.infer<typeof sectionSchema>) => {
+	const onSubmit = (values: z.infer<typeof scienceSchema>) => {
 		setIsLoading(true)
-		const promise = updateSectionTitle(section._id, values.title, pathname)
+		const promise = updateScienceTitle(science._id, values.title, pathname)
 			.then(() => onToggle())
 			.finally(() => setIsLoading(false))
 
@@ -93,7 +93,7 @@ function Forms({ section, onToggle }: FormsProps) {
 						render={({ field }) => (
 							<FormItem>
 								<FormLabel>
-									Section title
+									Science title
 									<span className='text-red-500'>*</span>
 								</FormLabel>
 								<FormControl>
@@ -101,7 +101,7 @@ function Forms({ section, onToggle }: FormsProps) {
 										{...field}
 										className='bg-secondary'
 										disabled={isLoading}
-										placeholder='e.g. Introduction to the course'
+										placeholder='e.g. Introduction to the direction'
 									/>
 								</FormControl>
 								<FormMessage />

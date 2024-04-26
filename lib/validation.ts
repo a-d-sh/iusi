@@ -29,6 +29,11 @@ export const courseFieldsSchema = z.object({
 	slug: z.string().min(3),
 })
 
+export const directionFieldsSchema = z.object({
+	title: z.string().min(3),
+	slug: z.string().min(3),
+})
+
 export const descriptionSchema = z.object({
 	description: z.string().min(10),
 })
@@ -54,7 +59,21 @@ export const sectionSchema = z.object({
 	title: z.string().min(3),
 })
 
+export const scienceSchema = z.object({
+	title: z.string().min(3),
+})
+
 export const lessonSchema = z.object({
+	title: z.string().min(3),
+	videoUrl: z.string(),
+	content: z.string().optional(),
+	hours: z.string(),
+	minutes: z.string(),
+	seconds: z.string(),
+	free: z.boolean().default(false).optional(),
+})
+
+export const bookSchema = z.object({
 	title: z.string().min(3),
 	videoUrl: z.string(),
 	content: z.string().optional(),

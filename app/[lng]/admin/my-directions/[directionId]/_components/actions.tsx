@@ -1,23 +1,23 @@
 'use client'
 
-import { deleteCourse, updateCourse } from '@/actions/course.action'
-import { ICourse } from '@/app.types'
+import { deleteDirection, updateDirection } from '@/actions/direction.action'
+import { IDirection } from '@/app.types'
 import ConfirmDeleteModal from '@/components/modals/confirm-delete.modal'
 import { Button } from '@/components/ui/button'
 import { usePathname, useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 
-function Actions(course: ICourse) {
+function Actions(direction: IDirection) {
 	const pathname = usePathname()
 	const router = useRouter()
 
 	const onUpdateStatus = () => {
 		let promise
 
-		if (course.published) {
-			promise = updateCourse(course._id, { published: false }, pathname)
+		if (direction.published) {
+			promise = updateDirection(direction._id, { published: false }, pathname)
 		} else {
-			promise = updateCourse(course._id, { published: true }, pathname)
+			promise = updateDirection(direction._id, { published: true }, pathname)
 		}
 
 		toast.promise(promise, {
@@ -28,9 +28,10 @@ function Actions(course: ICourse) {
 	}
 
 	const onDelete = () => {
-		const promise = deleteCourse(course._id, '/en/instructor/my-courses').then(
-			() => router.push('/en/instructor/my-courses')
-		)
+		const promise = deleteDirection(
+			direction._id,
+			'/en/admin/my-directions'
+		).then(() => router.push('/en/admin/my-directions'))
 
 		toast.promise(promise, {
 			loading: 'Loading...',
@@ -42,7 +43,7 @@ function Actions(course: ICourse) {
 	return (
 		<div className='flex gap-2 self-end'>
 			<Button onClick={onUpdateStatus}>
-				{course.published ? 'Draft' : 'Publish'}
+				{direction.published ? 'Draft' : 'Publish'}
 			</Button>
 			<ConfirmDeleteModal onConfirm={onDelete}>
 				<Button variant={'destructive'}>Delete</Button>

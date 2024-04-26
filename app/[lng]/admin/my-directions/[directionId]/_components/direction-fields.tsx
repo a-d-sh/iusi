@@ -1,7 +1,7 @@
 'use client'
 
-import { updateCourse } from '@/actions/course.action'
-import { ICourse } from '@/app.types'
+import { updateDirection } from '@/actions/direction.action'
+import { IDirection } from '@/app.types'
 import FillLoading from '@/components/shared/fill-loading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -15,7 +15,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import useToggleEdit from '@/hooks/use-toggle-edit'
-import { courseFieldsSchema } from '@/lib/validation'
+import { directionFieldsSchema } from '@/lib/validation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Edit2, X } from 'lucide-react'
 import { usePathname } from 'next/navigation'
@@ -24,14 +24,14 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
-function CourseFields(course: ICourse) {
+function DirectionFields(direction: IDirection) {
 	const { state, onToggle } = useToggleEdit()
 
 	return (
 		<Card>
 			<CardContent className='relative p-6'>
 				<div className='flex items-center justify-between'>
-					<span className='text-lg font-medium'>Course Title</span>
+					<span className='text-lg font-medium'>Direction Title</span>
 					<Button size={'icon'} variant={'ghost'} onClick={onToggle}>
 						{state ? <X /> : <Edit2 />}
 					</Button>
@@ -39,21 +39,21 @@ function CourseFields(course: ICourse) {
 				<Separator className='my-3' />
 
 				{state ? (
-					<Forms course={course} onToggle={onToggle} />
+					<Forms direction={direction} onToggle={onToggle} />
 				) : (
 					<div className='flex flex-col space-y-2'>
 						<div className='flex items-center gap-2'>
 							<span className='font-space-grotesk font-bold text-muted-foreground'>
 								Title:
 							</span>
-							<span className='font-medium'>{course.title}</span>
+							<span className='font-medium'>{direction.title}</span>
 						</div>
 						<div className='flex items-center gap-2'>
 							<span className='font-space-grotesk font-bold text-muted-foreground'>
 								Slug:
 							</span>
 							<span className='font-medium'>
-								{course.slug ?? 'Not configured'}
+								{direction.slug ?? 'Not configured'}
 							</span>
 						</div>
 					</div>
@@ -63,28 +63,28 @@ function CourseFields(course: ICourse) {
 	)
 }
 
-export default CourseFields
+export default DirectionFields
 
 interface FormsProps {
-	course: ICourse
+	direction: IDirection
 	onToggle: () => void
 }
-function Forms({ course, onToggle }: FormsProps) {
+function Forms({ direction, onToggle }: FormsProps) {
 	const [isLoading, setIsLoading] = useState(false)
 
 	const pathname = usePathname()
 
-	const form = useForm<z.infer<typeof courseFieldsSchema>>({
-		resolver: zodResolver(courseFieldsSchema),
+	const form = useForm<z.infer<typeof directionFieldsSchema>>({
+		resolver: zodResolver(directionFieldsSchema),
 		defaultValues: {
-			title: course.title,
-			slug: course.slug,
+			title: direction.title,
+			slug: direction.slug,
 		},
 	})
 
-	const onSubmit = (values: z.infer<typeof courseFieldsSchema>) => {
+	const onSubmit = (values: z.infer<typeof directionFieldsSchema>) => {
 		setIsLoading(true)
-		const promise = updateCourse(course._id, values, pathname)
+		const promise = updateDirection(direction._id, values, pathname)
 			.then(() => onToggle())
 			.finally(() => setIsLoading(false))
 

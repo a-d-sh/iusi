@@ -1,7 +1,7 @@
 'use client'
 
-import { updateCourse } from '@/actions/course.action'
-import { ICourse } from '@/app.types'
+import { updateDirection } from '@/actions/direction.action'
+import { IDirection } from '@/app.types'
 import FillLoading from '@/components/shared/fill-loading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -24,7 +24,7 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
-function Information(course: ICourse) {
+function Information(direction: IDirection) {
 	const { state, onToggle } = useToggleEdit()
 
 	return (
@@ -39,7 +39,7 @@ function Information(course: ICourse) {
 				<Separator className='my-3' />
 
 				{state ? (
-					<Forms course={course} onToggle={onToggle} />
+					<Forms direction={direction} onToggle={onToggle} />
 				) : (
 					<div className='flex flex-col space-y-2'>
 						<div className='grid grid-cols-3 gap-2'>
@@ -47,20 +47,22 @@ function Information(course: ICourse) {
 								Requirements:
 							</div>
 							<div className='col-span-2 line-clamp-3'>
-								{course.requirements}
+								{direction.requirements}
 							</div>
 						</div>
 						<div className='grid grid-cols-3 gap-2'>
 							<div className='col-span-1 font-space-grotesk font-bold text-muted-foreground'>
 								Learning:
 							</div>
-							<div className='col-span-2 line-clamp-3'>{course.learning}</div>
+							<div className='col-span-2 line-clamp-3'>
+								{direction.learning}
+							</div>
 						</div>
 						<div className='grid grid-cols-3 gap-2'>
 							<div className='col-span-1 font-space-grotesk font-bold text-muted-foreground'>
 								Tags:
 							</div>
-							<div className='col-span-2 line-clamp-3'>{course.tags}</div>
+							<div className='col-span-2 line-clamp-3'>{direction.tags}</div>
 						</div>
 					</div>
 				)}
@@ -72,10 +74,10 @@ function Information(course: ICourse) {
 export default Information
 
 interface FormsProps {
-	course: ICourse
+	direction: IDirection
 	onToggle: () => void
 }
-function Forms({ course, onToggle }: FormsProps) {
+function Forms({ direction, onToggle }: FormsProps) {
 	const [isLoading, setIsLoading] = useState(false)
 
 	const pathname = usePathname()
@@ -83,15 +85,15 @@ function Forms({ course, onToggle }: FormsProps) {
 	const form = useForm<z.infer<typeof informationSchema>>({
 		resolver: zodResolver(informationSchema),
 		defaultValues: {
-			requirements: course.requirements,
-			learning: course.learning,
-			tags: course.tags,
+			requirements: direction.requirements,
+			learning: direction.learning,
+			tags: direction.tags,
 		},
 	})
 
 	const onSubmit = (values: z.infer<typeof informationSchema>) => {
 		setIsLoading(true)
-		const promise = updateCourse(course._id, values, pathname)
+		const promise = updateDirection(direction._id, values, pathname)
 			.then(() => onToggle())
 			.finally(() => setIsLoading(false))
 

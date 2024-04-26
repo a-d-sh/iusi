@@ -1,7 +1,7 @@
 'use client'
 
-import { updateCourse } from '@/actions/course.action'
-import { ICourse } from '@/app.types'
+import { updateDirection } from '@/actions/direction.action'
+import { IDirection } from '@/app.types'
 import FillLoading from '@/components/shared/fill-loading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -25,7 +25,7 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
-function Price(course: ICourse) {
+function Price(direction: IDirection) {
 	const { state, onToggle } = useToggleEdit()
 
 	return (
@@ -40,7 +40,7 @@ function Price(course: ICourse) {
 				<Separator className='my-3' />
 
 				{state ? (
-					<Forms onToggle={onToggle} course={course} />
+					<Forms onToggle={onToggle} direction={direction} />
 				) : (
 					<div className='flex flex-col space-y-2'>
 						<div className='flex items-center gap-2'>
@@ -48,7 +48,7 @@ function Price(course: ICourse) {
 								Old price:
 							</span>
 							<span className='font-medium'>
-								{course.oldPrice.toLocaleString('en-US', {
+								{direction.oldPrice.toLocaleString('en-US', {
 									style: 'currency',
 									currency: 'USD',
 								})}
@@ -59,7 +59,7 @@ function Price(course: ICourse) {
 								Current price:
 							</span>
 							<span className='font-medium'>
-								{course.currentPrice.toLocaleString('en-US', {
+								{direction.currentPrice.toLocaleString('en-US', {
 									style: 'currency',
 									currency: 'USD',
 								})}
@@ -75,26 +75,26 @@ function Price(course: ICourse) {
 export default Price
 
 interface FormsProps {
-	course: ICourse
+	direction: IDirection
 	onToggle: () => void
 }
-function Forms({ course, onToggle }: FormsProps) {
+function Forms({ direction, onToggle }: FormsProps) {
 	const [isLoading, setIsLoading] = useState(false)
 	const pathname = usePathname()
 
 	const form = useForm<z.infer<typeof priceSchema>>({
 		resolver: zodResolver(priceSchema),
 		defaultValues: {
-			oldPrice: `${course.oldPrice}`,
-			currentPrice: `${course.currentPrice}`,
+			oldPrice: `${direction.oldPrice}`,
+			currentPrice: `${direction.currentPrice}`,
 		},
 	})
 
 	function onSubmit(values: z.infer<typeof priceSchema>) {
 		setIsLoading(true)
 		const { currentPrice, oldPrice } = values
-		const promise = updateCourse(
-			course._id,
+		const promise = updateDirection(
+			direction._id,
 			{ currentPrice: +currentPrice, oldPrice: +oldPrice },
 			pathname
 		)

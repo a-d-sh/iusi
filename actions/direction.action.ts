@@ -16,7 +16,7 @@ export const createDirection = async (
 		await connectToDatabase()
 		const user = await User.findOne({ clerkId })
 		await Direction.create({ ...data, instructor: user._id })
-		revalidatePath('/en/admin/my-courses')
+		revalidatePath('/en/admin/my-directions')
 	} catch (error) {
 		throw new Error('Something went wrong while creating direction!')
 	}
@@ -87,5 +87,19 @@ export const getDirectionById = async (id: string) => {
 		return direction as IDirection
 	} catch (error) {
 		throw new Error('Soething went wrong while getting direction!')
+	}
+}
+
+export const updateDirection = async (
+	id: string,
+	updateData: Partial<IDirection>,
+	path: string
+) => {
+	try {
+		await connectToDatabase()
+		await Direction.findByIdAndUpdate(id, updateData)
+		revalidatePath(path)
+	} catch (error) {
+		throw new Error('Something went wrong while updating Direction status!')
 	}
 }

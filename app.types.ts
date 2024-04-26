@@ -49,8 +49,30 @@ export interface ISection {
 	course: string
 	lessons: ILesson[]
 }
-
 export interface ILesson {
+	_id: string
+	title: string
+	position: number
+	videoUrl: string
+	content: string
+	free: boolean
+	duration: {
+		hours: number
+		minutes: number
+		seconds: number
+	}
+	userProgress: IUserProgress[]
+}
+
+export interface IScience {
+	title: string
+	_id: string
+	position: number
+	direction: string
+	books: IBook[]
+}
+
+export interface IBook {
 	_id: string
 	title: string
 	position: number

@@ -1,15 +1,12 @@
 'use client'
 
-import {
-	createLesson,
-	editLesson,
-	editLessonPosition,
-} from '@/actions/lesson.action'
-import { ILessonFields } from '@/actions/types'
-import { ILesson, ISection } from '@/app.types'
+import { createBook, editBook, editBookPosition } from '@/actions/book.action'
+import { IBookFields } from '@/actions/types'
+import { IBook, IScience } from '@/app.types'
 import FillLoading from '@/components/shared/fill-loading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { Checkbox } from '@/components/ui/checkbox'
 import {
 	Form,
 	FormControl,
@@ -20,72 +17,71 @@ import {
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import { Textarea } from '@/components/ui/textarea'
+import { editorConfig } from '@/constants'
 import useToggleEdit from '@/hooks/use-toggle-edit'
-import { lessonSchema } from '@/lib/validation'
-import { DragDropContext, DropResult, Droppable } from '@hello-pangea/dnd'
+import { bookSchema } from '@/lib/validation'
+import { DragDropContext, Droppable, DropResult } from '@hello-pangea/dnd'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Editor } from '@tinymce/tinymce-react'
 import { BadgePlus, X } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
-import LessonList from './lesson-list'
-import { Editor } from '@tinymce/tinymce-react'
-import { editorConfig } from '@/constants'
-import { Checkbox } from '@/components/ui/checkbox'
+import BookList from './book-list'
 
 interface Props {
-	section: ISection
-	lessons: ILesson[]
+	science: IScience
+	books: IBook[]
 }
-function Lessons({ section, lessons }: Props) {
+function Books({ science, books }: Props) {
 	const [isLoading, setIsLoading] = useState(false)
 	const [isEdit, setIsEdit] = useState(false)
-	const [currentLesson, setCurrentLesson] = useState<ILessonFields | null>(null)
-	const [lessonId, setLessonId] = useState('')
+	const [currentBook, setCurrentBook] = useState<IBookFields | null>(null)
+	const [bookId, setBookId] = useState('')
 
 	const path = usePathname()
 	const { onToggle, state } = useToggleEdit()
 
-	const onAdd = async (lesson: ILessonFields) => {
+	const onAdd = async (book: IBookFields) => {
 		setIsLoading(true)
-		return createLesson({ lesson, section: section._id, path })
+		return createBook({ book, science: science._id, path })
 			.then(() => onToggle())
 			.finally(() => setIsLoading(false))
 	}
 
-	const onStartEdit = (lesson: ILesson) => {
+	const onStartEdit = (book: IBook) => {
 		setIsEdit(true)
-		setLessonId(lesson._id)
-		setCurrentLesson({
-			content: lesson.content,
-			hours: `${lesson.duration.hours}`,
-			minutes: `${lesson.duration.minutes}`,
-			seconds: `${lesson.duration.seconds}`,
-			title: lesson.title,
-			videoUrl: lesson.videoUrl,
-			free: lesson.free,
+		setBookId(book._id)
+		setCurrentBook({
+			content: book.content,
+			hours: `${book.duration.hours}`,
+			minutes: `${book.duration.minutes}`,
+			seconds: `${book.duration.seconds}`,
+			title: book.title,
+			videoUrl: book.videoUrl,
+			free: book.free,
 		})
 	}
 
 	const onFinishEdit = () => {
 		setIsEdit(false)
-		setCurrentLesson(null)
-		setLessonId('')
+		setCurrentBook(null)
+		setBookId('')
 	}
 
-	const onEdit = async (lesson: ILessonFields) => {
+	const onEdit = async (book: IBookFields) => {
 		setIsLoading(true)
-		return editLesson(lesson, lessonId, path)
+		return editBook(book, bookId, path)
 			.then(() => onFinishEdit())
 			.finally(() => setIsLoading(false))
 	}
 
 	const onReorder = (updateData: { _id: string; position: number }[]) => {
 		setIsLoading(true)
-		const promise = editLessonPosition({ lists: updateData, path }).finally(
-			() => setIsLoading(false)
+		const promise = editBookPosition({ lists: updateData, path }).finally(() =>
+			setIsLoading(false)
 		)
 
 		toast.promise(promise, {
@@ -98,18 +94,18 @@ function Lessons({ section, lessons }: Props) {
 	const onDragEnd = (result: DropResult) => {
 		if (!result.destination) return null
 
-		const items = Array.from(lessons)
+		const items = Array.from(books)
 		const [reorderedItem] = items.splice(result.source.index, 1)
 		items.splice(result.destination.index, 0, reorderedItem)
 
 		const startIndex = Math.min(result.source.index, result.destination.index)
 		const endIndex = Math.max(result.source.index, result.destination.index)
 
-		const updatedLessons = items.slice(startIndex, endIndex + 1)
+		const updatedBooks = items.slice(startIndex, endIndex + 1)
 
-		const bulkUpdatedData = updatedLessons.map(lesson => ({
-			_id: lesson._id,
-			position: items.findIndex(item => item._id === lesson._id),
+		const bulkUpdatedData = updatedBooks.map(book => ({
+			_id: book._id,
+			position: items.findIndex(item => item._id === book._id),
 		}))
 
 		onReorder(bulkUpdatedData)
@@ -130,29 +126,29 @@ function Lessons({ section, lessons }: Props) {
 				<Separator className='my-3' />
 
 				{state ? (
-					<Forms lesson={{} as ILessonFields} handler={onAdd} />
+					<Forms book={{} as IBookFields} handler={onAdd} />
 				) : isEdit ? (
 					<Forms
-						lesson={currentLesson as ILessonFields}
+						book={currentBook as IBookFields}
 						handler={onEdit}
 						isEdit
 						onCancel={onFinishEdit}
 					/>
 				) : (
 					<>
-						{!lessons.length ? (
-							<p className='text-muted-foreground'>No lessons</p>
+						{!books.length ? (
+							<p className='text-muted-foreground'>No books</p>
 						) : (
 							<DragDropContext onDragEnd={onDragEnd}>
-								<Droppable droppableId='lessons'>
+								<Droppable droppableId='books'>
 									{provided => (
 										<div {...provided.droppableProps} ref={provided.innerRef}>
-											{lessons.map((lesson, index) => (
-												<LessonList
-													key={lesson._id}
-													lesson={lesson}
+											{books.map((book, index) => (
+												<BookList
+													key={book._id}
+													book={book}
 													index={index}
-													onStartEdit={() => onStartEdit(lesson)}
+													onStartEdit={() => onStartEdit(book)}
 												/>
 											))}
 										</div>
@@ -167,19 +163,19 @@ function Lessons({ section, lessons }: Props) {
 	)
 }
 
-export default Lessons
+export default Books
 
 interface FormProps {
-	lesson: ILessonFields
-	handler: (lesson: ILessonFields) => Promise<void>
+	book: IBookFields
+	handler: (book: IBookFields) => Promise<void>
 	isEdit?: boolean
 	onCancel?: () => void
 }
-function Forms({ handler, lesson, isEdit = false, onCancel }: FormProps) {
-	const { content, hours, minutes, seconds, title, videoUrl, free } = lesson
+function Forms({ handler, book, isEdit = false, onCancel }: FormProps) {
+	const { content, hours, minutes, seconds, title, videoUrl, free } = book
 
-	const form = useForm<z.infer<typeof lessonSchema>>({
-		resolver: zodResolver(lessonSchema),
+	const form = useForm<z.infer<typeof bookSchema>>({
+		resolver: zodResolver(bookSchema),
 		defaultValues: {
 			title,
 			videoUrl,
@@ -191,8 +187,8 @@ function Forms({ handler, lesson, isEdit = false, onCancel }: FormProps) {
 		},
 	})
 
-	const onSubmit = (values: z.infer<typeof lessonSchema>) => {
-		const promise = handler(values as ILessonFields).finally(() => form.reset())
+	const onSubmit = (values: z.infer<typeof bookSchema>) => {
+		const promise = handler(values as IBookFields).finally(() => form.reset())
 
 		toast.promise(promise, {
 			loading: 'Loading...',
@@ -319,7 +315,7 @@ function Forms({ handler, lesson, isEdit = false, onCancel }: FormProps) {
 										checked={field.value}
 									/>
 									<label className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
-										Are you offering this lesson for free?
+										Are you offering this book for free?
 									</label>
 								</div>
 							</FormControl>

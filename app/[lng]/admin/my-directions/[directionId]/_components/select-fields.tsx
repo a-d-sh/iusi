@@ -1,7 +1,7 @@
 'use client'
 
-import { updateCourse } from '@/actions/course.action'
-import { ICourse } from '@/app.types'
+import { updateDirection } from '@/actions/direction.action'
+import { IDirection } from '@/app.types'
 import FillLoading from '@/components/shared/fill-loading'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -21,7 +21,11 @@ import {
 	SelectValue,
 } from '@/components/ui/select'
 import { Separator } from '@/components/ui/separator'
-import { courseCategory, courseLanguage, courseLevels } from '@/constants'
+import {
+	directionCategory,
+	directionLanguage,
+	directionLevels,
+} from '@/constants'
 import useToggleEdit from '@/hooks/use-toggle-edit'
 import { selectFieldsSchema } from '@/lib/validation'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -32,7 +36,7 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
-function SelectFields(course: ICourse) {
+function SelectFields(direction: IDirection) {
 	const { state, onToggle } = useToggleEdit()
 
 	return (
@@ -47,26 +51,26 @@ function SelectFields(course: ICourse) {
 				<Separator className='my-3' />
 
 				{state ? (
-					<Forms course={course} onToggle={onToggle} />
+					<Forms direction={direction} onToggle={onToggle} />
 				) : (
 					<div className='flex flex-col space-y-2'>
 						<div className='flex items-center gap-2'>
 							<span className='font-space-grotesk font-bold text-muted-foreground'>
 								Language:
 							</span>
-							<span className='font-medium'>{course.language}</span>
+							<span className='font-medium'>{direction.language}</span>
 						</div>
 						<div className='flex items-center gap-2'>
 							<span className='font-space-grotesk font-bold text-muted-foreground'>
 								Category:
 							</span>
-							<span className='font-medium'>{course.category}</span>
+							<span className='font-medium'>{direction.category}</span>
 						</div>
 						<div className='flex items-center gap-2'>
 							<span className='font-space-grotesk font-bold text-muted-foreground'>
 								Level:
 							</span>
-							<span className='font-medium'>{course.level}</span>
+							<span className='font-medium'>{direction.level}</span>
 						</div>
 					</div>
 				)}
@@ -78,10 +82,10 @@ function SelectFields(course: ICourse) {
 export default SelectFields
 
 interface FormsProps {
-	course: ICourse
+	direction: IDirection
 	onToggle: () => void
 }
-function Forms({ course, onToggle }: FormsProps) {
+function Forms({ direction, onToggle }: FormsProps) {
 	const [isLoading, setIsLoading] = useState(false)
 
 	const pathname = usePathname()
@@ -89,15 +93,15 @@ function Forms({ course, onToggle }: FormsProps) {
 	const form = useForm<z.infer<typeof selectFieldsSchema>>({
 		resolver: zodResolver(selectFieldsSchema),
 		defaultValues: {
-			level: course.level,
-			language: course.language,
-			category: course.category,
+			level: direction.level,
+			language: direction.language,
+			category: direction.category,
 		},
 	})
 
 	const onSubmit = (values: z.infer<typeof selectFieldsSchema>) => {
 		setIsLoading(true)
-		const promise = updateCourse(course._id, values, pathname)
+		const promise = updateDirection(direction._id, values, pathname)
 			.then(() => onToggle())
 			.finally(() => setIsLoading(false))
 
@@ -131,7 +135,7 @@ function Forms({ course, onToggle }: FormsProps) {
 											<SelectValue placeholder={'Select'} />
 										</SelectTrigger>
 										<SelectContent>
-											{courseLanguage.map(item => (
+											{directionLanguage.map(item => (
 												<SelectItem key={item} value={item}>
 													{item}
 												</SelectItem>
@@ -161,7 +165,7 @@ function Forms({ course, onToggle }: FormsProps) {
 											<SelectValue placeholder={'Select'} />
 										</SelectTrigger>
 										<SelectContent>
-											{courseCategory.map(item => (
+											{directionCategory.map(item => (
 												<SelectItem key={item} value={item}>
 													{item}
 												</SelectItem>
@@ -191,7 +195,7 @@ function Forms({ course, onToggle }: FormsProps) {
 											<SelectValue placeholder={'Select'} />
 										</SelectTrigger>
 										<SelectContent>
-											{courseLevels.map(item => (
+											{directionLevels.map(item => (
 												<SelectItem key={item} value={item}>
 													{item}
 												</SelectItem>

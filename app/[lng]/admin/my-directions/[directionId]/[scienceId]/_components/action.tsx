@@ -1,18 +1,18 @@
 'use client'
 
-import { deleteSection } from '@/actions/section.action'
-import { ISection } from '@/app.types'
+import { deleteScience } from '@/actions/science.action'
+import { IScience } from '@/app.types'
 import ConfirmDeleteModal from '@/components/modals/confirm-delete.modal'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 
-function Action(section: ISection) {
+function Action(science: IScience) {
 	const router = useRouter()
 
 	const onDelete = () => {
-		const path = `/en/instructor/my-courses/${section.course}`
-		const promise = deleteSection(section._id, path).then(() =>
+		const path = `/en/admin/my-direction/${science.direction}`
+		const promise = deleteScience(science._id, path).then(() =>
 			router.push(path)
 		)
 

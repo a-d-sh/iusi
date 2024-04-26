@@ -1,22 +1,22 @@
-import { deleteLesson } from '@/actions/lesson.action'
-import { ILesson } from '@/app.types'
+import { deleteBook } from '@/actions/book.action'
+import { IBook } from '@/app.types'
 import { Draggable } from '@hello-pangea/dnd'
 import { Grip, Pencil, Trash2 } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { toast } from 'sonner'
 
 interface Props {
-	lesson: ILesson
+	book: IBook
 	index: number
 	onStartEdit: () => void
 }
-function LessonList({ index, lesson, onStartEdit }: Props) {
+function BookList({ index, book, onStartEdit }: Props) {
 	const pathname = usePathname()
 
 	const onDelete = () => {
-		const isConfimed = confirm('Are you sure you want to delete this lesson?')
+		const isConfimed = confirm('Are you sure you want to delete this book?')
 		if (isConfimed) {
-			const promise = deleteLesson(lesson._id, pathname)
+			const promise = deleteBook(book._id, pathname)
 
 			toast.promise(promise, {
 				loading: 'Loading...',
@@ -27,7 +27,7 @@ function LessonList({ index, lesson, onStartEdit }: Props) {
 	}
 
 	return (
-		<Draggable draggableId={lesson._id} index={index}>
+		<Draggable draggableId={book._id} index={index}>
 			{provided => (
 				<div
 					className='mb-4 flex items-center gap-x-2 rounded-md border bg-secondary text-sm'
@@ -40,7 +40,7 @@ function LessonList({ index, lesson, onStartEdit }: Props) {
 					>
 						<Grip className='size-5' />
 					</div>
-					<span>{lesson.title}</span>
+					<span>{book.title}</span>
 					<div className='ml-auto flex items-center gap-x-2 pr-2'>
 						<Pencil
 							className='size-4 cursor-pointer transition hover:opacity-75'
@@ -57,4 +57,4 @@ function LessonList({ index, lesson, onStartEdit }: Props) {
 	)
 }
 
-export default LessonList
+export default BookList

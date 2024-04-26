@@ -1,23 +1,19 @@
 import { getDirectionById } from '@/actions/direction.action'
-import { getSections } from '@/actions/section.action'
+import { getSciences } from '@/actions/science.action'
 import { Separator } from '@/components/ui/separator'
-import {
-	Images,
-	// LayoutPanelLeft,
-	Settings,
-} from 'lucide-react'
+import { Images, LayoutPanelLeft, Settings } from 'lucide-react'
 import Header from '../../../../../components/shared/header'
 import Actions from './_components/actions'
-// import CourseFields from './_components/direction-fields'
+import DirectionFields from './_components/direction-fields'
 import PreviewImage from './_components/preview-image'
-// import Sections from './_components/sections'
+import Sciences from './_components/sciences'
 
 async function Page({ params }: { params: { directionId: string } }) {
 	const directionJSON = await getDirectionById(params.directionId)
-	const sectionsJSON = await getSections(params.directionId)
+	const sciencesJSON = await getSciences(params.directionId)
 
 	const direction = JSON.parse(JSON.stringify(directionJSON))
-	const sections = JSON.parse(JSON.stringify(sectionsJSON))
+	const sciences = JSON.parse(JSON.stringify(sciencesJSON))
 
 	return (
 		<>
@@ -38,18 +34,18 @@ async function Page({ params }: { params: { directionId: string } }) {
 						</span>{' '}
 						<Settings />
 					</div>
-					{/* <CourseFields {...direction} /> */}
+					<DirectionFields {...direction} />
 				</div>
 
 				<div className='flex flex-col space-y-2'>
-					{/* Sections */}
-					{/* <div className='flex items-center gap-2'>
+					{/* Sciences */}
+					<div className='flex items-center gap-2'>
 						<span className='font-space-grotesk text-3xl font-medium'>
-							Course Sections
+							Direction Sciences
 						</span>{' '}
 						<LayoutPanelLeft />
 					</div>
-					<Sections course={direction} sections={sections} /> */}
+					<Sciences direction={direction} sciences={sciences} />
 
 					{/* Preview image */}
 					<div className='flex items-center gap-2'>
