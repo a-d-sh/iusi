@@ -15,7 +15,7 @@ export default authMiddleware({
 		'/:lng/direction-bachelor/:slug',
 		'/:lng/bachelor',
 		'/:lng/bachelor/:slug',
-
+		'/:lng/book',
 		'/:lng/courses',
 		'/:lng/course/:slug',
 		'/:lng/blogs',
