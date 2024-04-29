@@ -54,7 +54,7 @@ function Books({ science, books }: Props) {
 			const result = await response.text()
 			console.log(result)
 
-			console.log(data)
+			// console.log(data)
 		} catch (error) {
 			console.log(error.response?.data)
 		}
