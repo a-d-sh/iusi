@@ -5,7 +5,7 @@ const ScienceSchema = new Schema(
 		title: String,
 		position: Number,
 		direction: { type: Schema.Types.ObjectId, ref: 'direction' },
-		book: [{ type: Schema.Types.ObjectId, ref: 'Book' }],
+		books: [{ type: Schema.Types.ObjectId, ref: 'Book' }],
 	},
 	{ timestamps: true }
 )

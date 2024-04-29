@@ -5,7 +5,7 @@ const BookSchema = new Schema({
 	position: Number,
 	url: String,
 
-	section: { type: Schema.Types.ObjectId, ref: 'Section' },
+	science: { type: Schema.Types.ObjectId, ref: 'Science' },
 	free: { type: Boolean, default: false },
 	userProgresss: [{ type: Schema.Types.ObjectId, ref: 'UserProgresss' }],
 })
