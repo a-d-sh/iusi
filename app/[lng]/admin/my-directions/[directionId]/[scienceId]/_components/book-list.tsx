@@ -1,5 +1,6 @@
 import { deleteBook } from '@/actions/book.action'
 import { IBook } from '@/app.types'
+import Link from '@/node_modules/next/link'
 import { Draggable } from '@hello-pangea/dnd'
 import { Grip, Pencil, Trash2 } from 'lucide-react'
 import { usePathname } from 'next/navigation'
@@ -40,7 +41,10 @@ function BookList({ index, book, onStartEdit }: Props) {
 					>
 						<Grip className='size-5' />
 					</div>
-					<span>{book.title}</span>
+					<Link href={book.url}>
+						<span>{book.title}</span>
+					</Link>
+
 					<div className='ml-auto flex items-center gap-x-2 pr-2'>
 						<Pencil
 							className='size-4 cursor-pointer transition hover:opacity-75'
