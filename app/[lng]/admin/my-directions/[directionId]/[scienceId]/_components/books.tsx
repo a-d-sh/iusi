@@ -36,6 +36,31 @@ interface Props {
 	books: IBook[]
 }
 function Books({ science, books }: Props) {
+	const [uploading, setUploading] = useState(false)
+	const [selectedImage, setSelectedImage] = useState('')
+	const [selectedFile, setSelectedFile] = useState(null)
+
+	const handleUpload = async () => {
+		setUploading(true)
+		try {
+			if (!selectedFile) return
+			const formData = new FormData()
+			formData.append('file', selectedFile)
+			// const { data } = await axios.post('/api/book', formData)
+
+			var requestOptions = { method: 'POST', body: formData }
+
+			const response = await fetch('/api/files', requestOptions)
+			const result = await response.text()
+			console.log(result)
+
+			console.log(data)
+		} catch (error) {
+			console.log(error.response?.data)
+		}
+		setUploading(false)
+	}
+
 	const [isLoading, setIsLoading] = useState(false)
 	const [isEdit, setIsEdit] = useState(false)
 	const [currentBook, setCurrentBook] = useState<IBookFields | null>(null)
@@ -216,6 +241,36 @@ function Forms({ handler, book, isEdit = false, onCancel }: FormProps) {
 						</FormItem>
 					)}
 				/>
+
+				<label>
+					<input
+						type='file'
+						hidden
+						onChange={({ target }) => {
+							if (target.files) {
+								const file = target.files[0]
+								setSelectedImage(URL.createObjectURL(file))
+								setSelectedFile(file)
+							}
+						}}
+					/>
+					<div className='w-40 aspect-video rounded flex items-center justify-center border-2 border-dashed cursor-pointer'>
+						{selectedImage ? (
+							<img src={selectedImage} alt='' />
+						) : (
+							<span>Select file</span>
+						)}
+					</div>
+				</label>
+				<button
+					onClick={handleUpload}
+					disabled={uploading}
+					style={{ opacity: uploading ? '.5' : '1' }}
+					className='bg-red-600 p-3 w-32 text-center rounded text-white'
+				>
+					{uploading ? 'Uploading..' : 'Upload'}
+				</button>
+
 				<FormField
 					control={form.control}
 					name='videoUrl'
