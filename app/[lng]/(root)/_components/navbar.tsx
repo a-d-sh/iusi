@@ -5,7 +5,6 @@ import Logo from '@/components/shared/logo'
 import ModeToggle from '@/components/shared/mode-toggle'
 import Notification from '@/components/shared/notification'
 import UserBox from '@/components/shared/user-box'
-import { Button } from '@/components/ui/button'
 import { navLinks } from '@/constants'
 import useTranslate from '@/hooks/use-translate'
 import { cn } from '@/lib/utils'
@@ -13,6 +12,7 @@ import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs'
 import { LogIn } from 'lucide-react'
 import Link from 'next/link'
 import { useParams, usePathname } from 'next/navigation'
+import { Button } from '../../../../components/ui/button'
 import GlobalSearch from './global-search'
 import Mobile from './mobile'
 
@@ -51,6 +51,14 @@ function Navbar() {
 									{t(nav.name)}
 								</Link>
 							))}
+							<Button
+								className='w-fit'
+								size={'lg'}
+								type='submit'
+								rounded={'full'}
+							>
+								<span>asdasdasd</span>
+							</Button>
 						</div>
 					</div>
 
