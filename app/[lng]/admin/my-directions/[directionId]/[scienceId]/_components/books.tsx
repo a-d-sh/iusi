@@ -20,7 +20,6 @@ import { Textarea } from '@/components/ui/textarea'
 import { editorConfig } from '@/constants'
 import useToggleEdit from '@/hooks/use-toggle-edit'
 import { bookSchema } from '@/lib/validation'
-import Image from '@/node_modules/next/image'
 import { DragDropContext, Droppable, DropResult } from '@hello-pangea/dnd'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Editor } from '@tinymce/tinymce-react'
@@ -112,34 +111,6 @@ function Books({ science, books }: Props) {
 		onReorder(bulkUpdatedData)
 	}
 
-	const [uploading, setUploading] = useState(false)
-	const [selectedImage, setSelectedImage] = useState('')
-	const [
-		selectedFile,
-		// setSelectedFile
-	] = useState(null)
-
-	const handleUpload = async () => {
-		setUploading(true)
-		try {
-			if (!selectedFile) return
-			const formData = new FormData()
-			formData.append('file', selectedFile)
-			// const { data } = await axios.post('/api/book', formData)
-
-			const requestOptions = { method: 'POST', body: formData }
-
-			const response = await fetch('/api/files', requestOptions)
-			const result = await response.text()
-			console.log(result)
-
-			// console.log(data)
-		} catch (error) {
-			console.log('error.response?.data')
-		}
-		setUploading(false)
-	}
-
 	return (
 		<Card>
 			<CardContent className='relative p-6'>
@@ -152,32 +123,6 @@ function Books({ science, books }: Props) {
 						</Button>
 					)}
 				</div>
-				<Separator className='my-3' />
-
-				<label>
-					<input
-						type='file'
-						hidden
-						onChange={({ target }) => {
-							if (target.files) {
-								const file = target.files[0]
-								setSelectedImage(URL.createObjectURL(file))
-								// setSelectedFile(file)
-							}
-						}}
-					/>
-					<div className='w-40 aspect-video rounded flex items-center justify-center border-2 border-dashed cursor-pointer'>
-						{selectedImage ? (
-							<Image src={selectedImage} alt='' />
-						) : (
-							<span>Select file</span>
-						)}
-					</div>
-				</label>
-				<Button onClick={handleUpload} type='submit'>
-					{uploading ? 'Uploading..' : 'Upload'}
-				</Button>
-
 				<Separator className='my-3' />
 
 				{state ? (
