@@ -86,7 +86,13 @@ export interface IBook {
 		minutes: number
 		seconds: number
 	}
-	userProgress: IUserProgress[]
+	userProgress: IUserProgresss[]
+}
+
+export interface IUserProgresss {
+	userId: string
+	bookId: string
+	isCompleted: string
 }
 
 export interface IUserProgress {
