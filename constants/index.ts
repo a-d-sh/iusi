@@ -366,11 +366,11 @@ export const adminNavLinks = [
 	{ label: 'Reviews', route: '/admin/reviews', icon: MessageSquareMore },
 	{ label: 'Notifications', route: '/admin/notifications', icon: Bell },
 	{
-		label: 'Create Direction',
+		label: 'Create Major',
 		route: '/admin/create-direction',
 		icon: FileCode,
 	},
-	{ label: 'My Directions', route: '/admin/my-directions', icon: MonitorPlay },
+	{ label: 'My Majors', route: '/admin/my-directions', icon: MonitorPlay },
 ]
 
 export const amountOptions = [

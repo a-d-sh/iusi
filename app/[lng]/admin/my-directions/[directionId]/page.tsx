@@ -30,7 +30,7 @@ async function Page({ params }: { params: { directionId: string } }) {
 				<div className='flex flex-col space-y-2'>
 					<div className='flex items-center gap-2'>
 						<span className='font-space-grotesk text-3xl font-medium'>
-							Direction Fields
+							Major Fields
 						</span>{' '}
 						<Settings />
 					</div>
@@ -41,7 +41,7 @@ async function Page({ params }: { params: { directionId: string } }) {
 					{/* Sciences */}
 					<div className='flex items-center gap-2'>
 						<span className='font-space-grotesk text-3xl font-medium'>
-							Direction Sciences
+							Major Sciences
 						</span>{' '}
 						<LayoutPanelLeft />
 					</div>
