@@ -36,31 +36,6 @@ interface Props {
 	books: IBook[]
 }
 function Books({ science, books }: Props) {
-	const [uploading, setUploading] = useState(false)
-	const [selectedImage, setSelectedImage] = useState('')
-	const [selectedFile, setSelectedFile] = useState(null)
-
-	const handleUpload = async () => {
-		setUploading(true)
-		try {
-			if (!selectedFile) return
-			const formData = new FormData()
-			formData.append('file', selectedFile)
-			// const { data } = await axios.post('/api/book', formData)
-
-			var requestOptions = { method: 'POST', body: formData }
-
-			const response = await fetch('/api/files', requestOptions)
-			const result = await response.text()
-			console.log(result)
-
-			// console.log(data)
-		} catch (error) {
-			console.log(error.response?.data)
-		}
-		setUploading(false)
-	}
-
 	const [isLoading, setIsLoading] = useState(false)
 	const [isEdit, setIsEdit] = useState(false)
 	const [currentBook, setCurrentBook] = useState<IBookFields | null>(null)
@@ -222,6 +197,34 @@ function Forms({ handler, book, isEdit = false, onCancel }: FormProps) {
 		})
 	}
 
+	const [uploading, setUploading] = useState(false)
+	const [selectedImage, setSelectedImage] = useState('')
+	const [
+		selectedFile,
+		// setSelectedFile
+	] = useState(null)
+
+	const handleUpload = async () => {
+		setUploading(true)
+		try {
+			if (!selectedFile) return
+			const formData = new FormData()
+			formData.append('file', selectedFile)
+			// const { data } = await axios.post('/api/book', formData)
+
+			var requestOptions = { method: 'POST', body: formData }
+
+			const response = await fetch('/api/files', requestOptions)
+			const result = await response.text()
+			console.log(result)
+
+			// console.log(data)
+		} catch (error) {
+			console.log('error.response?.data')
+		}
+		setUploading(false)
+	}
+
 	return (
 		<Form {...form}>
 			<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-3'>
@@ -250,7 +253,7 @@ function Forms({ handler, book, isEdit = false, onCancel }: FormProps) {
 							if (target.files) {
 								const file = target.files[0]
 								setSelectedImage(URL.createObjectURL(file))
-								setSelectedFile(file)
+								// setSelectedFile(file)
 							}
 						}}
 					/>
@@ -262,14 +265,9 @@ function Forms({ handler, book, isEdit = false, onCancel }: FormProps) {
 						)}
 					</div>
 				</label>
-				<button
-					onClick={handleUpload}
-					disabled={uploading}
-					style={{ opacity: uploading ? '.5' : '1' }}
-					className='bg-red-600 p-3 w-32 text-center rounded text-white'
-				>
+				<Button onClick={handleUpload} type='submit'>
 					{uploading ? 'Uploading..' : 'Upload'}
-				</button>
+				</Button>
 
 				<FormField
 					control={form.control}
