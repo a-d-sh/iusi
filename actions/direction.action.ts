@@ -25,7 +25,7 @@ export const createDirection = async (
 export const getDirections = async (params: GetDirectionsParams) => {
 	try {
 		await connectToDatabase()
-		const { clerkId, page = 1, pageSize = 3 } = params
+		const { clerkId, page = 1, pageSize = 15 } = params
 
 		const skipAmount = (page - 1) * pageSize
 
