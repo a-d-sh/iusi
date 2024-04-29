@@ -110,7 +110,7 @@ function Books({ science, books }: Props) {
 			<CardContent className='relative p-6'>
 				{isLoading && <FillLoading />}
 				<div className='flex items-center justify-between'>
-					<span className='text-lg font-medium'>Manage chapters</span>
+					<span className='text-lg font-medium'>List of books</span>
 					{!isEdit && (
 						<Button size={'icon'} variant={'ghost'} onClick={onToggle}>
 							{state ? <X /> : <BadgePlus />}
