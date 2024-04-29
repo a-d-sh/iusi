@@ -54,11 +54,7 @@ export interface ILessonFields {
 
 export interface IBookFields {
 	title: string
-	content: string
-	videoUrl: string
-	hours: string
-	minutes: string
-	seconds: string
+	url: string
 	free: boolean
 }
 

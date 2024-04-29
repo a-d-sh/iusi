@@ -17,12 +17,10 @@ import {
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import { Textarea } from '@/components/ui/textarea'
-import { editorConfig } from '@/constants'
 import useToggleEdit from '@/hooks/use-toggle-edit'
 import { bookSchema } from '@/lib/validation'
 import { DragDropContext, Droppable, DropResult } from '@hello-pangea/dnd'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Editor } from '@tinymce/tinymce-react'
 import { BadgePlus, X } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -55,12 +53,8 @@ function Books({ science, books }: Props) {
 		setIsEdit(true)
 		setBookId(book._id)
 		setCurrentBook({
-			content: book.content,
-			hours: `${book.duration.hours}`,
-			minutes: `${book.duration.minutes}`,
-			seconds: `${book.duration.seconds}`,
 			title: book.title,
-			videoUrl: book.videoUrl,
+			url: book.url,
 			free: book.free,
 		})
 	}
@@ -172,17 +166,13 @@ interface FormProps {
 	onCancel?: () => void
 }
 function Forms({ handler, book, isEdit = false, onCancel }: FormProps) {
-	const { content, hours, minutes, seconds, title, videoUrl, free } = book
+	const { title, url, free } = book
 
 	const form = useForm<z.infer<typeof bookSchema>>({
 		resolver: zodResolver(bookSchema),
 		defaultValues: {
 			title,
-			videoUrl,
-			hours: `${hours}`,
-			minutes: `${minutes}`,
-			seconds: `${seconds}`,
-			content,
+			url,
 			free,
 		},
 	})
@@ -219,12 +209,12 @@ function Forms({ handler, book, isEdit = false, onCancel }: FormProps) {
 
 				<FormField
 					control={form.control}
-					name='videoUrl'
+					name='url'
 					render={({ field }) => (
 						<FormItem>
 							<FormControl>
 								<Textarea
-									placeholder='Video URL'
+									placeholder='URL'
 									className='bg-secondary'
 									{...field}
 								/>
@@ -233,77 +223,7 @@ function Forms({ handler, book, isEdit = false, onCancel }: FormProps) {
 						</FormItem>
 					)}
 				/>
-				<FormField
-					control={form.control}
-					name='content'
-					render={({ field }) => (
-						<FormItem>
-							<FormControl>
-								<Editor
-									apiKey={process.env.NEXT_PUBLIC_TINY_API_KEY}
-									init={editorConfig}
-									onBlur={field.onBlur}
-									initialValue={content}
-									onEditorChange={content => field.onChange(content)}
-								/>
-							</FormControl>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				<div className='grid grid-cols-3 gap-2'>
-					<FormField
-						control={form.control}
-						name='hours'
-						render={({ field }) => (
-							<FormItem>
-								<FormControl>
-									<Input
-										placeholder='Hours'
-										className='bg-secondary'
-										type='number'
-										{...field}
-									/>
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/>
-					<FormField
-						control={form.control}
-						name='minutes'
-						render={({ field }) => (
-							<FormItem>
-								<FormControl>
-									<Input
-										placeholder='Minutes'
-										className='bg-secondary'
-										type='number'
-										{...field}
-									/>
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/>
-					<FormField
-						control={form.control}
-						name='seconds'
-						render={({ field }) => (
-							<FormItem>
-								<FormControl>
-									<Input
-										placeholder='Seconds'
-										className='bg-secondary'
-										type='number'
-										{...field}
-									/>
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/>
-				</div>
+
 				<FormField
 					control={form.control}
 					name='free'

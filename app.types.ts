@@ -78,20 +78,15 @@ export interface IBook {
 	_id: string
 	title: string
 	position: number
-	videoUrl: string
-	content: string
+	url: string
 	free: boolean
-	duration: {
-		hours: number
-		minutes: number
-		seconds: number
-	}
+
 	userProgress: IUserProgresss[]
 }
 
 export interface IUserProgresss {
 	userId: string
-	bookId: string
+	lessonId: string
 	isCompleted: string
 }
 

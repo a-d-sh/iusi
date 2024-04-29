@@ -75,11 +75,7 @@ export const lessonSchema = z.object({
 
 export const bookSchema = z.object({
 	title: z.string().min(3),
-	videoUrl: z.string(),
-	content: z.string().optional(),
-	hours: z.string(),
-	minutes: z.string(),
-	seconds: z.string(),
+	url: z.string(),
 	free: z.boolean().default(false).optional(),
 })
 
