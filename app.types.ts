@@ -86,7 +86,7 @@ export interface IBook {
 
 export interface IUserProgresss {
 	userId: string
-	lessonId: string
+	bookId: string
 	isCompleted: string
 }
 

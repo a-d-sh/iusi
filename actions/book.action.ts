@@ -21,11 +21,6 @@ export const createBook = async (params: ICreateBook) => {
 	try {
 		await connectToDatabase()
 		const { book, science, path } = params
-		const duration = {
-			hours: Number(book.hours),
-			minutes: Number(book.minutes),
-			seconds: Number(book.seconds),
-		}
 
 		const existScience = await Science.findById(science)
 		const position = existScience.books.length
@@ -33,7 +28,6 @@ export const createBook = async (params: ICreateBook) => {
 		const newBook = await Book.create({
 			...book,
 			position,
-			duration,
 			science,
 		})
 		existScience.books.push(newBook._id)
@@ -65,13 +59,7 @@ export const editBook = async (
 ) => {
 	try {
 		await connectToDatabase()
-		const duration = {
-			hours: Number(book.hours),
-			minutes: Number(book.minutes),
-			seconds: Number(book.seconds),
-		}
-
-		await Book.findByIdAndUpdate(bookId, { ...book, duration })
+		await Book.findByIdAndUpdate(bookId, { ...book })
 		revalidatePath(path)
 	} catch (error) {
 		throw new Error('Something went wrong!')
@@ -135,7 +123,7 @@ export const uncompleteBook = async (bookId: string, path: string) => {
 export const getBook = async (id: string) => {
 	try {
 		await connectToDatabase()
-		return await Book.findById(id).select('title content videoUrl')
+		return await Book.findById(id).select('title url')
 	} catch (error) {
 		throw new Error('Something went wrong!')
 	}
@@ -219,7 +207,7 @@ export const getFreeBooks = async (directionId: string) => {
 		const sciences = await Science.find({ direction: directionId }).populate({
 			path: 'books',
 			model: Book,
-			select: 'title videoUrl duration',
+			select: 'title url duration',
 			match: { free: true },
 		})
 
