@@ -14,7 +14,7 @@ async function Page({ searchParams }: SearchParamsProps) {
 	return (
 		<>
 			<Header title='My Majors' description='Here are your latest majors' />
-			<div className='mt-4 grid grid-cols-3 gap-4'>
+			<div className='mt-4 grid grid-cols-4 gap-4'>
 				{result.directions.map(item => (
 					<AdminDirectionCard
 						key={item._id}
