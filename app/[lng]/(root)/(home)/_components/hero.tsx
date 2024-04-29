@@ -14,11 +14,11 @@ function Hero() {
 			<div className='w-full'>
 				<Carousel
 					opts={{ align: 'start', loop: true }}
-					plugins={[Autoplay({ delay: 3000 })]}
+					plugins={[Autoplay({ delay: 6000 })]}
 				>
 					<CarouselContent>
 						<CarouselItem>
-							<div className='text-5xl font-extrabold ...'>
+							<div className='text-5xl font-extrabold'>
 								<Image
 									src={'/assets/corusel/slider1.jpg'}
 									alt='hero'

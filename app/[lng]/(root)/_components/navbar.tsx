@@ -101,6 +101,13 @@ function Navbar() {
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
+												Rektor murojaati
+											</NavigationMenuLink>
+										</Link>
+										<Link href='/' legacyBehavior passHref>
+											<NavigationMenuLink
+												className={navigationMenuTriggerStyle()}
+											>
 												Me`yoriy hujjatlar
 											</NavigationMenuLink>
 										</Link>
@@ -136,7 +143,7 @@ function Navbar() {
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Departamentlar
+												Bo`limlar
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
@@ -144,13 +151,6 @@ function Navbar() {
 												className={navigationMenuTriggerStyle()}
 											>
 												Fakultetlar
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Kafedralar
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
@@ -172,7 +172,7 @@ function Navbar() {
 										TA`LIM
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
-										<Link href='/direction-bachelor' legacyBehavior passHref>
+										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
@@ -263,21 +263,7 @@ function Navbar() {
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Xalqaro konferensiya va loyihalar
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
 												Xalqaro tillar va madaniyatlar markazi
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Xalqaro assotsiatsiyalar a`zoligi
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuContent>
@@ -405,32 +391,30 @@ function Navbar() {
 												Yangiliklar
 											</NavigationMenuLink>
 										</Link>
+									</NavigationMenuContent>
+								</NavigationMenuItem>
+							</NavigationMenuList>
+						</NavigationMenu>
+
+						<NavigationMenu className='hidden md:flex'>
+							<NavigationMenuList>
+								<NavigationMenuItem>
+									<NavigationMenuTrigger className='rounded-none bg-background/70 backdrop-blur-xl'>
+										ONLINE KUTUBXONA
+									</NavigationMenuTrigger>
+									<NavigationMenuContent>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Kutilayotgan tadbirlar
+												Yo`nalish bo`yicha kitoblar
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Video galereya
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Foto galereya
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Vebinarlar
+												Umumblok fanlari bo`yicha kitoblar
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuContent>

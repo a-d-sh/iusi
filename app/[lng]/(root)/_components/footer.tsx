@@ -42,16 +42,16 @@ function Footer() {
 								<div className='flex flex-col space-y-1'>
 									<a
 										className='text-sm hover:text-blue-500 hover:underline dark:hover:text-blue-300'
-										href='tel:+998900059799'
+										href='tel:+998931639922'
 									>
-										+998 (90) 005-97-99
+										+998(93) 163 99 22
 									</a>
 									<Separator className='dark:bg-gray-500' />
 									<a
 										className='text-sm hover:text-blue-500 hover:underline dark:hover:text-blue-300'
-										href='tel:+998900059799'
+										href='tel:+998931639922'
 									>
-										+998 90 005 97 99
+										+998(93) 163 99 22
 									</a>
 								</div>
 							</div>
@@ -60,9 +60,9 @@ function Footer() {
 								<Mail size={20} />
 								<a
 									className='text-sm hover:text-blue-500 hover:underline dark:hover:text-blue-300'
-									href='https://t.me/adsh97'
+									href='https://t.me/innovatsiya_uni'
 								>
-									ADSH
+									Telegramga o`tish
 								</a>
 							</div>
 
