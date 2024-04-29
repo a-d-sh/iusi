@@ -81,7 +81,7 @@ function Navbar() {
 						</SignedOut>
 					</div>
 				</div>
-				<div className='container mx-auto h-full max-w-7xl items-center justify-between'>
+				<div className='mx-auto h-full max-w-7xl items-center justify-between'>
 					<div className='flex items-center'>
 						<NavigationMenu className='hidden md:flex'>
 							<NavigationMenuList className=''>
