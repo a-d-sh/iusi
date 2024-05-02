@@ -88,7 +88,7 @@ export const getDirections = async (params: GetDirectionsParams) => {
 export const getAllDirections = async (params: GetAllDirectionsParams) => {
 	try {
 		await connectToDatabase()
-		const { searchQuery, filter, page = 1, pageSize = 6 } = params
+		const { searchQuery, filter, page = 1, pageSize = 20 } = params
 
 		const skipAmount = (page - 1) * pageSize
 
@@ -139,9 +139,9 @@ export const getAllDirections = async (params: GetAllDirectionsParams) => {
 		}
 
 		const directions = await Direction.find(query)
-			.select('previewImage title slug _id oldPrice currentPrice instructor')
+			.select('previewImage title slug _id admin')
 			.populate({
-				path: 'instructor',
+				path: 'admin',
 				select: 'fullName picture clerkId',
 				model: User,
 			})

@@ -12,23 +12,10 @@ function DirectionCard(direction: IDirection) {
 					<CustomImage src={direction?.previewImage} alt={direction?.title} />
 				</CardContent>
 				<div className='my-4 flex flex-col space-y-2 px-2'>
+					<Separator />
 					<h2 className='line-clamp-1 font-space-grotesk text-2xl font-bold'>
 						{direction?.title}
 					</h2>
-					<Separator />
-					<div className='flex items-center justify-between'>
-						<div className='flex items-center gap-2'>
-							<div className='relative size-[40px]'>
-								<CustomImage
-									src={direction?.admin.picture}
-									alt={direction?.admin.fullName}
-									className='rounded-full'
-								/>
-							</div>
-						</div>
-
-						<div className='flex gap-2'></div>
-					</div>
 				</div>
 			</Card>
 		</Link>

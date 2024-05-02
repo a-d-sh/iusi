@@ -27,7 +27,7 @@ function AllDirections({ result }: Props) {
 		<div className='container mx-auto mt-12 max-w-6xl'>
 			<div className='flex items-center justify-between max-md:flex-col max-md:items-start max-md:space-y-2'>
 				<h2 className='max-md:self-end'>
-					{t('result1')}{' '}
+					{t('Barcha yo`nalishlar')}{' '}
 					<span className='font-space-grotesk font-bold'>
 						{totalDirections}
 					</span>{' '}
@@ -35,7 +35,7 @@ function AllDirections({ result }: Props) {
 				</h2>
 			</div>
 
-			<div className='mt-2 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
+			<div className='mt-2 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
 				{directions?.map((direction, index) => (
 					<DirectionCard key={index} {...direction} />
 				))}
