@@ -11,13 +11,12 @@ export const metadata: Metadata = {
 }
 async function Page({ searchParams }: SearchParamsProps) {
 	const resultJSON = await getAllDirections({
-		searchQuery: searchParams.q,
-		filter: searchParams.filter,
-		page: searchParams.page ? +searchParams.page : 1,
+		searchQuery: searchParams?.q,
+		filter: searchParams?.filter,
+		page: searchParams?.page ? +searchParams?.page : 1,
 	})
 
 	const result = JSON.parse(JSON.stringify(resultJSON))
-	console.log(result)
 
 	return (
 		<>
