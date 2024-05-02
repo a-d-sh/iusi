@@ -54,8 +54,6 @@ function Navbar() {
 							<Link
 								href={`/contact`}
 								className='w-fit items-end'
-								size={'lg'}
-								type='submit'
 								rounded={'full'}
 							>
 								<span>Online ro'yxatdan o'tish uchun</span>
