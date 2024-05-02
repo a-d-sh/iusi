@@ -52,12 +52,13 @@ function Navbar() {
 								</Link>
 							))}
 							<Button
-								className='w-fit'
+								className='w-fit items-end'
 								size={'lg'}
+								href={`/contact`}
 								type='submit'
 								rounded={'full'}
 							>
-								<span>asdasdasd</span>
+								<span>Online ro'yxatdan o'tish uchun</span>
 							</Button>
 						</div>
 					</div>
