@@ -17,6 +17,7 @@ async function Page({ searchParams }: SearchParamsProps) {
 	})
 
 	const result = JSON.parse(JSON.stringify(resultJSON))
+	console.log(result)
 
 	return (
 		<>

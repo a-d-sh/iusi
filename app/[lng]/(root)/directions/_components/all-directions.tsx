@@ -36,7 +36,7 @@ function AllDirections({ result }: Props) {
 			</div>
 
 			<div className='mt-2 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
-				{directions.map((direction, index) => (
+				{directions?.map((direction, index) => (
 					<DirectionCard key={index} {...direction} />
 				))}
 			</div>
