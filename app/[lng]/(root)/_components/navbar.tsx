@@ -53,7 +53,7 @@ function Navbar() {
 							))}
 							<Link
 								href={`/contact`}
-								className='w-fit items-end'
+								className={'w-fit items-end'}
 								rounded={'full'}
 							>
 								<span>Online ro'yxatdan o'tish uchun</span>
