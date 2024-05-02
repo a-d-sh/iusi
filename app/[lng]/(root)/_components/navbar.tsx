@@ -51,13 +51,6 @@ function Navbar() {
 									{t(nav.name)}
 								</Link>
 							))}
-							<Link
-								href={`/contact`}
-								className={'w-fit items-end'}
-								rounded={'full'}
-							>
-								<span>Online ro'yxatdan o'tish uchun</span>
-							</Link>
 						</div>
 					</div>
 

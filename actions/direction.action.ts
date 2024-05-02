@@ -5,8 +5,13 @@ import Direction from '@/database/direction.model'
 import Purchasedirection from '@/database/purchasedirection.model'
 import User from '@/database/user.model'
 import { connectToDatabase } from '@/lib/mongoose'
+import { FilterQuery } from 'mongoose'
 import { revalidatePath } from 'next/cache'
-import { GetDirectionsParams, ICreateDirection } from './types'
+import {
+	GetAllDirectionsParams,
+	GetDirectionsParams,
+	ICreateDirection,
+} from './types'
 
 export const createDirection = async (
 	data: ICreateDirection,
@@ -77,6 +82,79 @@ export const getDirections = async (params: GetDirectionsParams) => {
 		}
 	} catch (error) {
 		throw new Error('Soething went wrong while getting direction!')
+	}
+}
+
+export const getAllDirections = async (params: GetAllDirectionsParams) => {
+	try {
+		await connectToDatabase()
+		const { searchQuery, filter, page = 1, pageSize = 6 } = params
+
+		const skipAmount = (page - 1) * pageSize
+
+		const query: FilterQuery<typeof Direction> = {}
+
+		if (searchQuery) {
+			query.$or = [{ title: { $regex: new RegExp(searchQuery, 'i') } }]
+		}
+
+		let sortOptions = {}
+
+		switch (filter) {
+			case 'newest':
+				sortOptions = { createdAt: -1 }
+				break
+			case 'popular':
+				sortOptions = { students: -1 }
+				break
+			case 'lowest-price':
+				sortOptions = { currentPrice: 1 }
+				break
+			case 'highest-price':
+				sortOptions = { currentPrice: -1 }
+				break
+			case 'english':
+				query.language = 'english'
+				break
+			case 'uzbek':
+				query.language = 'uzbek'
+				break
+			case 'russian':
+				query.language = 'russian'
+				break
+			case 'turkish':
+				query.language = 'turkish'
+				break
+			case 'beginner':
+				query.level = 'beginner'
+				break
+			case 'intermediate':
+				query.level = 'intermediate'
+				break
+			case 'advanced':
+				query.level = 'advanced'
+				break
+			default:
+				break
+		}
+
+		const directions = await Direction.find(query)
+			.select('previewImage title slug _id oldPrice currentPrice instructor')
+			.populate({
+				path: 'instructor',
+				select: 'fullName picture clerkId',
+				model: User,
+			})
+			.skip(skipAmount)
+			.limit(pageSize)
+			.sort(sortOptions)
+
+		const totalDirections = await Direction.countDocuments(query)
+		const isNext = totalDirections > skipAmount + directions.length
+
+		return { directions, isNext, totalDirections }
+	} catch (error) {
+		throw new Error('Something went wrong!')
 	}
 }
 

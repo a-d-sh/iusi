@@ -1,24 +1,24 @@
 'use server'
 
+import { ICourse, ILesson } from '@/app.types'
 import Course from '@/database/course.model'
+import Lesson from '@/database/lesson.model'
+import Purchase from '@/database/purchase.model'
+import Review from '@/database/review.model'
+import Section from '@/database/section.model'
+import UserProgress from '@/database/user-progress.model'
+import User from '@/database/user.model'
 import { connectToDatabase } from '@/lib/mongoose'
+import { calculateTotalDuration } from '@/lib/utils'
+import { FilterQuery } from 'mongoose'
+import { revalidatePath } from 'next/cache'
+import { cache } from 'react'
 import {
 	GetAllCoursesParams,
 	GetCoursesParams,
 	GetPaginationParams,
 	ICreateCourse,
 } from './types'
-import { ICourse, ILesson } from '@/app.types'
-import { revalidatePath } from 'next/cache'
-import User from '@/database/user.model'
-import { cache } from 'react'
-import Section from '@/database/section.model'
-import Lesson from '@/database/lesson.model'
-import { calculateTotalDuration } from '@/lib/utils'
-import { FilterQuery } from 'mongoose'
-import Purchase from '@/database/purchase.model'
-import UserProgress from '@/database/user-progress.model'
-import Review from '@/database/review.model'
 
 export const createCourse = async (data: ICreateCourse, clerkId: string) => {
 	try {

@@ -1,7 +1,5 @@
 'use client'
 
-import DirectionsCard from '@/components/cards/directions.card'
-import { directions } from '@/constants'
 import useTranslate from '@/hooks/use-translate'
 
 function Directions() {
@@ -15,9 +13,9 @@ function Directions() {
 				</h1>
 			</div>
 			<div className='mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4'>
-				{directions.map(direction => (
-					<DirectionsCard key={direction.label} {...direction} />
-				))}
+				{/* {directions.map(direction => (
+					<DirectionsCard key={direction.title} {...direction} />
+				))} */}
 			</div>
 		</div>
 	)

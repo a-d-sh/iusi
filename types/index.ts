@@ -26,8 +26,12 @@ export interface ICategory {
 }
 
 export interface IDirection {
-	label: string
-	icon: string
+	title: string
+	previewImage: string
+	author: {
+		image: string
+		name: string
+	}
 }
 
 export interface IInstructor {

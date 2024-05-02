@@ -93,6 +93,20 @@ export interface GetAllCoursesParams {
 	filter?: string
 }
 
+export interface GetAllBooksParams {
+	page?: number
+	pageSize?: number
+	searchQuery?: string
+	filter?: string
+}
+
+export interface GetAllDirectionsParams {
+	page?: number
+	pageSize?: number
+	searchQuery?: string
+	filter?: string
+}
+
 export interface GetAllDirectionParams {
 	page?: number
 	pageSize?: number
