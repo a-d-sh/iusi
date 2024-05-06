@@ -1,6 +1,5 @@
 'use client'
 
-import { getFreeBooks } from '@/actions/book.action'
 import { IBook, IDirection } from '@/app.types'
 import CustomImage from '@/components/shared/custom-image'
 import FillLoading from '@/components/shared/fill-loading'
@@ -10,36 +9,14 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { PiStudentBold } from 'react-icons/pi'
 import ReactStars from 'react-stars'
-import { toast } from 'sonner'
 
 function Hero(direction: IDirection) {
-	const [loading, setLoading] = useState(false)
+	const [loading] = useState(false)
 	const [open, setOpen] = useState(false)
-	const [books, setBooks] = useState<IBook[]>([])
-	const [book, setBook] = useState<IBook | null>(null)
+	const [books] = useState<IBook[]>([])
+	const [setBook] = useState<IBook | null>(null)
 
 	const t = useTranslate()
-
-	const onHandler = async () => {
-		if (books.length > 0) return setOpen(true)
-
-		setLoading(true)
-
-		const promise = getFreeBooks(direction._id)
-			.then(data => {
-				if (data.length === 0) return toast.error(t('notFound'))
-				setBooks(data)
-				setBook(data[0])
-				setOpen(true)
-			})
-			.finally(() => setLoading(false))
-
-		toast.promise(promise, {
-			loading: t('loading'),
-			success: t('successfully'),
-			error: t('error'),
-		})
-	}
 
 	return (
 		<>
