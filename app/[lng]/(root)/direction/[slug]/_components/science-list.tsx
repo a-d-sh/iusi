@@ -25,7 +25,7 @@ function ScienceList(science: IScience) {
 					<div className='mt-2 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
 						<Card className='group w-full'>
 							<CardContent className='relative h-56 w-full'>
-								<CustomImage src='/logo.png' alt={science.title} />
+								<CustomImage src='../logo.png' alt={science.title} />
 							</CardContent>
 							<div className='my-4 flex flex-col space-y-2 px-2'>
 								<Separator />

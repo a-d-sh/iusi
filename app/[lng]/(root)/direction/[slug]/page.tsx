@@ -32,7 +32,7 @@ async function Page({ params: { lng, slug } }: Props) {
 		<>
 			<TopBar label='Elektron Kutubxona' extra={direction.title} />
 
-			<div className='container mx-auto max-w-6xl'>
+			<div className='container mx-auto mt-12 max-w-6xl'>
 				<Hero {...direction} />
 				<Overview {...direction} />
 			</div>

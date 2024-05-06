@@ -3,7 +3,6 @@
 import { getDirectionReviews } from '@/actions/review.action'
 import { getDirectionSciences } from '@/actions/science.action'
 import { IDirection, IScience } from '@/app.types'
-import { Accordion } from '@/components/ui/accordion'
 import { Separator } from '@/components/ui/separator'
 import useTranslate from '@/hooks/use-translate'
 import { useEffect, useState } from 'react'
@@ -45,13 +44,15 @@ function Overview(direction: IDirection) {
 			<div className='mt-8 rounded-md bg-gradient-to-b from-background to-secondary p-4 lg:p-6'>
 				<Separator className='my-3' />
 				{isLoading ? (
-					<div className='mt-4 flex flex-col gap-1'></div>
+					<div className='mt-4 flex flex-col gap-1'>
+						<p>Mavjud emas!</p>
+					</div>
 				) : (
-					<Accordion type='single' collapsible>
+					<div>
 						{sciences.map(science => (
 							<ScienceList key={science._id} {...science} />
 						))}
-					</Accordion>
+					</div>
 				)}
 			</div>
 		</>
