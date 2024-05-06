@@ -1,10 +1,10 @@
-import { type ClassValue, clsx } from 'clsx'
-import { twMerge } from 'tailwind-merge'
-import { enUS, ruRU, trTR } from '@clerk/localizations'
-import { uzUZ } from './uz-UZ'
-import qs from 'query-string'
 import { ILesson } from '@/app.types'
-import { enUS as en, uz, tr, ru } from 'date-fns/locale'
+import { enUS, ruRU, trTR } from '@clerk/localizations'
+import { clsx, type ClassValue } from 'clsx'
+import { enUS as en, ru, tr, uz } from 'date-fns/locale'
+import qs from 'query-string'
+import { twMerge } from 'tailwind-merge'
+import { uzUZ } from './uz-UZ'
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs))

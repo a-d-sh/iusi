@@ -34,6 +34,11 @@ export interface IDirection {
 	}
 }
 
+export interface IBook {
+	title: string
+	url: string
+}
+
 export interface IInstructor {
 	name: string
 	image: string

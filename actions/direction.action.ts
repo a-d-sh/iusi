@@ -1,12 +1,16 @@
 'use server'
 
-import { IDirection } from '@/app.types'
+import { IBook, IDirection } from '@/app.types'
+import Book from '@/database/book.model'
 import Direction from '@/database/direction.model'
 import Purchasedirection from '@/database/purchasedirection.model'
+import Review from '@/database/review.model'
+import Science from '@/database/science.model'
 import User from '@/database/user.model'
 import { connectToDatabase } from '@/lib/mongoose'
 import { FilterQuery } from 'mongoose'
 import { revalidatePath } from 'next/cache'
+import { cache } from 'react'
 import {
 	GetAllDirectionsParams,
 	GetDirectionsParams,
@@ -85,6 +89,41 @@ export const getDirections = async (params: GetDirectionsParams) => {
 	}
 }
 
+export const getDirectionById = async (id: string) => {
+	try {
+		await connectToDatabase()
+		const direction = await Direction.findById(id)
+		return direction as IDirection
+	} catch (error) {
+		throw new Error('Soething went wrong while getting direction!')
+	}
+}
+
+export const updateDirection = async (
+	id: string,
+	updateData: Partial<IDirection>,
+	path: string
+) => {
+	try {
+		await connectToDatabase()
+		await Direction.findByIdAndUpdate(id, updateData)
+		revalidatePath(path)
+	} catch (error) {
+		throw new Error('Something went wrong while updating Direction status!')
+	}
+}
+
+export const deleteDirection = async (id: string, path: string) => {
+	try {
+		await connectToDatabase()
+		await Direction.findByIdAndDelete(id)
+		revalidatePath(path)
+	} catch (error) {
+		throw new Error('Something went wrong while deleting direction!')
+	}
+}
+
+// Landing uchun Kutubxona tizimi
 export const getAllDirections = async (params: GetAllDirectionsParams) => {
 	try {
 		await connectToDatabase()
@@ -158,36 +197,82 @@ export const getAllDirections = async (params: GetAllDirectionsParams) => {
 	}
 }
 
-export const getDirectionById = async (id: string) => {
+export const getDetailedDirection = cache(async (id: string) => {
 	try {
 		await connectToDatabase()
+
 		const direction = await Direction.findById(id)
-		return direction as IDirection
-	} catch (error) {
-		throw new Error('Soething went wrong while getting direction!')
-	}
-}
+			.select('title previewImage tags')
+			.populate({
+				path: 'admin',
+				select: 'fullName picture clerkId',
+				model: User,
+			})
 
-export const updateDirection = async (
-	id: string,
-	updateData: Partial<IDirection>,
-	path: string
-) => {
+		const sciences = await Science.find({ direction: id }).populate({
+			path: 'books',
+			model: Book,
+		})
+
+		const totalBooks: IBook[] = sciences.map(science => science.books).flat()
+
+		const reviews = await Review.find({ direction: id, isFlag: false }).select(
+			'rating'
+		)
+
+		const rating = reviews.reduce((total, review) => total + review.rating, 0)
+
+		const purchasedStudents = await Purchasedirection.find({
+			course: id,
+		}).countDocuments()
+
+		const calcRating = (rating / reviews.length).toFixed(1)
+
+		const data = {
+			...direction._doc,
+			totalBooks: totalBooks.length,
+			totalSciences: sciences.length,
+			rating: calcRating === 'NaN' ? 0 : calcRating,
+			reviewCount: reviews.length,
+			purchasedStudents,
+		}
+
+		return data
+	} catch (error) {
+		throw new Error('Something went wrong while getting detailed course!')
+	}
+})
+
+export const getFeaturedDirections = cache(async () => {
 	try {
 		await connectToDatabase()
-		await Direction.findByIdAndUpdate(id, updateData)
-		revalidatePath(path)
-	} catch (error) {
-		throw new Error('Something went wrong while updating Direction status!')
-	}
-}
+		const directions = await Direction.find({ published: true })
+			.limit(6)
+			.sort({ createdAt: -1 })
+			.select('previewImage title slug admin')
+			.populate({
+				path: 'admin',
+				select: 'fullName picture clerkId',
+				model: User,
+			})
 
-export const deleteDirection = async (id: string, path: string) => {
+		return directions
+	} catch (error) {
+		throw new Error('Something went wrong while getting featured directions!')
+	}
+})
+
+export const getIsPurchase = async (clerkId: string, directionId: string) => {
 	try {
 		await connectToDatabase()
-		await Direction.findByIdAndDelete(id)
-		revalidatePath(path)
+		const user = await User.findOne({ clerkId })
+		const isPurchased = await Purchasedirection.findOne({
+			user: user._id,
+			direction: directionId,
+		})
+
+		return !!isPurchased
 	} catch (error) {
-		throw new Error('Something went wrong while deleting direction!')
+		throw new Error('Something went wrong while getting purchased directions!')
 	}
 }

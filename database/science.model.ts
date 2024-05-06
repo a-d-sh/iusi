@@ -10,5 +10,5 @@ const ScienceSchema = new Schema(
 	{ timestamps: true }
 )
 
-const Science = models.Section || model('Science', ScienceSchema)
+const Science = models.Science || model('Science', ScienceSchema)
 export default Science

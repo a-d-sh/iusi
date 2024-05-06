@@ -1,12 +1,12 @@
 'use server'
 
 import { IReview } from '@/app.types'
+import Course from '@/database/course.model'
 import Review from '@/database/review.model'
 import User from '@/database/user.model'
 import { connectToDatabase } from '@/lib/mongoose'
-import { GetPaginationParams, GetReviewParams } from './types'
-import Course from '@/database/course.model'
 import { revalidatePath } from 'next/cache'
+import { GetPaginationParams, GetReviewParams } from './types'
 
 export const createReview = async (
 	data: Partial<IReview>,
@@ -93,6 +93,20 @@ export const getCourseReviews = async (course: string, limit: number) => {
 	try {
 		await connectToDatabase()
 		const reviews = await Review.find({ course, isFlag: false })
+			.sort({ createdAt: -1 })
+			.populate({ path: 'user', model: User, select: 'fullName picture' })
+			.limit(limit)
+
+		return JSON.parse(JSON.stringify(reviews))
+	} catch (error) {
+		throw new Error('Error getting course reviews')
+	}
+}
+
+export const getDirectionReviews = async (direction: string, limit: number) => {
+	try {
+		await connectToDatabase()
+		const reviews = await Review.find({ direction, isFlag: false })
 			.sort({ createdAt: -1 })
 			.populate({ path: 'user', model: User, select: 'fullName picture' })
 			.limit(limit)
