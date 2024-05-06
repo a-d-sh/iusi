@@ -45,7 +45,7 @@ function Overview(direction: IDirection) {
 				<Separator className='my-3' />
 				{isLoading ? (
 					<div className='mt-4 flex flex-col gap-1'>
-						<p>Mavjud emas!</p>
+						<p>Yuklanmoqda...</p>
 					</div>
 				) : (
 					<div>

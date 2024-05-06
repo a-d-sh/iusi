@@ -21,8 +21,8 @@ function ScienceList(science: IScience) {
 	return (
 		<>
 			<Drawer>
-				<DrawerTrigger>
-					<div className='mt-2 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
+				<div className='mt-2 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
+					<DrawerTrigger>
 						<Card className='group w-full'>
 							<CardContent className='relative h-56 w-full'>
 								<CustomImage src='../logo.png' alt={science.title} />
@@ -38,8 +38,8 @@ function ScienceList(science: IScience) {
 								</p>
 							</div>
 						</Card>
-					</div>
-				</DrawerTrigger>
+					</DrawerTrigger>
+				</div>
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>
