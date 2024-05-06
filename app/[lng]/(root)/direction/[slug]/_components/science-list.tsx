@@ -13,8 +13,12 @@ import {
 	DrawerTitle,
 	DrawerTrigger,
 } from '@/components/ui/drawer'
+
 import useTranslate from '@/hooks/use-translate'
 import { ChevronsUpDown } from 'lucide-react'
+import CustomImage from '../shared/custom-image'
+import { Card, CardContent } from '../ui/card'
+import { Separator } from '../ui/separator'
 import BookList from './book-list'
 
 function ScienceList(science: IScience) {
@@ -46,7 +50,22 @@ function ScienceList(science: IScience) {
 			</AccordionItem>
 
 			<Drawer>
-				<DrawerTrigger>{science.title}</DrawerTrigger>
+				<DrawerTrigger>
+					<Card className='group w-full'>
+						<CardContent className='relative h-56 w-full'>
+							<CustomImage
+								src='../../../../../../public/logo.png'
+								alt={science.title}
+							/>
+						</CardContent>
+						<div className='my-4 flex flex-col space-y-2 px-2'>
+							<Separator />
+							<h2 className='line-clamp-1 font-space-grotesk text-2xl font-bold'>
+								{science.title}
+							</h2>
+						</div>
+					</Card>
+				</DrawerTrigger>
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>
