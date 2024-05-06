@@ -2,7 +2,7 @@
 
 import { getDirectionReviews } from '@/actions/review.action'
 import { getDirectionSciences } from '@/actions/science.action'
-import { IDirection, IReview, IScience } from '@/app.types'
+import { IDirection, IScience } from '@/app.types'
 import { Accordion } from '@/components/ui/accordion'
 import { Separator } from '@/components/ui/separator'
 import useTranslate from '@/hooks/use-translate'
@@ -12,19 +12,17 @@ import ScienceList from './science-list'
 function Overview(direction: IDirection) {
 	const [isLoading, setIsLoading] = useState(true)
 	const [sciences, setSciences] = useState<IScience[]>([])
-	const [reviews, setReviews] = useState<IReview[]>([])
 
 	const t = useTranslate()
 
 	useEffect(() => {
 		const getData = async () => {
 			try {
-				const [sciences, reviews] = await Promise.all([
+				const [sciences] = await Promise.all([
 					getDirectionSciences(direction._id),
 					getDirectionReviews(direction._id, 6),
 				])
 				setSciences(sciences)
-				setReviews(reviews)
 				setIsLoading(false)
 			} catch (error) {
 				setIsLoading(false)

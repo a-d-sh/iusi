@@ -1,17 +1,11 @@
 'use client'
 
 import { IBook, IDirection } from '@/app.types'
-import CustomImage from '@/components/shared/custom-image'
-import FillLoading from '@/components/shared/fill-loading'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 import useTranslate from '@/hooks/use-translate'
-import Image from 'next/image'
 import { useState } from 'react'
-import { PiStudentBold } from 'react-icons/pi'
-import ReactStars from 'react-stars'
 
 function Hero(direction: IDirection) {
-	const [loading] = useState(false)
 	const [open, setOpen] = useState(false)
 	const [books] = useState<IBook[]>([])
 
@@ -22,44 +16,6 @@ function Hero(direction: IDirection) {
 			<h1 className='font-space-grotesk text-4xl font-bold'>
 				{direction.title}
 			</h1>
-
-			<div className='mt-4 flex flex-wrap items-center gap-6'>
-				<div className='flex items-center gap-2'>
-					<Image
-						width={50}
-						height={50}
-						alt={direction.admin.fullName}
-						src={direction.admin.picture}
-						className='rounded-full'
-					/>
-					<p className='font-space-grotesk font-bold'>
-						{direction.admin.fullName}
-					</p>
-				</div>
-
-				<div className='flex items-center gap-2 font-space-grotesk'>
-					<p className='font-bold text-[#E59819]'>{direction.rating}</p>
-					<ReactStars value={direction.rating} edit={false} color2='#E59819' />
-					<p className='font-bold'>({direction.reviewCount})</p>
-				</div>
-
-				<div className='flex items-center gap-2'>
-					<PiStudentBold className='size-6' />
-					<p className='font-space-grotesk font-bold'>
-						{direction.purchasedStudents} {t('students')}
-					</p>
-				</div>
-			</div>
-
-			<div className='relative h-96 w-full'>
-				<CustomImage
-					src={direction.previewImage}
-					alt='direction'
-					className='mt-4 rounded-md'
-				/>
-				{loading && <FillLoading />}
-			</div>
-
 			<Dialog open={open} onOpenChange={setOpen}>
 				<DialogContent className='custom-scrollbar max-h-full max-w-full overflow-y-auto md:max-w-4xl'>
 					<h1 className='font-space-grotesk text-2xl font-bold'>
