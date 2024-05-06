@@ -1,19 +1,18 @@
 import { IScience } from '@/app.types'
 import CustomImage from '@/components/shared/custom-image'
 import { Card, CardContent } from '@/components/ui/card'
-import {
-	Drawer,
-	DrawerClose,
-	DrawerContent,
-	DrawerFooter,
-	DrawerHeader,
-	DrawerTitle,
-	DrawerTrigger,
-} from '@/components/ui/drawer'
+// import {
+// 	Drawer,
+// 	DrawerClose,
+// 	DrawerContent,
+// 	DrawerFooter,
+// 	DrawerHeader,
+// 	DrawerTitle,
+// 	DrawerTrigger,
+// } from '@/components/ui/drawer'
 import { Separator } from '@/components/ui/separator'
 
 import useTranslate from '@/hooks/use-translate'
-import BookList from './book-list'
 
 function ScienceList(science: IScience) {
 	const t = useTranslate()
@@ -33,7 +32,7 @@ function ScienceList(science: IScience) {
 					<p className='line-clamp-1 font-space-grotesk text-2xl font-bold'>
 						{science.books.length} {t('books')}
 					</p>
-					<Drawer>
+					{/* <Drawer>
 						<DrawerTrigger>Open</DrawerTrigger>
 						<DrawerContent>
 							<DrawerHeader>
@@ -49,7 +48,7 @@ function ScienceList(science: IScience) {
 								<DrawerClose></DrawerClose>
 							</DrawerFooter>
 						</DrawerContent>
-					</Drawer>
+					</Drawer> */}
 				</div>
 			</Card>
 		</div>
