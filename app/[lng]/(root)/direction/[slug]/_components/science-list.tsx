@@ -8,7 +8,6 @@ import {
 	Drawer,
 	DrawerClose,
 	DrawerContent,
-	DrawerDescription,
 	DrawerFooter,
 	DrawerHeader,
 	DrawerTitle,
@@ -47,11 +46,16 @@ function ScienceList(science: IScience) {
 			</AccordionItem>
 
 			<Drawer>
-				<DrawerTrigger>Open</DrawerTrigger>
+				<DrawerTrigger>{science.title}</DrawerTrigger>
 				<DrawerContent>
 					<DrawerHeader>
-						<DrawerTitle>asdasdTestTest</DrawerTitle>
-						<DrawerDescription>This action cannot be undone.</DrawerDescription>
+						<DrawerTitle>
+							<div className='mt-2 border-l-2 border-l-gray-800 p-4'>
+								{science.books.map(book => (
+									<BookList key={book._id} {...book} />
+								))}
+							</div>
+						</DrawerTitle>
 					</DrawerHeader>
 					<DrawerFooter>
 						<DrawerClose></DrawerClose>

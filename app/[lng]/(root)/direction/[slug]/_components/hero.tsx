@@ -13,9 +13,6 @@ function Hero(direction: IDirection) {
 
 	return (
 		<>
-			<h1 className='font-space-grotesk text-4xl font-bold'>
-				{direction.title}
-			</h1>
 			<Dialog open={open} onOpenChange={setOpen}>
 				<DialogContent className='custom-scrollbar max-h-full max-w-full overflow-y-auto md:max-w-4xl'>
 					<h1 className='font-space-grotesk text-2xl font-bold'>
