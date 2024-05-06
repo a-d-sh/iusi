@@ -41,20 +41,18 @@ function Overview(direction: IDirection) {
 				</h2>
 			</div>
 
-			<div className='mt-8 rounded-md bg-gradient-to-b from-background to-secondary p-4 lg:p-6'>
-				<Separator className='my-3' />
-				{isLoading ? (
-					<div className='mt-4 flex flex-col gap-1'>
-						<p>Yuklanmoqda...</p>
-					</div>
-				) : (
-					<div>
-						{sciences.map(science => (
-							<ScienceList key={science._id} {...science} />
-						))}
-					</div>
-				)}
-			</div>
+			<Separator className='my-3' />
+			{isLoading ? (
+				<div className='mt-4 flex flex-col gap-1'>
+					<p>Yuklanmoqda...</p>
+				</div>
+			) : (
+				<div>
+					{sciences.map(science => (
+						<ScienceList key={science._id} {...science} />
+					))}
+				</div>
+			)}
 		</>
 	)
 }
