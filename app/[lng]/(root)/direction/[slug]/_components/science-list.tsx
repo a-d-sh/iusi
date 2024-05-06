@@ -19,27 +19,25 @@ function ScienceList(science: IScience) {
 	const t = useTranslate()
 
 	return (
-		<>
+		<div className='mt-2 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
 			<Drawer>
-				<div className='mt-2 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
-					<DrawerTrigger>
-						<Card className='group w-full'>
-							<CardContent className='relative h-56 w-full'>
-								<CustomImage src='../logo.png' alt={science.title} />
-							</CardContent>
-							<div className='my-4 flex flex-col space-y-2 px-2'>
-								<Separator />
-								<h2 className='line-clamp-2 font-space-grotesk text-2xl font-bold'>
-									{science.title}
-								</h2>
-								<Separator />
-								<p className='line-clamp-1 font-space-grotesk text-2xl font-bold'>
-									{science.books.length} {t('books')}
-								</p>
-							</div>
-						</Card>
-					</DrawerTrigger>
-				</div>
+				<DrawerTrigger>
+					<Card className='group w-full'>
+						<CardContent className='relative h-56 w-full'>
+							<CustomImage src='/logo.png' alt={science.title} />
+						</CardContent>
+						<div className='my-4 flex flex-col space-y-2 px-2'>
+							<Separator />
+							<h2 className='line-clamp-2 font-space-grotesk text-2xl font-bold'>
+								{science.title}
+							</h2>
+							<Separator />
+							<p className='line-clamp-1 font-space-grotesk text-2xl font-bold'>
+								{science.books.length} {t('books')}
+							</p>
+						</div>
+					</Card>
+				</DrawerTrigger>
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>
@@ -55,7 +53,7 @@ function ScienceList(science: IScience) {
 					</DrawerFooter>
 				</DrawerContent>
 			</Drawer>
-		</>
+		</div>
 	)
 }
 
