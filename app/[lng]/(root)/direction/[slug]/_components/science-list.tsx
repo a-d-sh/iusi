@@ -1,9 +1,11 @@
 import { IScience } from '@/app.types'
+import CustomImage from '@/components/shared/custom-image'
 import {
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from '@/components/ui/accordion'
+import { Card, CardContent } from '@/components/ui/card'
 import {
 	Drawer,
 	DrawerClose,
@@ -13,12 +15,10 @@ import {
 	DrawerTitle,
 	DrawerTrigger,
 } from '@/components/ui/drawer'
+import { Separator } from '@/components/ui/separator'
 
 import useTranslate from '@/hooks/use-translate'
 import { ChevronsUpDown } from 'lucide-react'
-import CustomImage from '../shared/custom-image'
-import { Card, CardContent } from '../ui/card'
-import { Separator } from '../ui/separator'
 import BookList from './book-list'
 
 function ScienceList(science: IScience) {
