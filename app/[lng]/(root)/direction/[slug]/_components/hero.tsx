@@ -14,7 +14,6 @@ function Hero(direction: IDirection) {
 	const [loading] = useState(false)
 	const [open, setOpen] = useState(false)
 	const [books] = useState<IBook[]>([])
-	const [setBook] = useState<IBook | null>(null)
 
 	const t = useTranslate()
 
@@ -71,7 +70,6 @@ function Hero(direction: IDirection) {
 							<div
 								key={item._id}
 								className='flex cursor-pointer items-center justify-between gap-2 border-t p-4 transition-colors hover:bg-secondary'
-								onClick={() => setBook(item)}
 							>
 								<div className='flex items-center gap-2'>
 									<p className='font-space-grotesk font-bold'>{item.title}</p>
