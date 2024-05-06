@@ -2,8 +2,8 @@ import { z } from 'zod'
 
 export const contactSchema = z.object({
 	message: z.string().min(10),
-	tell: z.string().tell(),
-	fish: z.string().min(3),
+	tell: z.number().min(9).max(12).int(),
+	name: z.string().min(3),
 })
 
 export const courseSchema = z.object({
