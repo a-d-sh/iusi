@@ -48,9 +48,11 @@ function Overview(direction: IDirection) {
 				</div>
 			) : (
 				<div className='container mx-auto mt-12 max-w-6xl'>
-					{sciences.map(science => (
-						<ScienceList key={science._id} {...science} />
-					))}
+					<div className='mt-2 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
+						{sciences.map(science => (
+							<ScienceList key={science._id} {...science} />
+						))}
+					</div>
 				</div>
 			)}
 		</>
