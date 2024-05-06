@@ -1,10 +1,5 @@
 import { IScience } from '@/app.types'
 import CustomImage from '@/components/shared/custom-image'
-import {
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from '@/components/ui/accordion'
 import { Card, CardContent } from '@/components/ui/card'
 import {
 	Drawer,
@@ -18,7 +13,6 @@ import {
 import { Separator } from '@/components/ui/separator'
 
 import useTranslate from '@/hooks/use-translate'
-import { ChevronsUpDown } from 'lucide-react'
 import BookList from './book-list'
 
 function ScienceList(science: IScience) {
@@ -26,61 +20,41 @@ function ScienceList(science: IScience) {
 
 	return (
 		<>
-			<AccordionItem value={science.title} className='mt-1 border-none'>
-				<AccordionTrigger className='flex w-full items-center justify-between bg-primary p-4 hover:no-underline'>
-					<div className='flex items-center gap-2'>
-						<ChevronsUpDown strokeWidth={1.75} className='size-4' />
-						<div className='text-left font-space-grotesk text-[14px] font-semibold'>
-							{science.title}
-						</div>
-					</div>
-					<div className='hidden items-center text-sm lg:flex'>
-						<div>
-							{science.books.length} {t('books')}
-						</div>
-					</div>
-				</AccordionTrigger>
-				<AccordionContent>
-					<div className='mt-2 border-l-2 border-l-gray-800 p-4'>
-						{science.books.map(book => (
-							<BookList key={book._id} {...book} />
-						))}
-					</div>
-				</AccordionContent>
-			</AccordionItem>
-
-			<Drawer>
-				<DrawerTrigger>
-					<Card className='group w-full'>
-						<CardContent className='relative h-56 w-full'>
-							<CustomImage
-								src='../../../../../../public/logo.png'
-								alt={science.title}
-							/>
-						</CardContent>
-						<div className='my-4 flex flex-col space-y-2 px-2'>
-							<Separator />
-							<h2 className='line-clamp-1 font-space-grotesk text-2xl font-bold'>
-								{science.title}
-							</h2>
-						</div>
-					</Card>
-				</DrawerTrigger>
-				<DrawerContent>
-					<DrawerHeader>
-						<DrawerTitle>
-							<div className='mt-2 border-l-2 border-l-gray-800 p-4'>
-								{science.books.map(book => (
-									<BookList key={book._id} {...book} />
-								))}
+			<div className='mt-2 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
+				<Drawer>
+					<DrawerTrigger>
+						<Card className='group w-full'>
+							<CardContent className='relative h-56 w-full'>
+								<CustomImage src='../public/logo.png' alt={science.title} />
+							</CardContent>
+							<div className='my-4 flex flex-col space-y-2 px-2'>
+								<Separator />
+								<h2 className='line-clamp-1 font-space-grotesk text-2xl font-bold'>
+									{science.title}
+								</h2>
+								<Separator />
+								<h4 className='line-clamp-1 font-space-grotesk text-2xl font-bold'>
+									{science.books.length} {t('books')}
+								</h4>
 							</div>
-						</DrawerTitle>
-					</DrawerHeader>
-					<DrawerFooter>
-						<DrawerClose></DrawerClose>
-					</DrawerFooter>
-				</DrawerContent>
-			</Drawer>
+						</Card>
+					</DrawerTrigger>
+					<DrawerContent>
+						<DrawerHeader>
+							<DrawerTitle>
+								<div className='mt-2 border-l-2 border-l-gray-800 p-4'>
+									{science.books.map(book => (
+										<BookList key={book._id} {...book} />
+									))}
+								</div>
+							</DrawerTitle>
+						</DrawerHeader>
+						<DrawerFooter>
+							<DrawerClose></DrawerClose>
+						</DrawerFooter>
+					</DrawerContent>
+				</Drawer>
+			</div>
 		</>
 	)
 }
