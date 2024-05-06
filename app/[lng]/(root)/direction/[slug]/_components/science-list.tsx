@@ -20,9 +20,9 @@ function ScienceList(science: IScience) {
 
 	return (
 		<>
-			<div className='mt-2 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
-				<Drawer>
-					<DrawerTrigger>
+			<Drawer>
+				<DrawerTrigger>
+					<div className='mt-2 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
 						<Card className='group w-full'>
 							<CardContent className='relative h-56 w-full'>
 								<CustomImage src='/logo.png' alt={science.title} />
@@ -38,23 +38,23 @@ function ScienceList(science: IScience) {
 								</p>
 							</div>
 						</Card>
-					</DrawerTrigger>
-					<DrawerContent>
-						<DrawerHeader>
-							<DrawerTitle>
-								<div className='mt-2 border-l-2 border-l-gray-800 p-4'>
-									{science.books.map(book => (
-										<BookList key={book._id} {...book} />
-									))}
-								</div>
-							</DrawerTitle>
-						</DrawerHeader>
-						<DrawerFooter>
-							<DrawerClose></DrawerClose>
-						</DrawerFooter>
-					</DrawerContent>
-				</Drawer>
-			</div>
+					</div>
+				</DrawerTrigger>
+				<DrawerContent>
+					<DrawerHeader>
+						<DrawerTitle>
+							<div className='mt-2 border-l-2 border-l-gray-800 p-4'>
+								{science.books.map(book => (
+									<BookList key={book._id} {...book} />
+								))}
+							</div>
+						</DrawerTitle>
+					</DrawerHeader>
+					<DrawerFooter>
+						<DrawerClose></DrawerClose>
+					</DrawerFooter>
+				</DrawerContent>
+			</Drawer>
 		</>
 	)
 }
