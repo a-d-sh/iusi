@@ -403,14 +403,18 @@ function Navbar() {
 										ONLINE KUTUBXONA
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
-										<Link href='/' legacyBehavior passHref>
+										<Link href='/directions' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
 												Yo`nalish bo`yicha kitoblar
 											</NavigationMenuLink>
 										</Link>
-										<Link href='/' legacyBehavior passHref>
+										<Link
+											href='/direction/66389859f78efe45dd149c42'
+											legacyBehavior
+											passHref
+										>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
