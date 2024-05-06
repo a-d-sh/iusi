@@ -4,12 +4,8 @@ import { getFreeBooks } from '@/actions/book.action'
 import { IBook, IDirection } from '@/app.types'
 import CustomImage from '@/components/shared/custom-image'
 import FillLoading from '@/components/shared/fill-loading'
-import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 import useTranslate from '@/hooks/use-translate'
-import Vimeo from '@u-wave/react-vimeo'
-import { format } from 'date-fns'
-import { Clock3, PauseCircle, Play, PlayCircle } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 import { PiStudentBold } from 'react-icons/pi'
@@ -77,14 +73,6 @@ function Hero(direction: IDirection) {
 						{direction.purchasedStudents} {t('students')}
 					</p>
 				</div>
-
-				<div className='flex items-center gap-2'>
-					<Clock3 className='size-6' />
-					<p className='font-space-grotesk font-bold'>
-						{t('lastUpdated')}{' '}
-						{format(new Date(direction.updatedAt), 'MM/yyyy')}
-					</p>
-				</div>
 			</div>
 
 			<div className='relative h-96 w-full'>
@@ -94,21 +82,10 @@ function Hero(direction: IDirection) {
 					className='mt-4 rounded-md'
 				/>
 				{loading && <FillLoading />}
-				<Button
-					size={'icon'}
-					className='absolute left-1/2 top-1/2 size-14 -translate-x-1/2 -translate-y-1/2'
-					rounded={'full'}
-					variant={'secondary'}
-					onClick={onHandler}
-					disabled={loading}
-				>
-					<Play className='size-10' />
-				</Button>
 			</div>
 
 			<Dialog open={open} onOpenChange={setOpen}>
 				<DialogContent className='custom-scrollbar max-h-full max-w-full overflow-y-auto md:max-w-4xl'>
-					<Vimeo video={book?.url!} responsive />
 					<h1 className='font-space-grotesk text-2xl font-bold'>
 						{t('freeBooks')}
 					</h1>
@@ -120,11 +97,6 @@ function Hero(direction: IDirection) {
 								onClick={() => setBook(item)}
 							>
 								<div className='flex items-center gap-2'>
-									{book?._id === item._id ? (
-										<PauseCircle className='text-blue-500' />
-									) : (
-										<PlayCircle />
-									)}
 									<p className='font-space-grotesk font-bold'>{item.title}</p>
 								</div>
 							</div>
