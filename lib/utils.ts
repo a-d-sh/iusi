@@ -62,13 +62,14 @@ interface UrlQueryParams {
 	params: string
 	key: string
 	value: string | null
-	toCourses?: boolean
+	toDirections?: boolean
 }
+
 export const formUrlQuery = ({
 	key,
 	params,
 	value,
-	toCourses = false,
+	toDirections = false,
 }: UrlQueryParams) => {
 	const currentUrl = qs.parse(params)
 
@@ -76,8 +77,8 @@ export const formUrlQuery = ({
 
 	return qs.stringifyUrl(
 		{
-			url: toCourses
-				? `/${window.location.pathname.split('/')[1]}/courses`
+			url: toDirections
+				? `/${window.location.pathname.split('/')[1]}/directions`
 				: window.location.pathname,
 			query: currentUrl,
 		},

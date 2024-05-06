@@ -1,9 +1,9 @@
 import { Button } from '@/components/ui/button'
 import { formUrlQuery, removeKeysFromQuery } from '@/lib/utils'
+import { debounce } from 'lodash'
 import { Search } from 'lucide-react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { ChangeEvent } from 'react'
-import { debounce } from 'lodash'
 
 function GlobalSearch() {
 	const router = useRouter()
@@ -12,14 +12,14 @@ function GlobalSearch() {
 
 	const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
 		const text = e.target.value.toLowerCase()
-		const isCoursePage = pathname.split('/').includes('courses')
+		const isDirectionPage = pathname.split('/').includes('directions')
 
 		if (text && text.length > 2) {
 			const newUrl = formUrlQuery({
 				params: searchParams.toString(),
 				key: 'q',
 				value: text,
-				toCourses: !isCoursePage,
+				toDirections: !isDirectionPage,
 			})
 			router.push(newUrl)
 		} else {

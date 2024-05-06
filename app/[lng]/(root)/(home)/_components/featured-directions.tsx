@@ -1,7 +1,7 @@
 'use client'
 
-import { ICourse } from '@/app.types'
-import CourseCard from '@/components/cards/course.card'
+import { IDirection } from '@/app.types'
+import DirectionCard from '@/components/cards/direction.card'
 import { Button } from '@/components/ui/button'
 import {
 	Carousel,
@@ -10,15 +10,15 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from '@/components/ui/carousel'
-import { filterCourses } from '@/constants'
+import { filterDirections } from '@/constants'
 import useTranslate from '@/hooks/use-translate'
 import { cn, formUrlQuery } from '@/lib/utils'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 interface Props {
-	courses: ICourse[]
+	directions: IDirection[]
 }
-function FeaturedCourses({ courses }: Props) {
+function FeaturedDirections({ directions }: Props) {
 	const t = useTranslate()
 	const searchParams = useSearchParams()
 	const router = useRouter()
@@ -28,7 +28,7 @@ function FeaturedCourses({ courses }: Props) {
 			value,
 			key: 'filter',
 			params: searchParams.toString(),
-			toCourses: true,
+			toDirections: true,
 		})
 
 		router.push(newUrl)
@@ -39,15 +39,15 @@ function FeaturedCourses({ courses }: Props) {
 			<div className='flex items-center justify-between max-md:flex-col max-md:items-start'>
 				<div className='flex flex-col space-y-1'>
 					<h1 className='font-space-grotesk text-3xl font-bold'>
-						{t('exploreCourses')}
+						{t('exploreDirections')}
 					</h1>
 					<p className='text-sm text-muted-foreground'>
-						{t('exploreCoursesDescription')}
+						{t('exploreDirectionsDescription')}
 					</p>
 				</div>
 
 				<div className='flex items-center gap-1 self-end max-md:mt-4 max-md:w-full max-md:rounded-full max-md:bg-primary max-md:p-2'>
-					{filterCourses.map(item => (
+					{filterDirections.map(item => (
 						<Button
 							key={item.name}
 							rounded={'full'}
@@ -61,8 +61,8 @@ function FeaturedCourses({ courses }: Props) {
 				</div>
 			</div>
 			<div className='mt-4 flex flex-col space-y-4 md:hidden'>
-				{courses.map(course => (
-					<CourseCard key={course.title} {...course} />
+				{directions.map(direction => (
+					<DirectionCard key={direction.title} {...direction} />
 				))}
 			</div>
 			<Carousel
@@ -70,12 +70,12 @@ function FeaturedCourses({ courses }: Props) {
 				className='mt-6 hidden w-full md:flex'
 			>
 				<CarouselContent className='w-full'>
-					{courses.map(course => (
+					{directions.map(direction => (
 						<CarouselItem
-							key={course.title}
+							key={direction.title}
 							className='md:basis-1/2 lg:basis-1/3'
 						>
-							<CourseCard {...course} />
+							<DirectionCard {...direction} />
 						</CarouselItem>
 					))}
 				</CarouselContent>
@@ -86,4 +86,4 @@ function FeaturedCourses({ courses }: Props) {
 	)
 }
 
-export default FeaturedCourses
+export default FeaturedDirections

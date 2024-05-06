@@ -63,6 +63,11 @@ export const filterCourses = [
 	{ label: 'cateogry4', name: 'highest-price' },
 ]
 
+export const filterDirections = [
+	{ label: 'cateogry1', name: 'all' },
+	{ label: 'cateogry2', name: 'newest' },
+]
+
 export const filterLevels = [
 	{ label: 'level1', name: 'all' },
 	{ label: 'level2', name: 'beginner' },
