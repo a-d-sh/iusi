@@ -5,7 +5,7 @@ import {
 	AccordionTrigger,
 } from '@/components/ui/accordion'
 import useTranslate from '@/hooks/use-translate'
-import { ChevronsUpDown, Dot } from 'lucide-react'
+import { ChevronsUpDown } from 'lucide-react'
 import BookList from './book-list'
 
 function ScienceList(science: IScience) {
@@ -24,7 +24,6 @@ function ScienceList(science: IScience) {
 					<div>
 						{science.books.length} {t('books')}
 					</div>
-					<Dot />
 				</div>
 			</AccordionTrigger>
 			<AccordionContent>

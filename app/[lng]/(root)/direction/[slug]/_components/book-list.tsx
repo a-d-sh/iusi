@@ -1,4 +1,5 @@
 import { IBook } from '@/app.types'
+import Link from 'next/link'
 
 function BookList(book: IBook) {
 	return (
@@ -7,9 +8,11 @@ function BookList(book: IBook) {
 			key={book._id}
 			role='button'
 		>
-			<div className='flex items-center gap-2'>
-				<p>{book.title}</p>
-			</div>
+			<Link href={book.url}>
+				<div className='flex items-center gap-2'>
+					<p>{book.title}</p>
+				</div>
+			</Link>
 		</div>
 	)
 }
