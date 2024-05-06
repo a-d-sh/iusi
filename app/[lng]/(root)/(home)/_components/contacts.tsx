@@ -27,11 +27,11 @@ function Contacts() {
 
 						<div className='mt-12 flex items-center gap-3'>
 							<Mail className='size-4' />
-							<p className='text-sm'>t.me/adsh97</p>
+							<p className='text-sm'>t.me/innovatsiya_uni</p>
 						</div>
 						<div className='mt-2 flex items-center gap-3'>
 							<Phone className='size-4' />
-							<p className='text-sm'>+99 890 005 97 99</p>
+							<p className='text-sm'>+99 8(93) 163 99 22</p>
 						</div>
 					</div>
 

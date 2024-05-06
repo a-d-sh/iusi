@@ -20,9 +20,9 @@ function ContactForm() {
 	const form = useForm<z.infer<typeof contactSchema>>({
 		resolver: zodResolver(contactSchema),
 		defaultValues: {
-			email: '',
+			fish: '',
+			tell: '',
 			message: '',
-			name: '',
 		},
 	})
 
@@ -41,8 +41,8 @@ function ContactForm() {
 				},
 				body: JSON.stringify({
 					chat_id: telegramChatId,
-					text: `Name: ${values.name}:
-Email: ${values.email}:
+					text: `F.I.Sh: ${values.fish}:
+Tell: ${values.tell}:
 Message: ${values.message}`,
 				}),
 			}
@@ -62,6 +62,38 @@ Message: ${values.message}`,
 			<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-3'>
 				<FormField
 					control={form.control}
+					name='fish'
+					render={({ field }) => (
+						<FormItem>
+							<FormControl>
+								<Input
+									placeholder={t('Familya Ism Sharif')}
+									disabled={isLoading}
+									{...field}
+								/>
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name='tell'
+					render={({ field }) => (
+						<FormItem>
+							<FormControl>
+								<Input
+									placeholder={t('Telefon nomeringizni qoldiring')}
+									disabled={isLoading}
+									{...field}
+								/>
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
 					name='message'
 					render={({ field }) => (
 						<FormItem>
@@ -69,39 +101,7 @@ Message: ${values.message}`,
 								<Textarea
 									disabled={isLoading}
 									className='h-32 resize-none'
-									placeholder={t('contactFormTextarea')}
-									{...field}
-								/>
-							</FormControl>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				<FormField
-					control={form.control}
-					name='email'
-					render={({ field }) => (
-						<FormItem>
-							<FormControl>
-								<Input
-									placeholder={t('contactFormEmail')}
-									disabled={isLoading}
-									{...field}
-								/>
-							</FormControl>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				<FormField
-					control={form.control}
-					name='name'
-					render={({ field }) => (
-						<FormItem>
-							<FormControl>
-								<Input
-									placeholder={t('contactFormName')}
-									disabled={isLoading}
+									placeholder={t('Murojaat mazmunini kiriting')}
 									{...field}
 								/>
 							</FormControl>
