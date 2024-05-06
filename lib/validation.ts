@@ -7,7 +7,7 @@ import { z } from 'zod'
 export const contactSchema = z.object({
 	message: z.string().min(10),
 	tell: z.string().min(9).max(12),
-	name: z.string().min(3),
+	fish: z.string().min(3),
 })
 
 export const courseSchema = z.object({
