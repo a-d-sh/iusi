@@ -25,17 +25,17 @@ function ScienceList(science: IScience) {
 					<DrawerTrigger>
 						<Card className='group w-full'>
 							<CardContent className='relative h-56 w-full'>
-								<CustomImage src='../public/logo.png' alt={science.title} />
+								<CustomImage src='/logo.png' alt={science.title} />
 							</CardContent>
 							<div className='my-4 flex flex-col space-y-2 px-2'>
 								<Separator />
-								<h2 className='line-clamp-1 font-space-grotesk text-2xl font-bold'>
+								<h2 className='line-clamp-2 font-space-grotesk text-2xl font-bold'>
 									{science.title}
 								</h2>
 								<Separator />
-								<h4 className='line-clamp-1 font-space-grotesk text-2xl font-bold'>
+								<p className='line-clamp-1 font-space-grotesk text-2xl font-bold'>
 									{science.books.length} {t('books')}
-								</h4>
+								</p>
 							</div>
 						</Card>
 					</DrawerTrigger>
