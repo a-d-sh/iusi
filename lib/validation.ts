@@ -1,8 +1,12 @@
 import { z } from 'zod'
 
+// const phoneRegex = new RegExp(
+// 	/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
+// )
+
 export const contactSchema = z.object({
 	message: z.string().min(10),
-	tell: z.number().min(9).max(12).int(),
+	tell: z.string().min(9).max(12),
 	name: z.string().min(3),
 })
 
