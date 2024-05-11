@@ -1,11 +1,8 @@
 'use client'
 
 // import DirectionCard from '@/components/cards/direction.card'
-// import { directions } from '@/constants/index'
-import useTranslate from '@/hooks/use-translate'
 
 function Directions() {
-	const t = useTranslate()
 
 	return (
 		<div className='container mx-auto max-w-6xl py-12'>

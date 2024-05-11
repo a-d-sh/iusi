@@ -35,7 +35,7 @@ function Rektor() {
 							Azizov Ulug`bek Botirovich
 						</h2>
 						<p className='line-clamp-2 text-muted-foreground'>
-							Ijtimoiy fanlar bo'yicha falsafa doktori(PhD in Social Sciences, Germany)
+							Ijtimoiy fanlar bo’yicha falsafa doktori(PhD in Social Sciences, Germany)
 						</p>
 					</div>
 				</div>
