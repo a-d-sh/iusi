@@ -1,13 +1,18 @@
 'use client'
 
+import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Send } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { toast } from 'sonner'
 
 function Rektor() {
-	const pathname = usePathname()
+	const onCopy = () => {
+		const link = "https://t.me/azizovulugbek"
+		navigator.clipboard
+			.writeText(link)
+			.then(() => toast.success('Copied to clipboard'))
+	}
 
 	return (
 		<>
@@ -24,11 +29,14 @@ function Rektor() {
 						className='rounded-md max-md:self-start'
 					/>
 					<div className='flex flex-1 flex-col space-y-4'>
-						<h2 className='font-space-grotesk text-3xl font-bold'>
+						<h2 className='font-space-grotesk text-5xl font-bold'>
 							Azizov Ulug`bek Botirovich
 						</h2>
 						<p className='line-clamp-2 text-muted-foreground'>
-							Ijtimoiy fanlar bo’yicha falsafa doktori(PhD in Social Sciences, Germany)
+							Ijtimoiy fanlar bo’yicha falsafa doktori
+						</p>
+						<p className='line-clamp-2 text-muted-foreground'>
+							(PhD in Social Sciences, Germany)
 						</p>
 					</div>
 				</div>
@@ -38,16 +46,15 @@ function Rektor() {
 						<div className='sticky top-36'>
 							<p className='text-lg uppercase text-muted-foreground'>Telegram</p>
 							<div className='mt-4 flex flex-col max-md:flex-row max-md:space-x-3 md:space-y-3'>
-								<Link href="https://t.me/azizovulugbek" size={'icon'} variant={'outline'}>
+								<Button size={'icon'} variant={'outline'} onClick={onCopy}>
 									<Send />
-								</Link>
+								</Button>
 							</div>
 						</div>
 					</div>
 					<div className='prose max-w-none flex-1 dark:prose-invert'>
 					<div>
-						<h2 className=''>Xalqaro Ijtimoiy Innovatsiyalar Universitetida barchangizni qutlashdan mamnunman</h2>
-						<p>Universitetimiz ijtimoiy fanlarni o’qitishga ixtisoslashgan bo’lib, unda 16 ta bakalavriat ta’lim yo’nalishlari va 2 ta magistratura mutaxassisliklari bo’yicha o’quv jarayonlarini tashkil etish rejalashtirilgan.</p>
+						<p>Xalqaro Ijtimoiy Innovatsiyalar Universitetida barchangizni qutlashdan mamnunman. Universitetimiz ijtimoiy fanlarni o’qitishga ixtisoslashgan bo’lib, unda 16 ta bakalavriat ta’lim yo’nalishlari va 2 ta magistratura mutaxassisliklari bo’yicha o’quv jarayonlarini tashkil etish rejalashtirilgan.</p>
 						
 						<h2>Bakalavriat:</h2>
 						<ul>
