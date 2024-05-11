@@ -1,20 +1,13 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Send } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { toast } from 'sonner'
 
 function Rektor() {
 	const pathname = usePathname()
-	const onCopy = () => {
-		const link = process.env.NEXT_PUBLIC_BASE_URL + pathname
-		navigator.clipboard
-			.writeText(link)
-			.then(() => toast.success('Copied to clipboard'))
-	}
 
 	return (
 		<>
@@ -45,9 +38,9 @@ function Rektor() {
 						<div className='sticky top-36'>
 							<p className='text-lg uppercase text-muted-foreground'>Telegram</p>
 							<div className='mt-4 flex flex-col max-md:flex-row max-md:space-x-3 md:space-y-3'>
-								<Button size={'icon'} variant={'outline'} onClick={onCopy}>
+								<Link href="https://t.me/azizovulugbek" size={'icon'} variant={'outline'}>
 									<Send />
-								</Button>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -88,8 +81,6 @@ function Rektor() {
 					</div>
 				</div>
 			</div>
-			
-
 			<Separator className='my-3' />
 		</>
 	)
