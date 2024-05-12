@@ -37,7 +37,6 @@ export const lngs = [
 	{ route: 'en', label: 'English' },
 	{ route: 'uz', label: "O'zbekcha" },
 	{ route: 'ru', label: 'Русский' },
-	{ route: 'tr', label: 'Türkçe' },
 ]
 
 export const companies = [

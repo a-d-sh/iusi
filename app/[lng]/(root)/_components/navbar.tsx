@@ -43,7 +43,7 @@ function Navbar() {
 									href={`/${nav.route}`}
 									key={nav.route}
 									className={cn(
-										'font-medium transition-all hover:text-blue-500 hover:underline',
+										'font-medium text-xl transition-all hover:text-blue-500 hover:underline',
 										(nav.route === '' ? `${pathname}/` : pathname) ===
 											`/${lng}/${nav.route}` && 'text-blue-500'
 									)}
@@ -84,80 +84,134 @@ function Navbar() {
 				<div className='mx-auto h-full max-w-7xl items-center justify-between'>
 					<div className='flex items-center'>
 						<NavigationMenu className='hidden md:flex'>
-							<NavigationMenuList className=''>
-								<NavigationMenuItem className=''>
-									<NavigationMenuTrigger className='rounded-none bg-background/70 backdrop-blur-xl'>
-										UNIVERSITET
+							<NavigationMenuList>
+								<NavigationMenuItem>
+									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
+										{t('UNIVERSITET')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
-										<Link href='/aboutuniversity' legacyBehavior passHref>
+										{/* Har bir link o'z NavigationMenuItem ichida */}
+										<NavigationMenuItem className='list-none'>
+											<Link href='/aboutuniversity' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('Universitet haqida')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('Rektor murojaati')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('Interraktiv videolar')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('Me`yoriy hujjatlar')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('Rahbariyat')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('Bo`limlar')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('Fakultetlar')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('Tashkiliy tuzilma')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('Rekvizitlar')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('Kafedralar')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+									</NavigationMenuContent>
+								</NavigationMenuItem>
+							</NavigationMenuList>
+						</NavigationMenu>
+
+						<NavigationMenu className='hidden md:flex'>
+							<NavigationMenuList>
+								<NavigationMenuItem>
+									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
+										{t('TA`LIM')}
+									</NavigationMenuTrigger>
+									<NavigationMenuContent>
+										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Universitet haqida
+												{t('Bakalavriat')}
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Rektor murojaati
+												{t('Magistratura')}
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Me`yoriy hujjatlar
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Tashkiliy tuzilma
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Rekvizitlar
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Universitet missiyasi
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Rahbariyat
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Bo`limlar
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Fakultetlar
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Markazlar
+												{t('Doktorantura')}
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuContent>
@@ -168,29 +222,22 @@ function Navbar() {
 						<NavigationMenu className='hidden md:flex'>
 							<NavigationMenuList>
 								<NavigationMenuItem>
-									<NavigationMenuTrigger className='rounded-none bg-background/70 backdrop-blur-xl'>
-										TA`LIM
+									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
+										{t('ILM-FAN')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Bakalavriat
+												{t('Ilmiy elektron jurnal')}
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Magistratura
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Doktorantura
+												{t('Ilmiy tadbirlar')}
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuContent>
@@ -201,36 +248,22 @@ function Navbar() {
 						<NavigationMenu className='hidden md:flex'>
 							<NavigationMenuList>
 								<NavigationMenuItem>
-									<NavigationMenuTrigger className='rounded-none bg-background/70 backdrop-blur-xl'>
-										ILM-FAN
+									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
+										{t('HAMKORLIK')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Ilmiy elektron jurnal
+												{t('Xalqaro hamkorlik aloqalari')}
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Ilmiy tadbirlar
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Universitet solnomasi
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Ilmiy konferensiyalar
+												{t('Xalqaro stipendiyalar va amaliyot')}
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuContent>
@@ -241,29 +274,15 @@ function Navbar() {
 						<NavigationMenu className='hidden md:flex'>
 							<NavigationMenuList>
 								<NavigationMenuItem>
-									<NavigationMenuTrigger className='rounded-none bg-background/70 backdrop-blur-xl'>
-										HAMKORLIK
+									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
+										{t('DISTANSION TA`LIM')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Xalqaro hamkorlik aloqalari
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Xalqaro stipendiyalar va amaliyot
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Xalqaro tillar va madaniyatlar markazi
+												{t('Distansion ta`lim haqida')}
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuContent>
@@ -274,22 +293,29 @@ function Navbar() {
 						<NavigationMenu className='hidden md:flex'>
 							<NavigationMenuList>
 								<NavigationMenuItem>
-									<NavigationMenuTrigger className='rounded-none bg-background/70 backdrop-blur-xl'>
-										DISTANSION TA`LIM
+									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
+										{t('TALABALAR HAYOTI')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Distansion ta`lim haqida
+												{t('Iqtidorli talabalar')}
 											</NavigationMenuLink>
 										</Link>
 										<Link href='/' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Distansion ta`lim qulayliklari
+												{t('Talabalar turar joyi')}
+											</NavigationMenuLink>
+										</Link>
+										<Link href='/' legacyBehavior passHref>
+											<NavigationMenuLink
+												className={navigationMenuTriggerStyle()}
+											>
+												{t('Ijtimoiy hayot')}
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuContent>
@@ -300,31 +326,48 @@ function Navbar() {
 						<NavigationMenu className='hidden md:flex'>
 							<NavigationMenuList>
 								<NavigationMenuItem>
-									<NavigationMenuTrigger className='rounded-none bg-background/70 backdrop-blur-xl'>
-										TALABALAR HAYOTI
+									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
+										{t('ABITURIYENTLARGA')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Iqtidorli talabalar
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Talabalar turar joyi
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Ijtimoiy hayot
-											</NavigationMenuLink>
-										</Link>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t(
+														'Ta`lim shakllari va yo`nalishlari, mutaxassisliklari'
+													)}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('2024-2025 o`quv yili uchun ro`yxatdan o`tish')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('Ko`p beriladigan savollarga javoblar')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
+										<NavigationMenuItem className='list-none'>
+											<Link href='/' legacyBehavior passHref>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+												>
+													{t('Qabul rejasi')}
+												</NavigationMenuLink>
+											</Link>
+										</NavigationMenuItem>
 									</NavigationMenuContent>
 								</NavigationMenuItem>
 							</NavigationMenuList>
@@ -333,62 +376,15 @@ function Navbar() {
 						<NavigationMenu className='hidden md:flex'>
 							<NavigationMenuList>
 								<NavigationMenuItem>
-									<NavigationMenuTrigger className='rounded-none bg-background/70 backdrop-blur-xl'>
-										ABITURIYENTLARGA
-									</NavigationMenuTrigger>
-									<NavigationMenuContent>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Me`yoriy-normativ hujjatlar
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Ta`lim shakllari va yo`nalishlari, mutaxassisliklari
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												2024-2025 o`quv yili uchun ro`yxatdan o`tish
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Ko`p beriladigan savollarga javoblar
-											</NavigationMenuLink>
-										</Link>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												Qabul rejasi
-											</NavigationMenuLink>
-										</Link>
-									</NavigationMenuContent>
-								</NavigationMenuItem>
-							</NavigationMenuList>
-						</NavigationMenu>
-
-						<NavigationMenu className='hidden md:flex'>
-							<NavigationMenuList>
-								<NavigationMenuItem>
-									<NavigationMenuTrigger className='rounded-none bg-background/70 backdrop-blur-xl'>
-										MATBUOT XIZMATI
+									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
+										{t('MATBUOT XIZMATI')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
 										<Link href='/news' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Yangiliklar
+												{t('Yangiliklar')}
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuContent>
@@ -399,15 +395,15 @@ function Navbar() {
 						<NavigationMenu className='hidden md:flex'>
 							<NavigationMenuList>
 								<NavigationMenuItem>
-									<NavigationMenuTrigger className='rounded-none bg-background/70 backdrop-blur-xl'>
-										ONLINE KUTUBXONA
+									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
+										{t('ONLINE KUTUBXONA')}
 									</NavigationMenuTrigger>
-									<NavigationMenuContent>
+									<NavigationMenuContent className='absolute'>
 										<Link href='/directions' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Yo`nalish bo`yicha kitoblar
+												{t('Yo`nalish bo`yicha kitoblar')}
 											</NavigationMenuLink>
 										</Link>
 										<Link
@@ -418,7 +414,7 @@ function Navbar() {
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												Umumblok fanlari bo`yicha kitoblar
+												{t('Umumblok fanlari bo`yicha kitoblar')}
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuContent>
