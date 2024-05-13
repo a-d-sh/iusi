@@ -69,9 +69,9 @@ const Facts = () => {
 					{data.map((item, index) => (
 						<Card
 							key={index}
-							title={item.title}
-							subtitle={item.subtitle}
-							description={item.description}
+							title={t(item.title)}
+							subtitle={t(item.subtitle)}
+							description={t(item.description)}
 						/>
 					))}
 				</div>
