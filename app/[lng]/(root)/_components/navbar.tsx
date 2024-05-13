@@ -275,25 +275,6 @@ function Navbar() {
 							<NavigationMenuList>
 								<NavigationMenuItem>
 									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
-										{t('DISTANSION TA`LIM')}
-									</NavigationMenuTrigger>
-									<NavigationMenuContent>
-										<Link href='/' legacyBehavior passHref>
-											<NavigationMenuLink
-												className={navigationMenuTriggerStyle()}
-											>
-												{t('Distansion ta`lim haqida')}
-											</NavigationMenuLink>
-										</Link>
-									</NavigationMenuContent>
-								</NavigationMenuItem>
-							</NavigationMenuList>
-						</NavigationMenu>
-
-						<NavigationMenu className='hidden md:flex'>
-							<NavigationMenuList>
-								<NavigationMenuItem>
-									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
 										{t('TALABALAR HAYOTI')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
@@ -415,6 +396,25 @@ function Navbar() {
 												className={navigationMenuTriggerStyle()}
 											>
 												{t('Umumblok fanlari bo`yicha kitoblar')}
+											</NavigationMenuLink>
+										</Link>
+									</NavigationMenuContent>
+								</NavigationMenuItem>
+							</NavigationMenuList>
+						</NavigationMenu>
+
+						<NavigationMenu className='hidden md:flex'>
+							<NavigationMenuList>
+								<NavigationMenuItem>
+									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
+										{t('DISTANSION TA`LIM')}
+									</NavigationMenuTrigger>
+									<NavigationMenuContent>
+										<Link href='/profile' legacyBehavior passHref>
+											<NavigationMenuLink
+												className={navigationMenuTriggerStyle()}
+											>
+												{t('DIGI IUSI')}
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuContent>
