@@ -10,21 +10,6 @@ import {
 	Settings2,
 	User,
 } from 'lucide-react'
-import {
-	DiCisco,
-	DiCreativecommonsBadge,
-	DiDjango,
-	DiDocker,
-	DiGhost,
-	DiGithubFull,
-	DiLess,
-	DiMailchimp,
-	DiMeteorfull,
-	DiNetmagazine,
-	DiNginx,
-	DiStylus,
-	DiYahoo,
-} from 'react-icons/di'
 
 export const navLinks = [
 	{ route: '', name: 'navLink1', icon: Home },
@@ -40,19 +25,18 @@ export const lngs = [
 ]
 
 export const companies = [
-	DiCisco,
-	DiCreativecommonsBadge,
-	DiGhost,
-	DiGithubFull,
-	DiMeteorfull,
-	DiLess,
-	DiMailchimp,
-	DiNetmagazine,
-	DiNginx,
-	DiStylus,
-	DiYahoo,
-	DiDjango,
-	DiDocker,
+	{ name: 'Teachers Collage', src: '/brands/columbia.png' },
+	{ name: 'Kobe City', src: '/brands/KobeCity.png' },
+	{ name: 'Michigan State', src: '/brands/michigan.png' },
+	{ name: 'Tsukuba', src: '/brands/tsukuba.png' },
+	{ name: 'Teachers Collage', src: '/brands/columbia.png' },
+	{ name: 'Kobe City', src: '/brands/KobeCity.png' },
+	{ name: 'Michigan State', src: '/brands/michigan.png' },
+	{ name: 'Tsukuba', src: '/brands/tsukuba.png' },
+	{ name: 'Teachers Collage', src: '/brands/columbia.png' },
+	{ name: 'Kobe City', src: '/brands/KobeCity.png' },
+	{ name: 'Michigan State', src: '/brands/michigan.png' },
+	{ name: 'Tsukuba', src: '/brands/tsukuba.png' },
 ]
 
 export const filterCourses = [

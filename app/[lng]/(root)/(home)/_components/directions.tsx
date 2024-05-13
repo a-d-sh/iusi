@@ -12,6 +12,7 @@ import {
 import { Separator } from '@/components/ui/separator'
 import useTranslate from '@/hooks/use-translate'
 import Link from '@/node_modules/next/link'
+import Autoplay from 'embla-carousel-autoplay'
 
 function Directions() {
 	const t = useTranslate()
@@ -34,7 +35,7 @@ function Directions() {
 		{ key: '15', title: 'Filologiya koreys tili' },
 		{ key: '16', title: 'Filologiya xitoy tili' },
 		{ key: '17', title: 'Raqamli iqtisodiyot (Magistratura)' },
-		{ key: '18', title: 'Lingvistika (Magistratura)' },
+		{ key: '18', title: 'Lingvistika/ingliz tili (Magistratura)' },
 	]
 
 	return (
@@ -47,7 +48,11 @@ function Directions() {
 				</div>
 			</div>
 
-			<Carousel opts={{ align: 'start' }} className='mt-6 w-full md:flex'>
+			<Carousel
+				className='mt-6 w-full md:flex'
+				opts={{ align: 'start', loop: true }}
+				plugins={[Autoplay({ delay: 3000 })]}
+			>
 				<CarouselContent className='w-full'>
 					{items.map(item => (
 						<CarouselItem
@@ -61,8 +66,8 @@ function Directions() {
 									</CardContent>
 									<div className='my-4 flex flex-col space-y-2 px-2'>
 										<Separator />
-										<h2 className='line-clamp-2 font-space-grotesk text-2xl font-bold'>
-											{item.title}
+										<h2 className='line-clamp-3 font-space-grotesk text-2xl font-bold'>
+											{t(item.title)}
 										</h2>
 									</div>
 								</Card>
