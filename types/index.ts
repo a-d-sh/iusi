@@ -25,6 +25,12 @@ export interface ICategory {
 	icon: string
 }
 
+export interface IFacts {
+	title: string
+	titled: string
+	description: string
+}
+
 export interface IDirection {
 	title: string
 	previewImage: string
