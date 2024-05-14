@@ -56,7 +56,7 @@ const Card: React.FC<CardProps> = ({ title, subtitle, description }) => (
 const Facts = () => {
 	const t = useTranslate()
 	return (
-		<div className='container mx-auto grid max-w-6xl'>
+		<div className='container mx-auto grid max-w-6xl py-12'>
 			<div className='flex items-center justify-between max-md:flex-col max-md:items-start'>
 				<div className='flex flex-col space-y-1'>
 					<h1 className='font-space-grotesk text-3xl font-bold'>

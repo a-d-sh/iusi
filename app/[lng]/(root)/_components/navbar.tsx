@@ -407,14 +407,14 @@ function Navbar() {
 							<NavigationMenuList>
 								<NavigationMenuItem>
 									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
-										{t('DIGI IUSI')}
+										{t('DiGi IUSI')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
 										<Link href='/profile' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
-												{t('DIGI IUSI')}
+												{t('DiGi IUSI')}
 											</NavigationMenuLink>
 										</Link>
 									</NavigationMenuContent>

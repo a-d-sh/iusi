@@ -54,7 +54,7 @@ function News() {
 
 	return (
 		<>
-			<div className='container mx-auto max-w-6xl'>
+			<div className='container mx-auto max-w-6xl  py-12'>
 				<div className='flex items-center justify-between max-md:flex-col max-md:items-start'>
 					<div className='flex flex-col space-y-1'>
 						<h1 className='font-space-grotesk text-3xl font-bold'>
@@ -63,7 +63,7 @@ function News() {
 					</div>
 				</div>
 				<Separator className='my-3' />
-				<div className='grid grid-cols-4 gap-x-4 gap-y-24 max-md:grid-cols-1'>
+				<div className='grid grid-cols-4 gap-x-4 gap-y-24 max-md:grid-cols-1 py-12'>
 					{data.map(item => (
 						<Link href={`/news/${item.key}`} key={item.key}>
 							<div className={'group grid grid-cols-1 gap-4'}>
