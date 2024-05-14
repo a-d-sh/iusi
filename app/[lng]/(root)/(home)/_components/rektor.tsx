@@ -23,7 +23,7 @@ function Rektor() {
 		<>
 			<div className='container mx-auto grid max-w-6xl py-24'>
 				<h1 className='text-center font-space-grotesk text-5xl font-bold'>
-					Universitet rektori
+					{t('Universitet rektori')}
 				</h1>
 				<div className='mt-6 flex items-center gap-6 max-md:flex-col'>
 					<Image
@@ -37,20 +37,20 @@ function Rektor() {
 						<h2 className='font-space-grotesk text-5xl font-bold'>
 							{t('Azizov Ulug`bek Botirovich')}
 						</h2>
-						<p className='line-clamp-2 text-muted-foreground'>
-							Ijtimoiy fanlar bo’yicha falsafa doktori
-						</p>
-						<p className='line-clamp-2 text-muted-foreground'>
-							(PhD in Social Sciences, Germany)
-						</p>
+						<h2 className='line-clamp-2 text-muted-foreground'>
+							{t('Ijtimoiy fanlar bo’yicha falsafa doktori')}
+						</h2>
+						<h2 className='line-clamp-2 text-muted-foreground'>
+							{t('(PhD in Social Sciences, Germany)')}
+						</h2>
 					</div>
 				</div>
-				<Separator className='my-3' />
+
 				<div className='relative mt-12 flex w-full max-md:flex-col-reverse md:gap-12'>
 					<div className='flex flex-col space-y-3'>
 						<div className='sticky top-36'>
 							<p className='text-lg uppercase text-muted-foreground'>
-								Telegram
+								{t('Telegram')}
 							</p>
 							<div className='mt-4 flex flex-col max-md:flex-row max-md:space-x-3 md:space-y-3'>
 								<Button size={'icon'} variant={'outline'} onClick={onCopy}>
@@ -61,99 +61,94 @@ function Rektor() {
 					</div>
 					<div className='prose max-w-none flex-1 dark:prose-invert'>
 						<div>
-							<p>
-								Xalqaro Ijtimoiy Innovatsiyalar Universitetida barchangizni
-								qutlashdan mamnunman. Universitetimiz ijtimoiy fanlarni
-								o’qitishga ixtisoslashgan bo’lib, unda 16 ta bakalavriat ta’lim
-								yo’nalishlari va 2 ta magistratura mutaxassisliklari bo’yicha
-								o’quv jarayonlarini tashkil etish rejalashtirilgan.
+							<p className='text-lg'>
+								{t(
+									'Xalqaro ijtimoiy innovatsiyalar universitetining saytida sizni ko’rib turganimizdan mamnunmiz!'
+								)}
 							</p>
-
-							<h2>Bakalavriat:</h2>
-							<ul>
+							<p className='text-lg'>
+								{t(
+									'Universitetimiz 2023 yil 5-iyunda Toshkent shahrida tashkil etilgan. Joriy yilning sentyabr oyidan universitetimiz eshiklari talabalar uchun ochiladi. Biz va bizning professor-o’qituvchilarimiz universitetimizda O’zbekiston rivoji uchun katta hissa qo’sha oladigan iste’dodli yoshlar o’qishiga ishonch bildiradi.'
+								)}
+							</p>
+							<p className='text-lg'>
+								{t(
+									'Universitetimiz ijtimoiy fanlarni o’qitishga ixtisoslashgan bo’lib, unda 16 ta bakalavriat ta’lim yo’nalishlari va 2 ta magistratura mutaxassisliklari bo’yicha o’quv jarayonlarini tashkil etish rejalashtirilgan. Bular:'
+								)}
+							</p>
+							<h2>{t('Bakalavriat:')}</h2>
+							<ul className='text-lg'>
 								<li>
-									Filologiya va tillarni o’qitish (ingliz, koreys, yapon,
-									xitoy);
+									{t(
+										'Filologiya va tillarni o’qitish (ingliz, koreys, yapon, xitoy)'
+									)}
 								</li>
-								<li>Boshlang’ich ta’lim</li>
-								<li>O’zbek tili va adabiyoti</li>
-								<li>Raqamli iqtisodiyot;</li>
-								<li>Iqtisodiyot;</li>
-								<li>Buxgalteriya va audit;</li>
-								<li>Bank ishi va audit;</li>
-								<li>Moliya va moliyaviy texnologiyalar;</li>
-								<li>Soliq va soliqqa tortish;</li>
-								<li>Huquqshunoshlik (biznes huquqi);</li>
-								<li>Axborot texnologiyalari (dasturiy injiniring);</li>
-								<li>Siyosatshunoslik;</li>
-								<li>Xalqaro jurnalistika.</li>
+								<li>{t('Boshlang’ich ta’lim')}</li>
+								<li>{t('O’zbek tili va adabiyoti')}</li>
+								<li>{t('Raqamli iqtisodiyot')}</li>
+								<li>{t('Iqtisodiyot')}</li>
+								<li>{t('Buxgalteriya va audit')}</li>
+								<li>{t('Bank ishi va audit')}</li>
+								<li>{t('Moliya va moliyaviy texnologiyalar')}</li>
+								<li>{t('Soliq va soliqqa tortish')}</li>
+								<li>{t('Huquqshunoshlik (biznes huquqi)')}</li>
+								<li>{t('Axborot texnologiyalari (dasturiy injiniring)')}</li>
+								<li>{t('Siyosatshunoslik')}</li>
+								<li>{t('Xalqaro jurnalistika')}</li>
 							</ul>
-
-							<h2>Magistratura:</h2>
+							<h2>{t('Magistratura:')}</h2>
 							<ul>
-								<li>Raqamli iqtisodiyot;</li>
-								<li>Lingvistika (ingliz tili).</li>
+								<li>{t('Raqamli iqtisodiyot')}</li>
+								<li>{t('Lingvistika (ingliz tili)')}</li>
 							</ul>
-
-							<p>
-								Universitetimizda o’quv jarayonlari “markazda talaba”
-								(student-centered education) tamoyili asosida tashkil etilishi
-								ko’zda tutilgan bo’lib, bunda talabaning mustaqil ta’lim
-								olishiga koproq soatlar ajratiladi, o’tiladigan mavzular ko’proq
-								zamonaviy pedagogik texnologiyalarni (cooperative,
-								inquiry-based, and problem-based learning) qo’llagan holda
-								o’zlashtiriladi.
+							<p className='text-lg'>
+								{t(
+									'Shuni e’tirof etish joizki, Xalqaro ijtimoiy innovatsiyalar universiteti yuqori malakali professor-o’qituvchilar jamoasidan tarkib topgan. Ushbu professor-o’qituvchilar orasida bir qator fan doktorlari bo’lib, ular asosan O’zbekiston, AQSh, Hindiston va Rossiya mamlakatlaridan jalb etilgan.'
+								)}
 							</p>
-							<p>
-								Shularni inobatga holda universitetmizning ta’lim falsafasi
-								“talabani o’qitish emas”, balki “mustaqil ta’lim olish”
-								tamoyiliga asoslanadi. Ushbu ta’lim falsafasini amalga oshirish
-								uchun universitetimizda AQShning Michigan davlat universiteti
-								mutaxassislari hamkorligida yaratilgan DIGI IUSI elektron
-								mustaqil talim olish platformasidan keng foydalaniladi. Bunda
-								barcha ta’lim jarayonlari elektronlashtirilgan bo’lib,
-								farzandingiz ushbu yaratilgan imkoniyatlardan faydalangan holda
-								bilim oladi.
+							<p className='text-lg'>
+								{t(
+									'Universitetimizda o’quv jarayonlari “markazda talaba” (student-centered education) tamoyili asosida tashkil etilishi ko’zda tutilgan bo’lib, bunda talabaning mustaqil ta’lim olishiga ko’proq soatlar ajratiladi, o’tiladigan mavzular zamonaviy pedagogik texnologiyalarni (cooperative, inquiry-based, and problem-based learning) qo’llagan holda o’zlashtiriladi. Bularning barchasi talabalar sifatli bilim olishlari, o’zlarining nazariy va amaliy ko’nikmalarini rivojlantirish hamda kreativ va tanqidiy fikr yuritishlari uchun qulay sharoitlar yaratadi.'
+								)}
 							</p>
-							<p>
-								Ijtimoiy mumamolarga ilmiy yechim topa oladigan kadr bo’lib
-								yetishishda biz farzandingizga yo’l ko’rsatamiz.
+							<p className='text-lg'>
+								{t(
+									'Shularni inobatga olgan holda universitetimizning ta’lim falsafasi “talaba mustaqil ta’lim olishi uchun harakat qilamiz” tamoyiliga asoslanadi. Ushbu ta’lim falsafasini amalga oshirish uchun universitetimizda AQShning Michigan davlat universiteti mutaxassislari hamkorligida yaratilgan DiGi IUSI elektron mustaqil ta’lim olish platformasidan keng foydalaniladi. Bunda barcha ta’lim jarayonlari elektronlashtirilgan bo’lib, farzandingiz ushbu yaratilgan imkoniyatlardan foydalangan holda bilim oladi.'
+								)}
 							</p>
-							<p>
-								Barchangizni Xalqaro Ijtimoiy Innovatsiyalar Universitetida
-								kutamiz.
+							<p className='text-lg'>
+								{t(
+									'Ijtimoiy muammolarga nazariy va amaliy yechim topa oladigan kadr bo’lib yetishishda zamin yaratamiz.'
+								)}
+							</p>
+							<p className='text-lg'>
+								{t(
+									'Barchnagizni Xalqaro ijtimoiy innovatsiyalar universitetida kutamiz.'
+								)}
+							</p>
+							<p className='text-lg'>
+								{t(
+									'Universitetimiz, talabalarni qabuli va ularning o’qishlari to’g’risidagi ma’lumotni siz qo’shimcha tarzda bizning Facebook, Instagram, Telegram va Linkedin ijtimoiy tarmoqlaridagi rasmiy kanallarimiz orqali topa olish imkoniyatiga egasiz.'
+								)}
+							</p>
+							<p className='text-lg'>
+								{t(
+									'Biz bilan saytimizdagi elektron arizani to’ldirish yoki quyidagi telefon raqamlari orqali bog’lanishingiz mumkin.'
+								)}
 							</p>
 						</div>
 					</div>
-					{/* <div className='flex flex-col space-y-3'>
-						<div className='sticky top-36'>
-							<p className='text-lg uppercase text-muted-foreground'>
-								Birgalikda muhokama
-							</p>
-							<div className='mt-4 flex flex-col max-md:flex-row max-md:space-x-3 md:space-y-3'>
-								<Card className='group w-full'>
-									<CardContent className='relative h-56 w-full'>
-										<CustomImage src={'/logo.png'} alt={'brand'} />
-									</CardContent>
-									<div className='my-4 flex flex-col space-y-2 px-2'>
-										<Separator />
-										<h2 className='line-clamp-3 font-space-grotesk text-2xl font-bold'>
-											{t('Statistika va ta’lim')}
-										</h2>
-									</div>
-								</Card>
-							</div>
-						</div>
-					</div> */}
 					<div className='flex flex-col space-y-3'>
+						<Separator className='my-3' />
 						<div className='sticky top-36'>
 							<h2 className='line-clamp-3 font-space-grotesk text-2xl font-bold'>
-								Birgalikda muhokama
+								{t('Birgalikda muhokama')}
 							</h2>
-							<div className='mt-4 flex flex-col md:flex-row md:space-x-3 space-y-3 md:space-y-0'>
-								<div className='group w-full'>
+							<hr className='border-t border-gray-300' />
+							<div className='mt-4 flex flex-col md:flex-row md:space-x-3 space-y-2 md:space-y-0'>
+								<div className='group w-60'>
 									{/* Statistika va ta’lim */}
-									<div className='relative h-56 w-full bg-gray-200 overflow-hidden'>
+									<div className='relative h-36 w-full bg-gray-200 overflow-hidden'>
 										<iframe
 											width='100%'
 											height='100%'
@@ -166,12 +161,12 @@ function Rektor() {
 									</div>
 									<div className='my-4 flex flex-col space-y-2 px-2'>
 										<p className='text-lg text-gray-400'>
-											Statistika va ta’lim
+											{t('Statistika va ta’lim')}
 										</p>
 										<hr className='border-t border-gray-300' />
 									</div>
 									{/* Ta’limda kim baho berish lozim */}
-									<div className='relative h-56 w-full bg-gray-200 overflow-hidden'>
+									<div className='relative h-36 w-full bg-gray-200 overflow-hidden'>
 										<iframe
 											width='100%'
 											height='100%'
@@ -184,12 +179,12 @@ function Rektor() {
 									</div>
 									<div className='my-4 flex flex-col space-y-2 px-2'>
 										<p className='text-lg text-gray-400'>
-											Ta’limda kim baho berish lozim
+											{t('Ta’limda kim baho berish lozim')}
 										</p>
 										<hr className='border-t border-gray-300' />
 									</div>
 									{/* 🧐 Nima uchun bizda ilmiy yangilik yo‘q? */}
-									<div className='relative h-56 w-full bg-gray-200 overflow-hidden'>
+									<div className='relative h-36 w-full bg-gray-200 overflow-hidden'>
 										<iframe
 											width='100%'
 											height='100%'
@@ -202,12 +197,12 @@ function Rektor() {
 									</div>
 									<div className='my-4 flex flex-col space-y-2 px-2'>
 										<p className='text-lg text-gray-400'>
-											🧐 Nima uchun bizda ilmiy yangilik yo‘q?
+											{t('🧐 Nima uchun bizda ilmiy yangilik yo‘q?')}
 										</p>
 										<hr className='border-t border-gray-300' />
 									</div>
 									{/* ✅ This is normal! */}
-									<div className='relative h-56 w-full bg-gray-200 overflow-hidden'>
+									<div className='relative h-36 w-full bg-gray-200 overflow-hidden'>
 										<iframe
 											width='100%'
 											height='100%'
@@ -219,12 +214,14 @@ function Rektor() {
 										></iframe>
 									</div>
 									<div className='my-4 flex flex-col space-y-2 px-2'>
-										<p className='text-lg text-gray-400'>✅ This is normal!</p>
+										<p className='text-lg text-gray-400'>
+											{t('✅ This is normal!')}
+										</p>
 										<hr className='border-t border-gray-300' />
 									</div>
 
 									{/*  Xorijiy tillarni o’rganishdagi muammolar! */}
-									<div className='relative h-56 w-full bg-gray-200 overflow-hidden'>
+									<div className='relative h-36 w-full bg-gray-200 overflow-hidden'>
 										<iframe
 											width='100%'
 											height='100%'
@@ -237,13 +234,13 @@ function Rektor() {
 									</div>
 									<div className='my-4 flex flex-col space-y-2 px-2'>
 										<p className='text-lg text-gray-400'>
-											Xorijiy tillarni o’rganishdagi muammolar
+											{t('Xorijiy tillarni o’rganishdagi muammolar')}
 										</p>
 										<hr className='border-t border-gray-300' />
 									</div>
 
 									{/*  Ilmning o'z mantig'i bor! */}
-									<div className='relative h-56 w-full bg-gray-200 overflow-hidden'>
+									<div className='relative h-36 w-full bg-gray-200 overflow-hidden'>
 										<iframe
 											width='100%'
 											height='100%'
@@ -256,9 +253,8 @@ function Rektor() {
 									</div>
 									<div className='my-4 flex flex-col space-y-2 px-2'>
 										<p className='text-lg text-gray-400'>
-											Ilmning o`z mantig`i bor!
+											{t('Ilmning o`z mantig`i bor!')}
 										</p>
-										<hr className='border-t border-gray-300' />
 									</div>
 
 									<hr className='border-t border-gray-300' />

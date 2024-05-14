@@ -62,7 +62,6 @@ function News() {
 						</h1>
 					</div>
 				</div>
-				<Separator className='my-3' />
 				<div className='grid grid-cols-4 gap-x-4 gap-y-24 max-md:grid-cols-1 py-12'>
 					{data.map(item => (
 						<Link href={`/news/${item.key}`} key={item.key}>
@@ -99,6 +98,8 @@ function News() {
 					))}
 				</div>
 			</div>
+
+			<Separator className='my-3' />
 		</>
 	)
 }

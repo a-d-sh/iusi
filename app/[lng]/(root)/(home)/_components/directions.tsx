@@ -39,46 +39,50 @@ function Directions() {
 	]
 
 	return (
-		<div className='container mx-auto max-w-6xl py-12'>
-			<div className='flex items-center justify-between max-md:flex-col max-md:items-start'>
-				<div className='flex flex-col space-y-1'>
-					<h1 className='font-space-grotesk text-3xl font-bold'>
-						{t('Ta`lim yo`nalishlari')}
-					</h1>
+		<>
+			<div className='container mx-auto max-w-6xl py-12'>
+				<div className='flex items-center justify-between max-md:flex-col max-md:items-start'>
+					<div className='flex flex-col space-y-1'>
+						<h1 className='font-space-grotesk text-3xl font-bold'>
+							{t('Ta`lim yo`nalishlari')}
+						</h1>
+					</div>
 				</div>
+
+				<Carousel
+					className='mt-6 w-full md:flex'
+					opts={{ align: 'start', loop: true }}
+					plugins={[Autoplay({ delay: 3000 })]}
+				>
+					<CarouselContent className='w-full'>
+						{items.map(item => (
+							<CarouselItem
+								key={item.key}
+								className='basis-full md:basis-1/2 lg:basis-1/4'
+							>
+								<Link href={`/directions`}>
+									<Card className='group w-full'>
+										<CardContent className='relative h-56 w-full'>
+											<CustomImage src={'/logo.png'} alt={'brand'} />
+										</CardContent>
+										<div className='my-4 flex flex-col space-y-2 px-2'>
+											<Separator />
+											<h2 className='line-clamp-3 font-space-grotesk text-2xl font-bold'>
+												{t(item.title)}
+											</h2>
+										</div>
+									</Card>
+								</Link>
+							</CarouselItem>
+						))}
+					</CarouselContent>
+					<CarouselPrevious />
+					<CarouselNext />
+				</Carousel>
 			</div>
 
-			<Carousel
-				className='mt-6 w-full md:flex'
-				opts={{ align: 'start', loop: true }}
-				plugins={[Autoplay({ delay: 3000 })]}
-			>
-				<CarouselContent className='w-full'>
-					{items.map(item => (
-						<CarouselItem
-							key={item.key}
-							className='basis-full md:basis-1/2 lg:basis-1/4'
-						>
-							<Link href={`/directions`}>
-								<Card className='group w-full'>
-									<CardContent className='relative h-56 w-full'>
-										<CustomImage src={'/logo.png'} alt={'brand'} />
-									</CardContent>
-									<div className='my-4 flex flex-col space-y-2 px-2'>
-										<Separator />
-										<h2 className='line-clamp-3 font-space-grotesk text-2xl font-bold'>
-											{t(item.title)}
-										</h2>
-									</div>
-								</Card>
-							</Link>
-						</CarouselItem>
-					))}
-				</CarouselContent>
-				<CarouselPrevious />
-				<CarouselNext />
-			</Carousel>
-		</div>
+			<Separator className='my-3' />
+		</>
 	)
 }
 
