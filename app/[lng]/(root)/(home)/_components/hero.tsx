@@ -18,46 +18,52 @@ function Hero() {
 				>
 					<CarouselContent>
 						<CarouselItem>
-							<div className='text-5xl font-extrabold'>
+							<div className='w-full h-auto'>
 								<Image
 									src={'/assets/corusel/slider1.jpg'}
 									alt='hero'
-									width={520}
-									height={520}
-									sizes='(max-width: 520px) 100vw, (max-width: 520px) 50vw, 33vw'
-									className='h-auto w-full object-cover'
+									layout='responsive'
+									width={1920}
+									height={1080}
+									sizes='(max-width: 768px) 100vw, 50vw'
 								/>
 							</div>
 						</CarouselItem>
 						<CarouselItem>
-							<Image
-								src={'/assets/corusel/slider2.jpg'}
-								alt='hero'
-								width={520}
-								height={520}
-								sizes='(max-width: 520px) 100vw, (max-width: 520px) 50vw, 33vw'
-								className='h-auto w-full self-end object-cover'
-							/>
+							<div className='w-full h-auto'>
+								<Image
+									src={'/assets/corusel/slider2.jpg'}
+									alt='hero'
+									layout='responsive'
+									width={1920}
+									height={1080}
+									sizes='(max-width: 768px) 100vw, 50vw'
+								/>
+							</div>
 						</CarouselItem>
 						<CarouselItem>
-							<Image
-								src={'/assets/corusel/slider3.jpg'}
-								alt='hero'
-								width={520}
-								height={520}
-								sizes='(max-width: 520px) 100vw, (max-width: 520px) 50vw, 33vw'
-								className='h-auto w-full self-end object-cover'
-							/>
+							<div className='w-full h-auto'>
+								<Image
+									src={'/assets/corusel/slider3.jpg'}
+									alt='hero'
+									layout='responsive'
+									width={1920}
+									height={1080}
+									sizes='(max-width: 768px) 100vw, 50vw'
+								/>
+							</div>
 						</CarouselItem>
 						<CarouselItem>
-							<Image
-								src={'/assets/corusel/slider4.jpg'}
-								alt='hero'
-								width={520}
-								height={520}
-								sizes='(max-width: 520px) 100vw, (max-width: 520px) 50vw, 33vw'
-								className='h-auto w-full self-end object-cover'
-							/>
+							<div className='w-full h-auto'>
+								<Image
+									src={'/assets/corusel/slider4.jpg'}
+									alt='hero'
+									layout='responsive'
+									width={1920}
+									height={1080}
+									sizes='(max-width: 768px) 100vw, 50vw'
+								/>
+							</div>
 						</CarouselItem>
 					</CarouselContent>
 				</Carousel>
