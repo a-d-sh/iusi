@@ -4,6 +4,7 @@ import useTranslate from '@/hooks/use-translate'
 import parse from 'html-react-parser'
 import { CalendarDays, Minus } from 'lucide-react'
 import Image from 'next/image'
+import React from 'react'
 
 const data = [
 	{
@@ -21,28 +22,30 @@ function Page() {
 	const t = useTranslate()
 	return (
 		<div className='container mx-auto max-w-5xl pt-[15vh]'>
-			{data.map(item => (
-				<>
+			{data.map((item, index) => (
+				<React.Fragment key={index}>
 					<div className='relative mt-12 flex w-full max-md:flex-col-reverse md:gap-12'>
 						<div className='prose max-w-none flex-1 dark:prose-invert'>
 							{parse(t(item.description))}
 						</div>
 					</div>
+					<div className='flex flex-col md:flex-row justify-center items-center gap-4 mt-4'>
+						<Image
+							src={item.image1_url}
+							alt='Image 1'
+							width={1120}
+							height={595}
+							className='w-full md:w-1/2 rounded-md object-cover'
+						/>
+						<Image
+							src={item.image2_url}
+							alt='Image 2'
+							width={1120}
+							height={595}
+							className='w-full md:w-1/2 rounded-md object-cover'
+						/>
+					</div>
 
-					<Image
-						src={item.image1_url}
-						alt='alt'
-						width={`1120`}
-						height={`595`}
-						className='mt-4 rounded-md'
-					/>
-					<Image
-						src={item.image2_url}
-						alt='alt'
-						width={`1120`}
-						height={`595`}
-						className='mt-4 rounded-md'
-					/>
 					<Separator className='my-3' />
 
 					<div className='mt-4 flex flex-wrap items-center gap-4 max-md:justify-center'>
@@ -63,7 +66,7 @@ function Page() {
 						</div>
 					</div>
 					<Separator className='my-3' />
-				</>
+				</React.Fragment>
 			))}
 		</div>
 	)
