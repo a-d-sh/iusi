@@ -361,7 +361,7 @@ function Navbar() {
 										{t('MATBUOT XIZMATI')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
-										<Link href='/news' legacyBehavior passHref>
+										<Link href='/news/1' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
@@ -407,7 +407,7 @@ function Navbar() {
 							<NavigationMenuList>
 								<NavigationMenuItem>
 									<NavigationMenuTrigger className='rounded-none backdrop-blur-xl bg-background/70 px-2 py-0'>
-										{t('DISTANSION TA`LIM')}
+										{t('DIGI IUSI')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
 										<Link href='/profile' legacyBehavior passHref>
@@ -421,6 +421,12 @@ function Navbar() {
 								</NavigationMenuItem>
 							</NavigationMenuList>
 						</NavigationMenu>
+
+						{/* <nav className='hidden md:flex'>
+							<Link href='/profile' className={navigationMenuTriggerStyle()}>
+								DIGI IUSI
+							</Link>
+						</nav> */}
 					</div>
 				</div>
 			</div>

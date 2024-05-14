@@ -3,6 +3,7 @@ import Contacts from './_components/contacts'
 import Directions from './_components/directions'
 import Facts from './_components/facts'
 import Hero from './_components/hero'
+import News from './_components/news'
 import Rektor from './_components/rektor'
 
 async function Page() {
@@ -12,6 +13,7 @@ async function Page() {
 			<Rektor />
 			<Directions />
 			<Facts />
+			<News />
 			<Companies />
 			<Contacts />
 		</>
