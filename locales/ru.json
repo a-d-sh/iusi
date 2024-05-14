@@ -13,7 +13,7 @@
 	"Kafedralar": "Кафедры",
 	"TA`LIM": "ОБРАЗОВАНИЕ",
 	"Bakalavriat": "Бакалавриат",
-	"Magistratura": "Магистратуру",
+	"Magistratura": "Магистратуру:",
 	"Doktorantura": "Докторантура",
 	"ILM-FAN": "НАУКА",
 	"Ilmiy elektron jurnal": "Научный электронный журнал",
@@ -328,7 +328,7 @@
 
 	"Universitetimiz ijtimoiy fanlarni o’qitishga ixtisoslashgan bo’lib, unda 16 ta bakalavriat ta’lim yo’nalishlari va 2 ta magistratura mutaxassisliklari bo’yicha o’quv jarayonlarini tashkil etish rejalashtirilgan. Bular:": "Специализируясь на преподавании социальных наук, в Университете будут реализованы 16 направлений образования бакалавриата и 2 специальности магистратуры, включающих:",
 
-	"Bakalavriat:": "Бакалавриат:",
+	"Bakalavriat": "Бакалавриат:",
 	"Huquqshunoshlik (biznes huquqi)": "Юриспруденция (бизнес-право)",
 	"Axborot texnologiyalari (dasturiy injiniring)": "Информационные коммуникации (программный инжиниринг)",
 

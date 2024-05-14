@@ -76,7 +76,7 @@ function Rektor() {
 									'Universitetimiz ijtimoiy fanlarni o’qitishga ixtisoslashgan bo’lib, unda 16 ta bakalavriat ta’lim yo’nalishlari va 2 ta magistratura mutaxassisliklari bo’yicha o’quv jarayonlarini tashkil etish rejalashtirilgan. Bular:'
 								)}
 							</p>
-							<h2>{t('Bakalavriat:')}</h2>
+							<h2 className='text-lg'>{t('Bakalavriat')}</h2>
 							<ul className='text-lg'>
 								<li>
 									{t(
@@ -96,8 +96,8 @@ function Rektor() {
 								<li>{t('Siyosatshunoslik')}</li>
 								<li>{t('Xalqaro jurnalistika')}</li>
 							</ul>
-							<h2>{t('Magistratura:')}</h2>
-							<ul>
+							<h2 className='text-lg'>{t('Magistratura')}</h2>
+							<ul className='text-lg'>
 								<li>{t('Raqamli iqtisodiyot')}</li>
 								<li>{t('Lingvistika (ingliz tili)')}</li>
 							</ul>

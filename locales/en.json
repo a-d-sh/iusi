@@ -13,7 +13,7 @@
 	"Kafedralar": "Departments",
 	"TA`LIM": "ACADEMICS",
 	"Bakalavriat": "Undergraduate programs",
-	"Magistratura": "Graduate programs",
+	"Magistratura": "Graduate programs:",
 	"Doktorantura": "Post-graduate programs",
 	"ILM-FAN": "SCIENCE AND RESEARCH",
 	"Ilmiy elektron jurnal": "On-line scientific journal",
@@ -328,7 +328,7 @@
 
 	"Universitetimiz ijtimoiy fanlarni o’qitishga ixtisoslashgan bo’lib, unda 16 ta bakalavriat ta’lim yo’nalishlari va 2 ta magistratura mutaxassisliklari bo’yicha o’quv jarayonlarini tashkil etish rejalashtirilgan. Bular:": "While specializing in teaching social sciences, the University is planning to offer 16 undergraduate and 2 graduate degree programs, including:",
 
-	"Bakalavriat:": "Bachelor’s degree programs:",
+	"Bakalavriat": "Bachelor’s degree programs:",
 	"Huquqshunoshlik (biznes huquqi)": "Jurisprudence (business law)",
 	"Axborot texnologiyalari (dasturiy injiniring)": "Information technologies (program engineering)",
 
