@@ -34,13 +34,13 @@ function Rektor() {
 						className='rounded-md max-md:self-start'
 					/>
 					<div className='flex flex-1 flex-col space-y-4'>
-						<h2 className='font-space-grotesk text-5xl font-bold'>
+						<h2 className='font-space-grotesk md:text-6xl text-2xl font-bold'>
 							{t('Azizov Ulug`bek Botirovich')}
 						</h2>
-						<h2 className='line-clamp-2 text-muted-foreground'>
+						<h2 className='line-clamp-2 md:text-4xl text-muted-foreground'>
 							{t('Ijtimoiy fanlar bo’yicha falsafa doktori')}
 						</h2>
-						<h2 className='line-clamp-2 text-muted-foreground'>
+						<h2 className='line-clamp-2 md:text-4xl text-muted-foreground'>
 							{t('(PhD in Social Sciences, Germany)')}
 						</h2>
 					</div>
