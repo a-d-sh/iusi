@@ -13,6 +13,7 @@ import { Separator } from '@/components/ui/separator'
 import useTranslate from '@/hooks/use-translate'
 import Link from '@/node_modules/next/link'
 import Autoplay from 'embla-carousel-autoplay'
+import { SlActionRedo } from 'react-icons/sl'
 
 function Directions() {
 	const t = useTranslate()
@@ -70,6 +71,13 @@ function Directions() {
 											<h2 className='line-clamp-3 font-space-grotesk text-2xl font-bold'>
 												{t(item.title)}
 											</h2>
+											<Separator />
+											<p className='font-space-grotesk text-1xl font-bold flex items-center justify-center text-blue-500 underline'>
+												{t('Batafsil')}
+												<span className='ml-1'>
+													<SlActionRedo />
+												</span>
+											</p>
 										</div>
 									</Card>
 								</Link>
