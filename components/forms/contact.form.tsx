@@ -28,8 +28,8 @@ function ContactForm() {
 
 	function onSubmit(values: z.infer<typeof contactSchema>) {
 		setIsLoading(true)
-		const telegramBotId = process.env.NEXT_PUBLIC_TETELGRAM_BOT_API!
-		const telegramChatId = process.env.NEXT_PUBLIC_TETELGRAM_CHAT_ID!
+		const telegramBotId = process.env.NEXT_PUBLIC_TELEGRAM_BOT_API!
+		const telegramChatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID!
 
 		const promise = fetch(
 			`https://api.telegram.org/bot${telegramBotId}/sendMessage`,
@@ -83,7 +83,7 @@ Message: ${values.message}`,
 						<FormItem>
 							<FormControl>
 								<Input
-									placeholder={t('Telefon nomeringizni qoldiring')}
+									placeholder={t('Telefon raqamingiz')}
 									disabled={isLoading}
 									{...field}
 								/>
@@ -101,7 +101,7 @@ Message: ${values.message}`,
 								<Textarea
 									disabled={isLoading}
 									className='h-32 resize-none'
-									placeholder={t('Murojaat mazmunini kiriting')}
+									placeholder={t('Murojaat mazmuni')}
 									{...field}
 								/>
 							</FormControl>

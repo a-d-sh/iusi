@@ -13,7 +13,7 @@
 	"Kafedralar": "Кафедры",
 	"TA`LIM": "ОБРАЗОВАНИЕ",
 	"Bakalavriat": "Бакалавриат",
-	"Magistratura": "Магистратуру:",
+	"Magistratura": "Магистратура:",
 	"Doktorantura": "Докторантура",
 	"ILM-FAN": "НАУКА",
 	"Ilmiy elektron jurnal": "Научный электронный журнал",
@@ -136,7 +136,7 @@
 	"contactFormTextarea": "Savol yoki Salom deb ayting",
 	"contactFormName": "Ismingizni kiriting",
 	"contactFormEmail": "Elektron pochta manzili",
-	"send": "Yuborish",
+	"send": "Отправить",
 	"loading": "Yuklanmoqda...",
 	"successfully": "Muvaffaqiyatli!",
 	"error": "Nimadir noto'g'ri ketdi!",
@@ -350,5 +350,10 @@
 	"Biz bilan saytimizdagi elektron arizani to’ldirish yoki quyidagi telefon raqamlari orqali bog’lanishingiz mumkin.": "Прием заявок осуществляется через сайт при заполнении электронной формы, по телефону или в Университете в часы приема абитуриентов.",
 
 	"Birgalikda muhokama": "Обсуждаем вместе",
-	"Batafsil": "Подробно"
+	"Batafsil": "Подробно",
+	"Familya Ism Sharif": "Фамилия Имя",
+	"Universitet ta’limi va qabul borasida savollaringiz bo’lsa, bizga murojaat qiling.": "Свяжитесь с университетом IUSI с нами для получения информации, поступления и других вопросов. Мы готовы помочь вам.",
+	"Telefon raqamingiz": "Телефон",
+	"Murojaat mazmuni": "Цель обращения",
+	"Biz bilan bog’lanish": "Свяжитесь с нами"
 }
