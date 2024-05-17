@@ -16,7 +16,7 @@ function Footer() {
 				<div className='grid grid-cols-1 gap-12 md:grid-cols-4'>
 					<div className='flex flex-col space-y-3 md:col-span-1'>
 						<Logo />
-						<p>{t('heroDescription')}</p>
+						<p>{t('navLink1')}</p>
 					</div>
 
 					<div className='flex flex-col space-y-3'>
@@ -62,13 +62,13 @@ function Footer() {
 									className='text-sm hover:text-blue-500 hover:underline dark:hover:text-blue-300'
 									href='https://t.me/innovatsiya_uni'
 								>
-									Telegramga o`tish
+									{t('Telegram')}
 								</a>
 							</div>
 
 							<div className='flex items-center space-x-3'>
 								<MapPin size={20} />
-								<span className='text-sm'>Tashkent Uzbekistan</span>
+								<span className='text-sm'>{t('Tashkent Uzbekistan')}</span>
 							</div>
 						</div>
 					</div>
