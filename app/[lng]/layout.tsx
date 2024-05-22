@@ -29,12 +29,12 @@ export async function generateStaticParams() {
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://iusi.uz'),
-	title: 'IUSI | Online o`qitish uchun platforma',
+	title: 'IUSI | Rasmiy websayt',
 	description: 'Xalqaro ijtimoiy innovatsiyalar universiteti',
 	authors: [{ name: 'Abduvoxidov Davlatbek', url: 'https://t.me/adsh97' }],
 	icons: { icon: '/logo.png' },
 	openGraph: {
-		title: 'IUSI | Online o`qitish uchun platforma',
+		title: 'IUSI | Rasmiy websayt',
 		description: 'Xalqaro ijtimoiy innovatsiyalar universiteti',
 		type: 'website',
 		url: 'https://iusi.uz',
