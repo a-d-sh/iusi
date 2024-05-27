@@ -27,7 +27,7 @@ function Rektor() {
 				</h1>
 				<div className='mt-6 flex items-center gap-6 max-md:flex-col'>
 					<Image
-						src={'/assets/rektor.JPG'}
+						src={'/assets/rektor.jpg'}
 						alt='author'
 						width='400'
 						height='400'
