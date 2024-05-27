@@ -19,24 +19,99 @@ function Directions() {
 	const t = useTranslate()
 
 	const items = [
-		{ key: '1', title: 'Boshlang’ich ta’lim' },
-		{ key: '2', title: 'Raqamli iqtisodiyot' },
-		{ key: '3', title: 'Iqtisodiyot' },
-		{ key: '4', title: 'Bank ishi va audit' },
-		{ key: '5', title: 'Buxgalteriya va audit' },
-		{ key: '6', title: 'O’zbek tili va adabiyoti' },
-		{ key: '7', title: 'Moliya va moliyaviy texnologiyalar' },
-		{ key: '8', title: 'Soliq va soliqqa tortish' },
-		{ key: '9', title: 'Biznes huquqi' },
-		{ key: '10', title: 'Dasturiy injiniring' },
-		{ key: '11', title: 'Siyosatshunoslik' },
-		{ key: '12', title: 'Xalqaro jurnalistika' },
-		{ key: '13', title: 'Filologiya ingliz tili' },
-		{ key: '14', title: 'Filologiya yapon tili' },
-		{ key: '15', title: 'Filologiya koreys tili' },
-		{ key: '16', title: 'Filologiya xitoy tili' },
-		{ key: '17', title: 'Raqamli iqtisodiyot (Magistratura)' },
-		{ key: '18', title: 'Lingvistika/ingliz tili (Magistratura)' },
+		{
+			key: '1',
+			title: 'Filologiya va tillarni o’qitish (Ingliz tili)',
+			brand: '/majors/1.jpg',
+			url: '',
+		},
+		{
+			key: '2',
+			title: 'Filologiya va tillarni o’qitish (Yapon tili)',
+			brand: '/majors/2.jpg',
+			url: '',
+		},
+		{
+			key: '3',
+			title: 'Filologiya va tillarni o’qitish (Koreys tili)',
+			brand: '/majors/3.jpg',
+			url: '',
+		},
+		{
+			key: '4',
+			title: 'Filologiya va tillarni o’qitish (Xitoy tili)',
+			brand: '/majors/4.jpg',
+			url: '',
+		},
+		{ key: '5', title: 'Boshlang’ich ta’lim', brand: '/majors/5.jpg', url: '' },
+		{
+			key: '6',
+			title: 'O’zbek tili va adabiyoti',
+			brand: '/majors/6.jpg',
+			url: '',
+		},
+		{
+			key: '7',
+			title: 'Raqamli iqtisodiyot',
+			brand: '/majors/7.jpg',
+			url: '',
+		},
+		{ key: '8', title: 'Iqtisodiyot', brand: '/majors/8.jpg', url: '' },
+		{
+			key: '9',
+			title: 'Buxgalteriya va audit',
+			brand: '/majors/9.jpg',
+			url: '',
+		},
+		{
+			key: '10',
+			title: 'Bank ishi va audit',
+			brand: '/majors/10.jpg',
+			url: '',
+		},
+		{
+			key: '11',
+			title: 'Moliya va moliyaviy texnologiyalar',
+			brand: '/majors/11.jpg',
+			url: '',
+		},
+		{
+			key: '12',
+			title: 'Soliq va soliqqa tortish',
+			brand: '/majors/12.jpg',
+			url: '',
+		},
+		{
+			key: '13',
+			title: 'Yurisprudensiya (biznes huquqi)',
+			brand: '/majors/13.jpg',
+			url: '',
+		},
+		{
+			key: '14',
+			title: 'Axborot texnologiyalar (dasturiy injiniring)',
+			brand: '/majors/14.jpg',
+			url: '',
+		},
+		{ key: '15', title: 'Siyosatshunoslik', brand: '/majors/15.jpg', url: '' },
+		{
+			key: '16',
+			title: 'Xalqaro jurnalistika',
+			brand: '/majors/16.jpg',
+			url: '',
+		},
+		{
+			key: '17',
+			title: 'Raqamli iqtisodiyot (Magistratura)',
+			brand: '/majors/17.jpg',
+			url: '',
+		},
+		{
+			key: '18',
+			title: 'Lingvistika (ingliz tili) (Magistratura)',
+			brand: '/majors/18.jpg',
+			url: '',
+		},
 	]
 
 	return (
@@ -61,10 +136,10 @@ function Directions() {
 								key={item.key}
 								className='basis-full md:basis-1/2 lg:basis-1/4'
 							>
-								<Link href={`/directions`}>
+								<Link href={'majors/' + item.key}>
 									<Card className='group w-full'>
 										<CardContent className='relative h-56 w-full'>
-											<CustomImage src={'/logo.png'} alt={'brand'} />
+											<CustomImage src={item.brand} alt={'brand'} />
 										</CardContent>
 										<div className='my-4 flex flex-col space-y-2 px-2'>
 											<Separator />
