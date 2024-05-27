@@ -23,94 +23,104 @@ function Directions() {
 			key: '1',
 			title: 'Filologiya va tillarni o’qitish (Ingliz tili)',
 			brand: '/majors/1.jpg',
-			url: '',
+			url: '1',
 		},
 		{
 			key: '2',
 			title: 'Filologiya va tillarni o’qitish (Yapon tili)',
 			brand: '/majors/2.jpg',
-			url: '',
+			url: '2',
 		},
 		{
 			key: '3',
 			title: 'Filologiya va tillarni o’qitish (Koreys tili)',
 			brand: '/majors/3.jpg',
-			url: '',
+			url: '3',
 		},
 		{
 			key: '4',
 			title: 'Filologiya va tillarni o’qitish (Xitoy tili)',
 			brand: '/majors/4.jpg',
-			url: '',
+			url: '4',
 		},
-		{ key: '5', title: 'Boshlang’ich ta’lim', brand: '/majors/5.jpg', url: '' },
+		{
+			key: '5',
+			title: 'Boshlang’ich ta’lim',
+			brand: '/majors/5.jpg',
+			url: '5',
+		},
 		{
 			key: '6',
 			title: 'O’zbek tili va adabiyoti',
 			brand: '/majors/6.jpg',
-			url: '',
+			url: '6',
 		},
 		{
 			key: '7',
 			title: 'Raqamli iqtisodiyot',
 			brand: '/majors/7.jpg',
-			url: '',
+			url: '7',
 		},
-		{ key: '8', title: 'Iqtisodiyot', brand: '/majors/8.jpg', url: '' },
+		{ key: '8', title: 'Iqtisodiyot', brand: '/majors/8.jpg', url: '8' },
 		{
 			key: '9',
 			title: 'Buxgalteriya va audit',
 			brand: '/majors/9.jpg',
-			url: '',
+			url: '9',
 		},
 		{
 			key: '10',
 			title: 'Bank ishi va audit',
 			brand: '/majors/10.jpg',
-			url: '',
+			url: '10',
 		},
 		{
 			key: '11',
 			title: 'Moliya va moliyaviy texnologiyalar',
 			brand: '/majors/11.jpg',
-			url: '',
+			url: '11',
 		},
 		{
 			key: '12',
 			title: 'Soliq va soliqqa tortish',
 			brand: '/majors/12.jpg',
-			url: '',
+			url: '12',
 		},
 		{
 			key: '13',
 			title: 'Yurisprudensiya (biznes huquqi)',
 			brand: '/majors/13.jpg',
-			url: '',
+			url: '13',
 		},
 		{
 			key: '14',
 			title: 'Axborot texnologiyalar (dasturiy injiniring)',
 			brand: '/majors/14.jpg',
-			url: '',
+			url: '14',
 		},
-		{ key: '15', title: 'Siyosatshunoslik', brand: '/majors/15.jpg', url: '' },
+		{
+			key: '15',
+			title: 'Siyosatshunoslik',
+			brand: '/majors/15.jpg',
+			url: '15',
+		},
 		{
 			key: '16',
 			title: 'Xalqaro jurnalistika',
 			brand: '/majors/16.jpg',
-			url: '',
+			url: '16',
 		},
 		{
 			key: '17',
 			title: 'Raqamli iqtisodiyot (Magistratura)',
 			brand: '/majors/17.jpg',
-			url: '',
+			url: '17',
 		},
 		{
 			key: '18',
 			title: 'Lingvistika (ingliz tili) (Magistratura)',
 			brand: '/majors/18.jpg',
-			url: '',
+			url: '18',
 		},
 	]
 
@@ -136,7 +146,7 @@ function Directions() {
 								key={item.key}
 								className='basis-full md:basis-1/2 lg:basis-1/4'
 							>
-								<Link href={'major/' + item.key}>
+								<Link href={'major/' + item.url}>
 									<Card className='group w-full'>
 										<CardContent className='relative h-56 w-full'>
 											<CustomImage src={item.brand} alt={'brand'} />
