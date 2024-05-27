@@ -1,6 +1,10 @@
 'use client'
 
-import { Languages } from 'lucide-react'
+import { lngs } from '@/constants'
+import { cn, getCurrentLng } from '@/lib/utils'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useParams, usePathname } from 'next/navigation'
 import { Button } from '../ui/button'
 import {
 	DropdownMenu,
@@ -9,11 +13,6 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from '../ui/dropdown-menu'
-import Image from 'next/image'
-import { lngs } from '@/constants'
-import Link from 'next/link'
-import { cn, getCurrentLng } from '@/lib/utils'
-import { useParams, usePathname } from 'next/navigation'
 
 interface Props {
 	isMobile?: boolean
@@ -22,6 +21,9 @@ interface Props {
 function LanguageDropdown({ isMobile = false }: Props) {
 	const { lng } = useParams()
 	const pathanme = usePathname()
+
+	// Ensure lng is a string
+	const currentLng = Array.isArray(lng) ? lng[0] : lng ?? 'default' // 'default' ni o'zingizga mos til kodi bilan almashtiring
 
 	return (
 		<DropdownMenu>
@@ -34,10 +36,15 @@ function LanguageDropdown({ isMobile = false }: Props) {
 					)}
 					aria-label='language-dropdown'
 				>
-					<Languages />
+					<Image
+						src={`/assets/locales/${currentLng}.png`}
+						alt={getCurrentLng(currentLng) ?? 'default'}
+						width={30}
+						height={30}
+					/>
 					{isMobile && (
 						<span className='ml-2 font-space-grotesk font-medium'>
-							{getCurrentLng(lng as string)}
+							{getCurrentLng(currentLng) ?? 'Language'}
 						</span>
 					)}
 				</Button>
@@ -49,7 +56,7 @@ function LanguageDropdown({ isMobile = false }: Props) {
 							<DropdownMenuItem
 								className={cn(
 									'cursor-pointer',
-									lng === item.route && 'bg-secondary'
+									currentLng === item.route && 'bg-secondary'
 								)}
 							>
 								<Image

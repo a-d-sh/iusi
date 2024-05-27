@@ -136,14 +136,14 @@ function Directions() {
 								key={item.key}
 								className='basis-full md:basis-1/2 lg:basis-1/4'
 							>
-								<Link href={'majors/' + item.key}>
+								<Link href={'major/' + item.key}>
 									<Card className='group w-full'>
 										<CardContent className='relative h-56 w-full'>
 											<CustomImage src={item.brand} alt={'brand'} />
 										</CardContent>
 										<div className='my-4 flex flex-col space-y-2 px-2'>
 											<Separator />
-											<h2 className='line-clamp-3 font-space-grotesk text-2xl font-bold'>
+											<h2 className='line-clamp-4 font-space-grotesk text-2xl font-bold'>
 												{t(item.title)}
 											</h2>
 											<Separator />
