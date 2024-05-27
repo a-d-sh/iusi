@@ -22,6 +22,7 @@ export default authMiddleware({
 		'/:lng/directions',
 		'/:lng/directions/:directionId',
 		'/:lng/directions/:slug',
+		'/:lng/direction/:slug',
 		'/:lng/courses',
 		'/:lng/course/:slug',
 		'/:lng/blogs',

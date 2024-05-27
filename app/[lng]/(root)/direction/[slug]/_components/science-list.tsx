@@ -41,9 +41,13 @@ function ScienceList(science: IScience) {
 				<DrawerHeader>
 					<DrawerTitle>
 						<div className='mt-2 border-l-2 border-l-gray-800 p-4'>
-							{science.books.map(book => (
-								<BookList key={book._id} {...book} />
-							))}
+							<div className='mx-auto max-w-4xl'>
+								<div className='flex flex-wrap justify-center gap-4'>
+									{science.books.map(book => (
+										<BookList key={book._id} {...book} />
+									))}
+								</div>
+							</div>
 						</div>
 					</DrawerTitle>
 				</DrawerHeader>
