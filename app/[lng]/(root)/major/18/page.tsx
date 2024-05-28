@@ -29,7 +29,7 @@ function Page() {
 					<React.Fragment key={index}>
 						<div className='flex flex-col md:flex-row justify-center items-center gap-4'>
 							<div className='relative flex w-full max-md:flex-col-reverse md:gap-12'>
-								<div className='prose max-w-none flex-1 dark:prose-invert'>
+								<div className='text-lg prose max-w-none flex-1 dark:prose-invert'>
 									{parse(t(item.description))}
 								</div>
 							</div>
