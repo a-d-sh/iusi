@@ -58,10 +58,10 @@ function Navbar() {
 						<div className='flex items-center gap-2 md:border-r md:pr-3'>
 							<div className='hidden gap-1 md:flex'>
 								<GlobalSearch />
-								<LanguageDropdown />
 								<Notification />
 							</div>
 							<Mobile />
+							<LanguageDropdown />
 							<ModeToggle />
 						</div>
 						<SignedIn>
