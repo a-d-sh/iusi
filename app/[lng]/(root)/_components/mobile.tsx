@@ -50,7 +50,7 @@ function Mobile() {
 						<DropdownMenuContent className='w-full z-50 bg-white text-black'>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/aboutuniversity' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Universitet haqida')}
 										</span>
@@ -59,7 +59,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Rektor murojaati')}
 										</span>
@@ -68,7 +68,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Interraktiv videolar')}
 										</span>
@@ -77,7 +77,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Me`yoriy hujjatlar')}
 										</span>
@@ -86,7 +86,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Rahbariyat')}
 										</span>
@@ -95,7 +95,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Bo`limlar')}
 										</span>
@@ -104,7 +104,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Fakultetlar')}
 										</span>
@@ -113,7 +113,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Tashkiliy tuzilma')}
 										</span>
@@ -122,7 +122,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Rekvizitlar')}
 										</span>
@@ -131,7 +131,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Kafedralar')}
 										</span>
@@ -150,7 +150,7 @@ function Mobile() {
 						<DropdownMenuContent className='w-full z-50 bg-white text-black'>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Bakalavriat')}
 										</span>
@@ -159,7 +159,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Magistratura')}
 										</span>
@@ -168,7 +168,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Doktorantura')}
 										</span>
@@ -187,7 +187,7 @@ function Mobile() {
 						<DropdownMenuContent className='w-full z-50 bg-white text-black'>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Ilmiy elektron jurnal')}
 										</span>
@@ -196,7 +196,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Ilmiy tadbirlar')}
 										</span>
@@ -215,7 +215,7 @@ function Mobile() {
 						<DropdownMenuContent className='w-full z-50 bg-white text-black'>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Xalqaro hamkorlik aloqalari')}
 										</span>
@@ -224,7 +224,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Xalqaro stipendiyalar va amaliyot')}
 										</span>
@@ -243,7 +243,7 @@ function Mobile() {
 						<DropdownMenuContent className='w-full z-50 bg-white text-black'>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Iqtidorli talabalar')}
 										</span>
@@ -252,7 +252,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Talabalar turar joyi')}
 										</span>
@@ -261,7 +261,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Ijtimoiy hayot')}
 										</span>
@@ -280,7 +280,7 @@ function Mobile() {
 						<DropdownMenuContent className='w-full z-50 bg-white text-black'>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t(
 												'Ta`lim shakllari va yo`nalishlari, mutaxassisliklari'
@@ -291,7 +291,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('2024-2025 o`quv yili uchun ro`yxatdan o`tish')}
 										</span>
@@ -300,7 +300,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Ko`p beriladigan savollarga javoblar')}
 										</span>
@@ -309,7 +309,7 @@ function Mobile() {
 							</DropdownMenuItem>
 							<DropdownMenuItem className='w-full'>
 								<SheetClose asChild>
-									<Link href='/' className='w-full flex'>
+									<Link href='/page/rektor' className='w-full flex'>
 										<span className='w-full flex-grow block py-2 whitespace-normal min-w-0'>
 											{t('Qabul rejasi')}
 										</span>
