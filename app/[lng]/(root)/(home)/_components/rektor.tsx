@@ -147,42 +147,6 @@ function Rektor() {
 							<hr className='border-t border-gray-300' />
 							<div className='mt-4 flex flex-col md:flex-row md:space-x-3 space-y-2 md:space-y-0'>
 								<div className='group w-60'>
-									{/* Michigan state university */}
-									<div className='relative h-36 w-full bg-gray-200 overflow-hidden'>
-										<iframe
-											width='100%'
-											height='100%'
-											src='https://www.youtube.com/embed/RH6Lg3H3r5M?si=FleyPnDy_7eJQqfM'
-											title='YouTube video'
-											frameBorder='0'
-											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-											allowFullScreen
-										></iframe>
-									</div>
-									<div className='my-4 flex flex-col space-y-2 px-2'>
-										<p className='text-lg text-gray-400'>
-											{t('Michigan state university')}
-										</p>
-										<hr className='border-t border-gray-300' />
-									</div>
-									{/* Columbia University */}
-									<div className='relative h-36 w-full bg-gray-200 overflow-hidden'>
-										<iframe
-											width='100%'
-											height='100%'
-											src='https://www.youtube.com/embed/MYvq1QtOL3k?si=8HV1RvRGOiItx3pI'
-											title='YouTube video'
-											frameBorder='0'
-											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-											allowFullScreen
-										></iframe>
-									</div>
-									<div className='my-4 flex flex-col space-y-2 px-2'>
-										<p className='text-lg text-gray-400'>
-											{t('Columbia University')}
-										</p>
-										<hr className='border-t border-gray-300' />
-									</div>
 									{/* Statistika va ta’lim */}
 									<div className='relative h-36 w-full bg-gray-200 overflow-hidden'>
 										<iframe
@@ -291,6 +255,42 @@ function Rektor() {
 										<p className='text-lg text-gray-400'>
 											{t('Ilmning o`z mantig`i bor!')}
 										</p>
+									</div>
+									{/* Michigan state university */}
+									<div className='relative h-36 w-full bg-gray-200 overflow-hidden'>
+										<iframe
+											width='100%'
+											height='100%'
+											src='https://www.youtube.com/embed/RH6Lg3H3r5M?si=FleyPnDy_7eJQqfM'
+											title='YouTube video'
+											frameBorder='0'
+											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+											allowFullScreen
+										></iframe>
+									</div>
+									<div className='my-4 flex flex-col space-y-2 px-2'>
+										<p className='text-lg text-gray-400'>
+											{t('Michigan state university')}
+										</p>
+										<hr className='border-t border-gray-300' />
+									</div>
+									{/* Columbia University */}
+									<div className='relative h-36 w-full bg-gray-200 overflow-hidden'>
+										<iframe
+											width='100%'
+											height='100%'
+											src='https://www.youtube.com/embed/MYvq1QtOL3k?si=8HV1RvRGOiItx3pI'
+											title='YouTube video'
+											frameBorder='0'
+											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+											allowFullScreen
+										></iframe>
+									</div>
+									<div className='my-4 flex flex-col space-y-2 px-2'>
+										<p className='text-lg text-gray-400'>
+											{t('Columbia University')}
+										</p>
+										<hr className='border-t border-gray-300' />
 									</div>
 
 									<hr className='border-t border-gray-300' />
