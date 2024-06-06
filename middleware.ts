@@ -14,6 +14,8 @@ export default authMiddleware({
 		'/:lng/major/:key',
 		'/:lng/news',
 		'/:lng/news/:slug',
+		'/:lng/page',
+		'/:lng/page/:slug',
 		'/:lng/direction-bachelor',
 		'/:lng/direction-bachelor/:slug',
 		'/:lng/bachelor',

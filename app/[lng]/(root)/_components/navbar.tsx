@@ -92,7 +92,7 @@ function Navbar() {
 									<NavigationMenuContent>
 										{/* Har bir link o'z NavigationMenuItem ichida */}
 										<NavigationMenuItem className='list-none'>
-											<Link href='/aboutuniversity' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
@@ -110,7 +110,7 @@ function Navbar() {
 											</Link>
 										</NavigationMenuItem>
 										<NavigationMenuItem className='list-none'>
-											<Link href='/' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
@@ -119,7 +119,7 @@ function Navbar() {
 											</Link>
 										</NavigationMenuItem>
 										<NavigationMenuItem className='list-none'>
-											<Link href='/' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
@@ -128,7 +128,7 @@ function Navbar() {
 											</Link>
 										</NavigationMenuItem>
 										<NavigationMenuItem className='list-none'>
-											<Link href='/' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
@@ -137,7 +137,7 @@ function Navbar() {
 											</Link>
 										</NavigationMenuItem>
 										<NavigationMenuItem className='list-none'>
-											<Link href='/' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
@@ -146,7 +146,7 @@ function Navbar() {
 											</Link>
 										</NavigationMenuItem>
 										<NavigationMenuItem className='list-none'>
-											<Link href='/' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
@@ -155,7 +155,7 @@ function Navbar() {
 											</Link>
 										</NavigationMenuItem>
 										<NavigationMenuItem className='list-none'>
-											<Link href='/' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
@@ -164,7 +164,7 @@ function Navbar() {
 											</Link>
 										</NavigationMenuItem>
 										<NavigationMenuItem className='list-none'>
-											<Link href='/' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
@@ -173,7 +173,7 @@ function Navbar() {
 											</Link>
 										</NavigationMenuItem>
 										<NavigationMenuItem className='list-none'>
-											<Link href='/' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
@@ -193,21 +193,21 @@ function Navbar() {
 										{t('TA`LIM')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
-										<Link href='/' legacyBehavior passHref>
+										<Link href='/page/rektor' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
 												{t('Bakalavriat')}
 											</NavigationMenuLink>
 										</Link>
-										<Link href='/' legacyBehavior passHref>
+										<Link href='/page/rektor' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
 												{t('Magistratura')}
 											</NavigationMenuLink>
 										</Link>
-										<Link href='/' legacyBehavior passHref>
+										<Link href='/page/rektor' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
@@ -226,14 +226,14 @@ function Navbar() {
 										{t('ILM-FAN')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
-										<Link href='/' legacyBehavior passHref>
+										<Link href='/page/rektor' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
 												{t('Ilmiy elektron jurnal')}
 											</NavigationMenuLink>
 										</Link>
-										<Link href='/' legacyBehavior passHref>
+										<Link href='/page/rektor' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
@@ -252,14 +252,14 @@ function Navbar() {
 										{t('HAMKORLIK')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
-										<Link href='/' legacyBehavior passHref>
+										<Link href='/page/rektor' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
 												{t('Xalqaro hamkorlik aloqalari')}
 											</NavigationMenuLink>
 										</Link>
-										<Link href='/' legacyBehavior passHref>
+										<Link href='/page/rektor' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
@@ -278,21 +278,21 @@ function Navbar() {
 										{t('TALABALAR HAYOTI')}
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
-										<Link href='/' legacyBehavior passHref>
+										<Link href='/page/rektor' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
 												{t('Iqtidorli talabalar')}
 											</NavigationMenuLink>
 										</Link>
-										<Link href='/' legacyBehavior passHref>
+										<Link href='/page/rektor' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
 												{t('Talabalar turar joyi')}
 											</NavigationMenuLink>
 										</Link>
-										<Link href='/' legacyBehavior passHref>
+										<Link href='/page/rektor' legacyBehavior passHref>
 											<NavigationMenuLink
 												className={navigationMenuTriggerStyle()}
 											>
@@ -312,7 +312,7 @@ function Navbar() {
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
 										<NavigationMenuItem className='list-none'>
-											<Link href='/' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
@@ -323,7 +323,7 @@ function Navbar() {
 											</Link>
 										</NavigationMenuItem>
 										<NavigationMenuItem className='list-none'>
-											<Link href='/' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
@@ -332,7 +332,7 @@ function Navbar() {
 											</Link>
 										</NavigationMenuItem>
 										<NavigationMenuItem className='list-none'>
-											<Link href='/' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
@@ -341,7 +341,7 @@ function Navbar() {
 											</Link>
 										</NavigationMenuItem>
 										<NavigationMenuItem className='list-none'>
-											<Link href='/' legacyBehavior passHref>
+											<Link href='/page/rektor' legacyBehavior passHref>
 												<NavigationMenuLink
 													className={navigationMenuTriggerStyle()}
 												>
