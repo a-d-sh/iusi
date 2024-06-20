@@ -73,7 +73,7 @@ function Rektor() {
 							</p>
 							<p className='text-lg'>
 								{t(
-									'Universitetimiz ijtimoiy fanlarni o’qitishga ixtisoslashgan bo’lib, unda 16 ta bakalavriat ta’lim yo’nalishlari va 2 ta magistratura mutaxassisliklari bo’yicha o’quv jarayonlarini tashkil etish rejalashtirilgan. Bular:'
+									'Universitetimiz ijtimoiy fanlarni o’qitishga ixtisoslashgan bo’lib, unda 17 ta bakalavriat ta’lim yo’nalishlari va 2 ta magistratura mutaxassisliklari bo’yicha o’quv jarayonlarini tashkil etish rejalashtirilgan. Bular:'
 								)}
 							</p>
 							<h2 className='text-lg'>{t('Bakalavriat')}</h2>
@@ -85,7 +85,6 @@ function Rektor() {
 								</li>
 								<li>{t('Boshlang’ich ta’lim')}</li>
 								<li>{t('O’zbek tili va adabiyoti')}</li>
-								<li>{t('Raqamli iqtisodiyot')}</li>
 								<li>{t('Iqtisodiyot')}</li>
 								<li>{t('Buxgalteriya va audit')}</li>
 								<li>{t('Bank ishi va audit')}</li>
@@ -93,6 +92,8 @@ function Rektor() {
 								<li>{t('Soliq va soliqqa tortish')}</li>
 								<li>{t('Huquqshunoshlik (biznes huquqi)')}</li>
 								<li>{t('Axborot texnologiyalari (dasturiy injiniring)')}</li>
+								<li>{t('Axborot xavfsizligi')}</li>
+								<li>{t('Sun’iy intellekt')}</li>
 								<li>{t('Siyosatshunoslik')}</li>
 								<li>{t('Xalqaro jurnalistika')}</li>
 							</ul>

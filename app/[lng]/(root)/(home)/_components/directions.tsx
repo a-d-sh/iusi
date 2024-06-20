@@ -55,12 +55,6 @@ function Directions() {
 			brand: '/majors/6.jpg',
 			url: '6',
 		},
-		{
-			key: '7',
-			title: 'Raqamli iqtisodiyot',
-			brand: '/majors/7.jpg',
-			url: '7',
-		},
 		{ key: '8', title: 'Iqtisodiyot', brand: '/majors/8.jpg', url: '8' },
 		{
 			key: '9',
@@ -97,6 +91,18 @@ function Directions() {
 			title: 'Axborot texnologiyalar (dasturiy injiniring)',
 			brand: '/majors/14.jpg',
 			url: '14',
+		},
+		{
+			key: '19',
+			title: 'Axborot xavfsizligi',
+			brand: '/majors/19.jpg',
+			url: '19',
+		},
+		{
+			key: '20',
+			title: 'Sun’iy intellekt',
+			brand: '/majors/20.jpg',
+			url: '20',
 		},
 		{
 			key: '15',
