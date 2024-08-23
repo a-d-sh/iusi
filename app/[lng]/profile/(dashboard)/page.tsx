@@ -9,10 +9,12 @@ function Page({ params }: LngParams) {
 	const [t, setT] = useState<any>(null)
 	const [step, setStep] = useState(1)
 	const [formData, setFormData] = useState({
-		username: '',
-		email: '',
-		password: '',
-		confirmPassword: '',
+		firstName: '',
+		lastName: '',
+		middleName: '',
+		passportSeria: '',
+		passportNumber: '',
+		tell: '',
 	})
 
 	useEffect(() => {
@@ -133,73 +135,105 @@ function Page({ params }: LngParams) {
 						<div className='mb-4 grid sm:grid-cols-2 gap-4'>
 							<div>
 								<label
-									htmlFor='username'
+									htmlFor='firstName'
 									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
-									Username
+									First Name
 								</label>
 								<input
 									type='text'
-									name='username'
-									id='username'
+									name='firstName'
+									id='firstName'
 									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-									placeholder='username.example'
+									placeholder='John'
 									required
-									value={formData.username}
+									value={formData.firstName}
 									onChange={handleChange}
 								/>
 							</div>
 							<div>
 								<label
-									htmlFor='email'
+									htmlFor='lastName'
 									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
-									Email
+									Last Name
 								</label>
 								<input
-									type='email'
-									name='email'
-									id='email'
+									type='text'
+									name='lastName'
+									id='lastName'
 									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-									placeholder='name@company.com'
+									placeholder='Doe'
 									required
-									value={formData.email}
+									value={formData.lastName}
 									onChange={handleChange}
 								/>
 							</div>
 							<div>
 								<label
-									htmlFor='password'
+									htmlFor='middleName'
 									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
-									Password
+									Middle Name
 								</label>
 								<input
-									type='password'
-									name='password'
-									id='password'
+									type='text'
+									name='middleName'
+									id='middleName'
 									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-									placeholder='•••••••••'
-									required
-									value={formData.password}
+									placeholder='Middle'
+									value={formData.middleName}
 									onChange={handleChange}
 								/>
 							</div>
 							<div>
 								<label
-									htmlFor='confirm-password'
+									htmlFor='passportSeria'
 									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
-									Confirm password
+									Passport Seria
 								</label>
 								<input
-									type='password'
-									name='confirmPassword'
-									id='confirm-password'
+									type='text'
+									name='passportSeria'
+									id='passportSeria'
 									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-									placeholder='•••••••••'
-									required
-									value={formData.confirmPassword}
+									placeholder='AB'
+									value={formData.passportSeria}
+									onChange={handleChange}
+								/>
+							</div>
+							<div>
+								<label
+									htmlFor='passportNumber'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Passport Number
+								</label>
+								<input
+									type='text'
+									name='passportNumber'
+									id='passportNumber'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='12345678'
+									value={formData.passportNumber}
+									onChange={handleChange}
+								/>
+							</div>
+							<div>
+								<label
+									htmlFor='tell'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Tell
+								</label>
+								<input
+									type='text'
+									name='tell'
+									id='tell'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='+998901234567'
+									value={formData.tell}
 									onChange={handleChange}
 								/>
 							</div>
