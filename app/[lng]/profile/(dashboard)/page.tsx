@@ -12,10 +12,10 @@ function Page({ params }: LngParams) {
 		firstName: '',
 		lastName: '',
 		middleName: '',
+		tell: '',
 		passportSeria: '',
 		passportNumber: '',
-		tell: '',
-		passportDate: '', // Yangi maydon
+		passportDate: '',
 	})
 
 	useEffect(() => {
@@ -155,7 +155,110 @@ function Page({ params }: LngParams) {
 							Shaxsga doir ma`lumotlar
 						</h3>
 						<div className='mb-4 grid sm:grid-cols-3 gap-4'>
-							{/* Other form fields */}
+							<div>
+								<label
+									htmlFor='firstName'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Ismingiz
+								</label>
+								<input
+									type='text'
+									name='firstName'
+									id='firstName'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='John'
+									required
+									value={formData.firstName}
+									onChange={handleChange}
+								/>
+							</div>
+							<div>
+								<label
+									htmlFor='lastName'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Familyangiz
+								</label>
+								<input
+									type='text'
+									name='lastName'
+									id='lastName'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='Doe'
+									required
+									value={formData.lastName}
+									onChange={handleChange}
+								/>
+							</div>
+							<div>
+								<label
+									htmlFor='middleName'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Sharifingiz
+								</label>
+								<input
+									type='text'
+									name='middleName'
+									id='middleName'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='Middle'
+									value={formData.middleName}
+									onChange={handleChange}
+								/>
+							</div>
+							<div>
+								<label
+									htmlFor='tell'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Tell
+								</label>
+								<input
+									type='text'
+									name='tell'
+									id='tell'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='+998901234567'
+									value={formData.tell}
+									onChange={handleChange}
+								/>
+							</div>
+							<div>
+								<label
+									htmlFor='passportSeria'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Passport seria
+								</label>
+								<input
+									type='text'
+									name='passportSeria'
+									id='passportSeria'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='AB'
+									value={formData.passportSeria}
+									onChange={handleChange}
+								/>
+							</div>
+							<div>
+								<label
+									htmlFor='passportNumber'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Passport raqam
+								</label>
+								<input
+									type='text'
+									name='passportNumber'
+									id='passportNumber'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='12345678'
+									value={formData.passportNumber}
+									onChange={handleChange}
+								/>
+							</div>
 							<div>
 								<label
 									htmlFor='passportDate'
@@ -172,7 +275,6 @@ function Page({ params }: LngParams) {
 									onChange={handleChange}
 								/>
 							</div>
-							{/* Other form fields */}
 						</div>
 						<button
 							type='submit'
