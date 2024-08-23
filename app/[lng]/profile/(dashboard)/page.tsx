@@ -154,7 +154,7 @@ function Page({ params }: LngParams) {
 						<h3 className='mb-4 text-lg font-medium leading-none text-gray-900 dark:text-white'>
 							Shaxsga doir ma`lumotlar
 						</h3>
-						<div className='mb-4 grid sm:grid-cols-3 gap-4'>
+						<div className='mb-4 grid sm:grid-cols-2 gap-4'>
 							<div>
 								<label
 									htmlFor='firstName'
@@ -167,7 +167,7 @@ function Page({ params }: LngParams) {
 									name='firstName'
 									id='firstName'
 									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-									placeholder='John'
+									placeholder='Ismingiz'
 									required
 									value={formData.firstName}
 									onChange={handleChange}
@@ -185,7 +185,7 @@ function Page({ params }: LngParams) {
 									name='lastName'
 									id='lastName'
 									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-									placeholder='Doe'
+									placeholder='Familyangiz'
 									required
 									value={formData.lastName}
 									onChange={handleChange}
@@ -203,7 +203,7 @@ function Page({ params }: LngParams) {
 									name='middleName'
 									id='middleName'
 									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-									placeholder='Middle'
+									placeholder='Sharifingiz'
 									value={formData.middleName}
 									onChange={handleChange}
 								/>
@@ -254,7 +254,7 @@ function Page({ params }: LngParams) {
 									name='passportNumber'
 									id='passportNumber'
 									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-									placeholder='12345678'
+									placeholder='1234567'
 									value={formData.passportNumber}
 									onChange={handleChange}
 								/>
