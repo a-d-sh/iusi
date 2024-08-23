@@ -3,10 +3,17 @@
 import Header from '@/components/shared/header'
 import { translation } from '@/i18n/server'
 import { LngParams } from '@/types'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-async function Page({ params }: LngParams) {
-	const { t } = await translation(params.lng)
+function Page({ params }: LngParams) {
+	const [t, setT] = useState<any>(null)
+
+	useEffect(() => {
+		;(async () => {
+			const { t } = await translation(params.lng)
+			setT(t)
+		})()
+	}, [params.lng])
 
 	// State to manage the current step
 	const [step, setStep] = useState(1)
@@ -42,27 +49,29 @@ async function Page({ params }: LngParams) {
 		console.log('Form submitted:', formData)
 	}
 
+	if (!t) return <div>Loading...</div>
+
 	return (
 		<>
 			<Header
 				title={t('Ariza topshirish qadamlari')}
 				description={t('Ariza to`ldiring va talaba bo`ling')}
 			/>
-			<div className='mt-4 grid grid-cols-2 gap-8 max-md:grid-cols-1'>
-				<ol className='items-center w-full space-y-4 sm:flex sm:space-x-8 sm:space-y-0 rtl:space-x-reverse'>
+			<div className='mt-4 grid max-md:grid-cols-1 grid-cols-2 gap-8'>
+				<ol className='w-full items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-8 rtl:space-x-reverse'>
 					<li
 						className={`flex items-center ${
 							step >= 1
 								? 'text-blue-600 dark:text-blue-500'
 								: 'text-gray-500 dark:text-gray-400'
-						} space-x-2.5 rtl:space-x-reverse`}
+						} rtl:space-x-reverse space-x-2.5`}
 					>
 						<span
-							className={`flex items-center justify-center w-8 h-8 border ${
+							className={`flex items-center justify-center size-8 border ${
 								step >= 1
 									? 'border-blue-600 dark:border-blue-500'
 									: 'border-gray-500 dark:border-gray-400'
-							} rounded-full shrink-0`}
+							} shrink-0 rounded-full`}
 						>
 							1
 						</span>
@@ -76,14 +85,14 @@ async function Page({ params }: LngParams) {
 							step >= 2
 								? 'text-blue-600 dark:text-blue-500'
 								: 'text-gray-500 dark:text-gray-400'
-						} space-x-2.5 rtl:space-x-reverse`}
+						} rtl:space-x-reverse space-x-2.5`}
 					>
 						<span
-							className={`flex items-center justify-center w-8 h-8 border ${
+							className={`flex items-center justify-center size-8 border ${
 								step >= 2
 									? 'border-blue-600 dark:border-blue-500'
 									: 'border-gray-500 dark:border-gray-400'
-							} rounded-full shrink-0`}
+							} shrink-0 rounded-full`}
 						>
 							2
 						</span>
@@ -97,14 +106,14 @@ async function Page({ params }: LngParams) {
 							step === 3
 								? 'text-blue-600 dark:text-blue-500'
 								: 'text-gray-500 dark:text-gray-400'
-						} space-x-2.5 rtl:space-x-reverse`}
+						} rtl:space-x-reverse space-x-2.5`}
 					>
 						<span
-							className={`flex items-center justify-center w-8 h-8 border ${
+							className={`flex items-center justify-center size-8 border ${
 								step === 3
 									? 'border-blue-600 dark:border-blue-500'
 									: 'border-gray-500 dark:border-gray-400'
-							} rounded-full shrink-0`}
+							} shrink-0 rounded-full`}
 						>
 							3
 						</span>
@@ -123,11 +132,11 @@ async function Page({ params }: LngParams) {
 						<h3 className='mb-4 text-lg font-medium leading-none text-gray-900 dark:text-white'>
 							User Info
 						</h3>
-						<div className='grid gap-4 mb-4 sm:grid-cols-2'>
+						<div className='mb-4 grid sm:grid-cols-2 gap-4'>
 							<div>
 								<label
 									htmlFor='username'
-									className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
 									Username
 								</label>
@@ -135,7 +144,7 @@ async function Page({ params }: LngParams) {
 									type='text'
 									name='username'
 									id='username'
-									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
 									placeholder='username.example'
 									required
 									value={formData.username}
@@ -145,7 +154,7 @@ async function Page({ params }: LngParams) {
 							<div>
 								<label
 									htmlFor='email'
-									className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
 									Email
 								</label>
@@ -153,7 +162,7 @@ async function Page({ params }: LngParams) {
 									type='email'
 									name='email'
 									id='email'
-									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
 									placeholder='name@company.com'
 									required
 									value={formData.email}
@@ -163,7 +172,7 @@ async function Page({ params }: LngParams) {
 							<div>
 								<label
 									htmlFor='password'
-									className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
 									Password
 								</label>
@@ -171,7 +180,7 @@ async function Page({ params }: LngParams) {
 									type='password'
 									name='password'
 									id='password'
-									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
 									placeholder='•••••••••'
 									required
 									value={formData.password}
@@ -181,7 +190,7 @@ async function Page({ params }: LngParams) {
 							<div>
 								<label
 									htmlFor='confirm-password'
-									className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
 									Confirm password
 								</label>
@@ -189,7 +198,7 @@ async function Page({ params }: LngParams) {
 									type='password'
 									name='confirmPassword'
 									id='confirm-password'
-									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
 									placeholder='•••••••••'
 									required
 									value={formData.confirmPassword}
