@@ -159,8 +159,110 @@ function Page({ params }: LngParams) {
 							Shaxsga doir ma`lumotlar
 						</h3>
 						<div className='mb-4 grid sm:grid-cols-2 gap-4'>
-							{/* Shaxsga doir ma'lumotlar */}
-							{/* ... other fields */}
+							<div>
+								<label
+									htmlFor='firstName'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Ismingiz
+								</label>
+								<input
+									type='text'
+									name='firstName'
+									id='firstName'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='Ismingiz'
+									required
+									value={formData.firstName}
+									onChange={handleChange}
+								/>
+							</div>
+							<div>
+								<label
+									htmlFor='lastName'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Familyangiz
+								</label>
+								<input
+									type='text'
+									name='lastName'
+									id='lastName'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='Familyangiz'
+									required
+									value={formData.lastName}
+									onChange={handleChange}
+								/>
+							</div>
+							<div>
+								<label
+									htmlFor='middleName'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Sharifingiz
+								</label>
+								<input
+									type='text'
+									name='middleName'
+									id='middleName'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='Sharifingiz'
+									value={formData.middleName}
+									onChange={handleChange}
+								/>
+							</div>
+							<div>
+								<label
+									htmlFor='tell'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Tell
+								</label>
+								<input
+									type='text'
+									name='tell'
+									id='tell'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='+998901234567'
+									value={formData.tell}
+									onChange={handleChange}
+								/>
+							</div>
+							<div>
+								<label
+									htmlFor='passportSeria'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Passport seria
+								</label>
+								<input
+									type='text'
+									name='passportSeria'
+									id='passportSeria'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='AB'
+									value={formData.passportSeria}
+									onChange={handleChange}
+								/>
+							</div>
+							<div>
+								<label
+									htmlFor='passportNumber'
+									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+								>
+									Passport raqam
+								</label>
+								<input
+									type='text'
+									name='passportNumber'
+									id='passportNumber'
+									className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+									placeholder='1234567'
+									value={formData.passportNumber}
+									onChange={handleChange}
+								/>
+							</div>
 							<div>
 								<label
 									htmlFor='passportDate'
@@ -188,7 +290,7 @@ function Page({ params }: LngParams) {
 				)}
 
 				{step === 2 && (
-					<form>
+					<form onSubmit={nextStep}>
 						<h3 className='mb-4 text-lg font-medium leading-none text-gray-900 dark:text-white'>
 							Ta`lim yo`nalishi va shakli
 						</h3>
@@ -207,12 +309,11 @@ function Page({ params }: LngParams) {
 									value={formData.educationField}
 									onChange={handleChange}
 								>
-									<option value='' disabled>
-										Tanlang
-									</option>
-									<option value='engineering'>Muhandislik</option>
-									<option value='science'>Fanlar</option>
-									{/* Boshqa variantlar */}
+									<option value=''>Ta`lim yo`nalishini tanlang</option>
+									<option value='science'>Fan</option>
+									<option value='technology'>Texnologiya</option>
+									<option value='arts'>San`at</option>
+									{/* Qo'shimcha variantlar qo'shishingiz mumkin */}
 								</select>
 							</div>
 							<div>
@@ -229,23 +330,23 @@ function Page({ params }: LngParams) {
 									value={formData.educationForm}
 									onChange={handleChange}
 								>
-									<option value='' disabled>
-										Tanlang
-									</option>
-									<option value='fulltime'>Kunduzgi</option>
-									<option value='parttime'>Sirtqi</option>
-									{/* Boshqa variantlar */}
+									<option value=''>Ta`lim shaklini tanlang</option>
+									<option value='full-time'>To`liq vaqt</option>
+									<option value='part-time'>Qisman vaqt</option>
+									<option value='online'>Online</option>
+									{/* Qo'shimcha variantlar qo'shishingiz mumkin */}
 								</select>
 							</div>
 						</div>
 						<button
+							type='button'
 							onClick={prevStep}
 							className='text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-400 dark:hover:bg-gray-500 dark:focus:ring-gray-600'
 						>
 							Avvalgi qadam
 						</button>
 						<button
-							onClick={nextStep}
+							type='submit'
 							className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
 						>
 							Keyingi qadam
