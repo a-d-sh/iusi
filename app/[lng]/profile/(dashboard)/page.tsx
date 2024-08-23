@@ -1,3 +1,5 @@
+'use client'
+
 import Header from '@/components/shared/header'
 import { translation } from '@/i18n/server'
 import { LngParams } from '@/types'
