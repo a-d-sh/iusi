@@ -3,7 +3,7 @@
 import Header from '@/components/shared/header'
 import { translation } from '@/i18n/server'
 import { LngParams } from '@/types'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 async function Page({ params }: LngParams) {
 	const { t } = await translation(params.lng)
