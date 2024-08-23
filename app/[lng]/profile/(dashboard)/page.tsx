@@ -20,7 +20,7 @@ async function Page({ params }: LngParams) {
 	})
 
 	// Handle input change
-	const handleChange = e => {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target
 		setFormData({ ...formData, [name]: value })
 	}
@@ -36,7 +36,7 @@ async function Page({ params }: LngParams) {
 	}
 
 	// Handle form submission
-	const handleSubmit = e => {
+	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
 		// Process final form data submission
 		console.log('Form submitted:', formData)
@@ -228,7 +228,7 @@ async function Page({ params }: LngParams) {
 				)}
 
 				{step === 3 && (
-					<form onSubmit={handleSubmit}>
+					<div>
 						<h3 className='mb-4 text-lg font-medium leading-none text-gray-900 dark:text-white'>
 							Payment Info
 						</h3>
@@ -240,12 +240,12 @@ async function Page({ params }: LngParams) {
 							Previous Step
 						</button>
 						<button
-							type='submit'
-							className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+							onClick={handleSubmit}
+							className='text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800'
 						>
-							Submit
+							Submit Application
 						</button>
-					</form>
+					</div>
 				)}
 			</div>
 		</>
