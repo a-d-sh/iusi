@@ -1,15 +1,9 @@
-import { getStudentCourse } from '@/actions/course.action'
-import { getCustomerCards } from '@/actions/customer.action'
 import Header from '@/components/shared/header'
 import { translation } from '@/i18n/server'
 import { LngParams } from '@/types'
-import { auth } from '@clerk/nextjs'
 
 async function Page({ params }: LngParams) {
 	const { t } = await translation(params.lng)
-	const { userId } = auth()
-	const data = await getStudentCourse(userId!)
-	const cards = await getCustomerCards(userId!)
 
 	return (
 		<>
