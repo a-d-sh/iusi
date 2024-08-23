@@ -7,19 +7,7 @@ import React, { useEffect, useState } from 'react'
 
 function Page({ params }: LngParams) {
 	const [t, setT] = useState<any>(null)
-
-	useEffect(() => {
-		const fetchTranslation = async () => {
-			const { t } = await translation(params.lng)
-			setT(t)
-		}
-
-		fetchTranslation()
-	}, [params.lng])
-
-	// Step and form management state
 	const [step, setStep] = useState(1)
-
 	const [formData, setFormData] = useState({
 		username: '',
 		email: '',
@@ -27,21 +15,38 @@ function Page({ params }: LngParams) {
 		confirmPassword: '',
 	})
 
+	useEffect(() => {
+		const fetchTranslation = async () => {
+			try {
+				const { t } = await translation(params.lng)
+				setT(() => t)
+			} catch (error) {
+				console.error('Error fetching translation:', error)
+			}
+		}
+
+		fetchTranslation()
+	}, [params.lng])
+
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target
 		setFormData({ ...formData, [name]: value })
 	}
 
-	const nextStep = () => setStep(prevStep => prevStep + 1)
+	const nextStep = (e: React.FormEvent) => {
+		e.preventDefault()
+		setStep(prevStep => prevStep + 1)
+	}
 
-	const prevStep = () => setStep(prevStep => prevStep - 1)
+	const prevStep = () => {
+		setStep(prevStep => prevStep - 1)
+	}
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
 		console.log('Form submitted:', formData)
 	}
 
-	// If translation is not yet fetched, show loading
 	if (!t) return <div>Loading...</div>
 
 	return (
