@@ -76,8 +76,9 @@ function Page({ params }: LngParams) {
 							1
 						</span>
 						<span>
-							<h3 className='font-medium leading-tight'>User info</h3>
-							<p className='text-sm'>Step details here</p>
+							<h3 className='font-medium leading-tight'>
+								Shaxsga doir ma`lumotlar
+							</h3>
 						</span>
 					</li>
 					<li
@@ -97,8 +98,9 @@ function Page({ params }: LngParams) {
 							2
 						</span>
 						<span>
-							<h3 className='font-medium leading-tight'>Company info</h3>
-							<p className='text-sm'>Step details here</p>
+							<h3 className='font-medium leading-tight'>
+								Ta'lim yo'nalishi va shakli
+							</h3>
 						</span>
 					</li>
 					<li
@@ -118,8 +120,27 @@ function Page({ params }: LngParams) {
 							3
 						</span>
 						<span>
-							<h3 className='font-medium leading-tight'>Payment info</h3>
-							<p className='text-sm'>Step details here</p>
+							<h3 className='font-medium leading-tight'>Online test</h3>
+						</span>
+					</li>
+					<li
+						className={`flex items-center ${
+							step === 4
+								? 'text-blue-600 dark:text-blue-500'
+								: 'text-gray-500 dark:text-gray-400'
+						} rtl:space-x-reverse space-x-2.5`}
+					>
+						<span
+							className={`flex items-center justify-center size-8 border ${
+								step === 4
+									? 'border-blue-600 dark:border-blue-500'
+									: 'border-gray-500 dark:border-gray-400'
+							} shrink-0 rounded-full`}
+						>
+							4
+						</span>
+						<span>
+							<h3 className='font-medium leading-tight'>Natija</h3>
 						</span>
 					</li>
 				</ol>
@@ -130,7 +151,7 @@ function Page({ params }: LngParams) {
 				{step === 1 && (
 					<form onSubmit={nextStep}>
 						<h3 className='mb-4 text-lg font-medium leading-none text-gray-900 dark:text-white'>
-							User Info
+							Shaxsga doir ma`lumotlar
 						</h3>
 						<div className='mb-4 grid sm:grid-cols-2 gap-4'>
 							<div>
@@ -138,7 +159,7 @@ function Page({ params }: LngParams) {
 									htmlFor='firstName'
 									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
-									First Name
+									Ismingiz
 								</label>
 								<input
 									type='text'
@@ -156,7 +177,7 @@ function Page({ params }: LngParams) {
 									htmlFor='lastName'
 									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
-									Last Name
+									Familyangiz
 								</label>
 								<input
 									type='text'
@@ -174,7 +195,7 @@ function Page({ params }: LngParams) {
 									htmlFor='middleName'
 									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
-									Middle Name
+									Sharifingiz
 								</label>
 								<input
 									type='text'
@@ -191,7 +212,7 @@ function Page({ params }: LngParams) {
 									htmlFor='passportSeria'
 									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
-									Passport Seria
+									Passport seria
 								</label>
 								<input
 									type='text'
@@ -208,7 +229,7 @@ function Page({ params }: LngParams) {
 									htmlFor='passportNumber'
 									className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
 								>
-									Passport Number
+									Passport raqam
 								</label>
 								<input
 									type='text'
@@ -242,7 +263,7 @@ function Page({ params }: LngParams) {
 							type='submit'
 							className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
 						>
-							Next Step: Company Info
+							Keyingi qadam
 						</button>
 					</form>
 				)}
@@ -250,20 +271,19 @@ function Page({ params }: LngParams) {
 				{step === 2 && (
 					<div>
 						<h3 className='mb-4 text-lg font-medium leading-none text-gray-900 dark:text-white'>
-							Company Info
+							Ta'lim yo'nalishi va shakli
 						</h3>
-						{/* Company Info Form Fields */}
 						<button
 							onClick={prevStep}
 							className='text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-400 dark:hover:bg-gray-500 dark:focus:ring-gray-600'
 						>
-							Previous Step
+							Avvalgi qadam
 						</button>
 						<button
 							onClick={nextStep}
 							className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
 						>
-							Next Step: Payment Info
+							Keyingi qadam
 						</button>
 					</div>
 				)}
@@ -271,21 +291,29 @@ function Page({ params }: LngParams) {
 				{step === 3 && (
 					<div>
 						<h3 className='mb-4 text-lg font-medium leading-none text-gray-900 dark:text-white'>
-							Payment Info
+							Online test
 						</h3>
-						{/* Payment Info Form Fields */}
+						{/* Online test Form Fields */}
 						<button
 							onClick={prevStep}
 							className='text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-400 dark:hover:bg-gray-500 dark:focus:ring-gray-600'
 						>
-							Previous Step
+							Avvalgi qadam
 						</button>
 						<button
 							onClick={handleSubmit}
 							className='text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800'
 						>
-							Submit Application
+							Keyingi qadam
 						</button>
+					</div>
+				)}
+
+				{step === 4 && (
+					<div>
+						<h3 className='mb-4 text-lg font-medium leading-none text-gray-900 dark:text-white'>
+							Natija
+						</h3>
 					</div>
 				)}
 			</div>
