@@ -99,7 +99,7 @@ function Page({ params }: LngParams) {
 						</span>
 						<span>
 							<h3 className='font-medium leading-tight'>
-								Ta'lim yo'nalishi va shakli
+								Ta`lim yo`nalishi va shakli
 							</h3>
 						</span>
 					</li>
@@ -271,7 +271,7 @@ function Page({ params }: LngParams) {
 				{step === 2 && (
 					<div>
 						<h3 className='mb-4 text-lg font-medium leading-none text-gray-900 dark:text-white'>
-							Ta'lim yo'nalishi va shakli
+							Ta`lim yo`nalishi va shakli
 						</h3>
 						<button
 							onClick={prevStep}
