@@ -9,16 +9,17 @@ function Page({ params }: LngParams) {
 	const [t, setT] = useState<any>(null)
 
 	useEffect(() => {
-		;(async () => {
+		const fetchTranslation = async () => {
 			const { t } = await translation(params.lng)
 			setT(t)
-		})()
+		}
+
+		fetchTranslation()
 	}, [params.lng])
 
-	// State to manage the current step
+	// Step and form management state
 	const [step, setStep] = useState(1)
 
-	// State to hold form data
 	const [formData, setFormData] = useState({
 		username: '',
 		email: '',
@@ -26,29 +27,21 @@ function Page({ params }: LngParams) {
 		confirmPassword: '',
 	})
 
-	// Handle input change
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target
 		setFormData({ ...formData, [name]: value })
 	}
 
-	// Handle next step
-	const nextStep = () => {
-		setStep(prevStep => prevStep + 1)
-	}
+	const nextStep = () => setStep(prevStep => prevStep + 1)
 
-	// Handle previous step
-	const prevStep = () => {
-		setStep(prevStep => prevStep - 1)
-	}
+	const prevStep = () => setStep(prevStep => prevStep - 1)
 
-	// Handle form submission
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
-		// Process final form data submission
 		console.log('Form submitted:', formData)
 	}
 
+	// If translation is not yet fetched, show loading
 	if (!t) return <div>Loading...</div>
 
 	return (
