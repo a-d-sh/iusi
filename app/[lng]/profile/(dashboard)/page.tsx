@@ -310,9 +310,55 @@ function Page({ params }: LngParams) {
 									onChange={handleChange}
 								>
 									<option value=''>Ta`lim yo`nalishini tanlang</option>
-									<option value='science'>Fan</option>
-									<option value='technology'>Texnologiya</option>
-									<option value='arts'>San`at</option>
+									<option value='Filologiya va tillarni o’qitish (Ingliz tili)'>
+										Filologiya va tillarni o’qitish (Ingliz tili)
+									</option>
+									<option value='Filologiya va tillarni o’qitish (Yapon tili)'>
+										Filologiya va tillarni o’qitish (Yapon tili)
+									</option>
+									<option value='Filologiya va tillarni o’qitish (Koreys tili)'>
+										Filologiya va tillarni o’qitish (Koreys tili)
+									</option>
+									<option value='Filologiya va tillarni o’qitish (Xitoy tili)'>
+										Filologiya va tillarni o’qitish (Xitoy tili)
+									</option>
+									<option value='Boshlang’ich ta’lim'>
+										Boshlang’ich ta’lim
+									</option>
+									<option value='O’zbek tili va adabiyoti'>
+										O’zbek tili va adabiyoti
+									</option>
+									<option value='Iqtisodiyot'>Iqtisodiyot</option>
+									<option value='Buxgalteriya va audit'>
+										Buxgalteriya va audit
+									</option>
+									<option value='Bank ishi va audit'>Bank ishi va audit</option>
+									<option value='Moliya va moliyaviy texnologiyalar'>
+										Moliya va moliyaviy texnologiyalar
+									</option>
+									<option value='Soliq va soliqqa tortish'>
+										Soliq va soliqqa tortish
+									</option>
+									<option value='Huquqshunoshlik (biznes huquqi)'>
+										Huquqshunoshlik (biznes huquqi)
+									</option>
+									<option value='Axborot texnologiyalari (dasturiy injiniring)'>
+										Axborot texnologiyalari (dasturiy injiniring)
+									</option>
+									<option value='Axborot xavfsizligi'>
+										Axborot xavfsizligi
+									</option>
+									<option value='Sun’iy intellekt'>Sun’iy intellekt</option>
+									<option value='Siyosatshunoslik'>Siyosatshunoslik</option>
+									<option value='Xalqaro jurnalistika'>
+										Xalqaro jurnalistika
+									</option>
+									<option value='Magistratura || Raqamli iqtisodiyot'>
+										Magistratura || Raqamli iqtisodiyot
+									</option>
+									<option value='Magistratura || Lingvistika (ingliz tili)'>
+										Magistratura || Lingvistika (ingliz tili)
+									</option>
 									{/* Qo'shimcha variantlar qo'shishingiz mumkin */}
 								</select>
 							</div>
@@ -331,8 +377,8 @@ function Page({ params }: LngParams) {
 									onChange={handleChange}
 								>
 									<option value=''>Ta`lim shaklini tanlang</option>
-									<option value='full-time'>To`liq vaqt</option>
-									<option value='part-time'>Qisman vaqt</option>
+									<option value='full-time'>Kunduzgi</option>
+									<option value='part-time'>Kechki</option>
 									<option value='online'>Online</option>
 									{/* Qo'shimcha variantlar qo'shishingiz mumkin */}
 								</select>
